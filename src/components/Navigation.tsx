@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
-import { FixedObject } from "gatsby-image";
 
 import {
   StyledNav,
@@ -22,18 +21,28 @@ type QueryProps = {
       title: string;
     };
   };
-  siteLogo: FixedImageProps;
+  siteLogoLight: FixedImageProps;
+  siteLogoDark: FixedImageProps;
 };
 
 const Navigation: React.FC = () => {
-  const { siteName, siteLogo } = useStaticQuery<QueryProps>(graphql`
+  const { siteName, siteLogoLight, siteLogoDark } = useStaticQuery<
+    QueryProps
+  >(graphql`
     {
       siteName: site {
         siteMetadata {
           title
         }
       }
-      siteLogo: file(relativePath: { eq: "logo.png" }) {
+      siteLogoLight: file(relativePath: { eq: "logo-light.png" }) {
+        childImageSharp {
+          fixed(width: 28) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      siteLogoDark: file(relativePath: { eq: "logo-dark.png" }) {
         childImageSharp {
           fixed(width: 28) {
             ...GatsbyImageSharpFixed
@@ -48,7 +57,11 @@ const Navigation: React.FC = () => {
   return (
     <StyledNav>
       <Logo
-        src={siteLogo.childImageSharp.fixed}
+        src={
+          isDarkMode
+            ? siteLogoDark.childImageSharp.fixed
+            : siteLogoLight.childImageSharp.fixed
+        }
         name={siteName.siteMetadata.title}
       />
       <StyledNavLinks>

@@ -17,7 +17,8 @@ export const StyledHero = styled.section`
   overflow: hidden;
 
   width: 100%;
-  height: calc(100vh - 5.6rem);
+  /* height: calc(100vh - 5.6rem); */
+  padding-bottom: 14rem;
 
   background: var(--color-hero-gradient);
 `;
