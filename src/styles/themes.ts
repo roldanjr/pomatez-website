@@ -20,7 +20,14 @@ export const lightTheme = css`
     var(--color-bg-tertiary)
   );
 
+  --color-button-normal: linear-gradient(
+    to bottom right,
+    var(--color-bg-secondary),
+    var(--color-bg-primary)
+  );
+
   --color-shadow-primary: rgba(0, 0, 0, 0.16);
+  --color-shadow-secondary: rgba(0, 0, 0, 0.24);
 `;
 
 export const darkTheme = css`
@@ -29,9 +36,9 @@ export const darkTheme = css`
 
   --color-link: var(--color-primary);
 
-  --color-heading-text: #ffffff;
-  --color-body-text: #e3e4e5;
-  --color-disabled-text: #a7abae;
+  --color-heading-text: #e3e4e5;
+  --color-body-text: #a7abae;
+  --color-disabled-text: #6d7478;
 
   --color-bg-primary: #141e25;
   --color-bg-secondary: #1f2930;
@@ -39,5 +46,12 @@ export const darkTheme = css`
 
   --color-hero-gradient: linear-gradient(to bottom right, #141c20, #12181b);
 
+  --color-button-normal: linear-gradient(
+    to bottom right,
+    var(--color-bg-tertiary),
+    var(--color-bg-secondary)
+  );
+
   --color-shadow-primary: rgba(0, 0, 0, 0.24);
+  --color-shadow-secondary: rgba(0, 0, 0, 0.4);
 `;

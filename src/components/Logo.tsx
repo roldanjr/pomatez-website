@@ -10,10 +10,10 @@ type Props = {
 const Logo: React.FC<Props> = ({ name, src }) => {
   return (
     <StyledNavLogo to="/">
-      <Image fixed={src} />
+      <Image fixed={src} alt="Productivity Timer Logo" />
       <label>{name}</label>
     </StyledNavLogo>
   );
 };
 
-export default React.memo(Logo);
+export default Logo;

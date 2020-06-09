@@ -15,7 +15,10 @@ export const StyledNav = styled.nav`
   background-color: var(--color-bg-primary);
   box-shadow: 0 2px 4px 0 var(--color-shadow-primary);
 
-  position: relative;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
 `;
 
 export const StyledNavLogo = styled(Link)`

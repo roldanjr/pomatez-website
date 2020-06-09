@@ -8,6 +8,7 @@ export const ButtonStyles = css`
 
   display: flex;
   align-items: center;
+  justify-content: center;
 
   font-weight: 500;
 
@@ -20,6 +21,13 @@ export const ButtonStyles = css`
 
     fill: currentColor;
   }
+`;
+
+export const StyledButtonNormal = styled.button`
+  ${ButtonStyles};
+
+  color: var(--color-heading-text);
+  background: var(--color-button-normal);
 `;
 
 export const StyledButtonPrimary = styled.button`

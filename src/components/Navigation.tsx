@@ -11,15 +11,10 @@ import {
 } from "styles";
 import { navLinks } from "configurations";
 import { ThemeContext } from "contexts";
+import { FixedImageProps } from "types";
 import { SVG } from "components";
 
 import Logo from "./Logo";
-
-type LogoProps = {
-  childImageSharp: {
-    fixed: FixedObject | FixedObject[] | undefined;
-  };
-};
 
 type QueryProps = {
   siteName: {
@@ -27,28 +22,18 @@ type QueryProps = {
       title: string;
     };
   };
-  siteLogoLight: LogoProps;
-  siteLogoDark: LogoProps;
+  siteLogo: FixedImageProps;
 };
 
 const Navigation: React.FC = () => {
-  const { siteName, siteLogoLight, siteLogoDark } = useStaticQuery<
-    QueryProps
-  >(graphql`
+  const { siteName, siteLogo } = useStaticQuery<QueryProps>(graphql`
     {
       siteName: site {
         siteMetadata {
           title
         }
       }
-      siteLogoLight: file(relativePath: { eq: "logo-light.png" }) {
-        childImageSharp {
-          fixed(width: 28) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      siteLogoDark: file(relativePath: { eq: "logo-dark.png" }) {
+      siteLogo: file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
           fixed(width: 28) {
             ...GatsbyImageSharpFixed
@@ -63,11 +48,7 @@ const Navigation: React.FC = () => {
   return (
     <StyledNav>
       <Logo
-        src={
-          isDarkMode
-            ? siteLogoDark.childImageSharp.fixed
-            : siteLogoLight.childImageSharp.fixed
-        }
+        src={siteLogo.childImageSharp.fixed}
         name={siteName.siteMetadata.title}
       />
       <StyledNavLinks>
