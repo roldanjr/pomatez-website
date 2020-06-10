@@ -16,7 +16,7 @@ export const StyledHeader = styled.header`
     color: var(--color-heading-text);
 
     & > span {
-      color: var(--color-primary);
+      color: var(--color-primary-variant);
     }
   }
 

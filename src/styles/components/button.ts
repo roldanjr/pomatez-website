@@ -27,7 +27,7 @@ export const StyledButtonNormal = styled.button`
   ${ButtonStyles};
 
   color: var(--color-heading-text);
-  background: var(--color-button-normal);
+  background: var(--color-bg-button-normal);
 `;
 
 export const StyledButtonPrimary = styled.button`

@@ -20,7 +20,7 @@ export const StyledHero = styled.section`
   /* height: calc(100vh - 5.6rem); */
   padding-bottom: 14rem;
 
-  background: var(--color-hero-gradient);
+  background: var(--color-bg-hero);
 `;
 
 export const StyledWaterMarkLeft = styled(WaterMarkLeft)`
@@ -79,7 +79,7 @@ export const StyledHeroCtaWrapper = styled.div`
 export const StyledHeroCtaDownloadButton = styled(StyledButtonPrimary)`
   font-size: 1.6rem;
   padding: 1.2rem 2.4rem;
-  box-shadow: 0 3px 6px 0 var(--color-shadow-secondary);
+  box-shadow: 0 2px 4px 0 var(--color-shadow-secondary);
 
   & > svg {
     width: 2.2rem;
@@ -93,7 +93,7 @@ export const StyledHeroCtaGithubLink = styled(StyledButtonNormal)`
   width: 24.4rem;
   font-size: 1.6rem;
   padding: 1.2rem 2.4rem;
-  box-shadow: 0 3px 6px 0 var(--color-shadow-primary);
+  box-shadow: 0 2px 4px 0 var(--color-shadow-primary);
 
   & > svg {
     width: 2.2rem;

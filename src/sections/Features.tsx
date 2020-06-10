@@ -35,7 +35,7 @@ const Features: React.FC = () => {
   const titleParts = frontmatter.title.split(" ");
 
   return (
-    <StyledFeatures>
+    <StyledFeatures id="app-features">
       <StyledHeader>
         <h2>
           <span>{titleParts[0]}</span>

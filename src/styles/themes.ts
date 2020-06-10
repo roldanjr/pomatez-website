@@ -14,19 +14,25 @@ export const lightTheme = css`
   --color-bg-secondary: #fafafa;
   --color-bg-tertiary: #f2f2f2;
 
-  --color-hero-gradient: linear-gradient(
+  --color-bg-hero: linear-gradient(
     to bottom right,
     var(--color-bg-secondary),
     var(--color-bg-tertiary)
   );
 
-  --color-button-normal: linear-gradient(
+  --color-bg-button-normal: linear-gradient(
     to bottom right,
     var(--color-bg-secondary),
     var(--color-bg-primary)
   );
 
-  --color-bg-feature: var(--color-bg-primary);
+  --color-bg-how-it-works: linear-gradient(
+    to bottom,
+    var(--color-bg-secondary),
+    var(--color-bg-tertiary)
+  );
+
+  --color-border-primary: #e6e6e6;
 
   --color-shadow-primary: rgba(0, 0, 0, 0.16);
   --color-shadow-secondary: rgba(0, 0, 0, 0.24);
@@ -46,13 +52,17 @@ export const darkTheme = css`
   --color-bg-secondary: #1f2930;
   --color-bg-tertiary: #232d34;
 
-  --color-hero-gradient: linear-gradient(to bottom right, #141c20, #12181b);
+  --color-bg-hero: linear-gradient(to bottom right, #141c20, #12181b);
 
-  --color-button-normal: linear-gradient(
+  --color-bg-button-normal: linear-gradient(
     to bottom right,
     var(--color-bg-tertiary),
     var(--color-bg-secondary)
   );
+
+  --color-bg-how-it-works: linear-gradient(to bottom right, #141c20, #12181b);
+
+  --color-border-primary: rgba(255, 255, 255, 0.16);
 
   --color-shadow-primary: rgba(0, 0, 0, 0.24);
   --color-shadow-secondary: rgba(0, 0, 0, 0.4);

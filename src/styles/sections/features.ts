@@ -11,11 +11,7 @@ export const StyledFeatures = styled.section`
   height: max-content;
 
   background: var(--color-bg-primary);
-  box-shadow: 0 3px 6px 0 var(--color-shadow-primary);
-
-  display: grid;
-  row-gap: 6rem;
-  align-content: start;
+  box-shadow: 0 1px 4px -1px var(--color-shadow-primary);
 `;
 
 export const StyledFeatureList = styled.ul`
@@ -42,14 +38,18 @@ export const StyledFeatureItem = styled.li`
 
   border-radius: 3px;
   color: var(--color-heading-text);
-  background-color: var(--color-bg-primary);
+  background-color: transparent;
   box-shadow: 0 0 0 0 var(--color-shadow-primary);
   transition: all 200ms ease;
 
   &:hover {
     color: var(--color-primary-variant);
-    background: var(--color-button-normal);
+    background: var(--color-bg-button-normal);
     box-shadow: 0 3px 16px -3px var(--color-shadow-secondary);
+  }
+
+  &:last-of-type {
+    cursor: pointer;
   }
 
   & > h3 {
