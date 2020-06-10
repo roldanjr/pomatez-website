@@ -37,6 +37,6 @@ export const StyledButtonPrimary = styled.button`
   background: linear-gradient(
     to bottom right,
     var(--color-primary),
-    var(--color-primary-dark)
+    var(--color-primary-variant)
   );
 `;

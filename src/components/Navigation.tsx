@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 
 import {
   StyledNav,
@@ -8,8 +8,8 @@ import {
   StyledNavThemeToggler,
   StyledNavButtonWrapper,
 } from "styles";
-import { navLinks } from "configurations";
 import { ThemeContext } from "contexts";
+import { navLinks } from "configurations";
 import { FixedImageProps } from "types";
 import { SVG } from "components";
 
@@ -67,7 +67,7 @@ const Navigation: React.FC = () => {
       <StyledNavLinks>
         {navLinks.map((nav, index) => (
           <li key={index}>
-            <Link to={nav.link}>{nav.label}</Link>
+            <a href={nav.link}>{nav.label}</a>
           </li>
         ))}
       </StyledNavLinks>

@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
           node {
             frontmatter {
               title
-              sub_title
+              subTitle
             }
           }
         }
@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
       <StyledHeroContent>
         <StyledHeroHeader>
           <h1>{frontmatter.title}</h1>
-          <p>{frontmatter.sub_title}</p>
+          <p>{frontmatter.subTitle}</p>
         </StyledHeroHeader>
 
         <StyledHeroCtaWrapper>

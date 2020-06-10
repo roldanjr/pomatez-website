@@ -53,6 +53,8 @@ export const StyledHeroHeader = styled.header`
   text-align: center;
   max-width: 60rem;
 
+  margin: 0 auto;
+
   display: grid;
   row-gap: 0.8rem;
 
@@ -64,6 +66,7 @@ export const StyledHeroHeader = styled.header`
 
   & > p {
     font-size: 2rem;
+    line-height: normal;
   }
 `;
 

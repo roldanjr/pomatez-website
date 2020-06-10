@@ -2,9 +2,9 @@ import { css } from "styled-components";
 
 export const lightTheme = css`
   --color-primary: #0098f7;
-  --color-primary-dark: #0078d6;
+  --color-primary-variant: #0078d6;
 
-  --color-link: var(--color-primary-dark);
+  --color-link: var(--color-primary-variant);
 
   --color-heading-text: #212121;
   --color-body-text: #666666;
@@ -26,13 +26,15 @@ export const lightTheme = css`
     var(--color-bg-primary)
   );
 
+  --color-bg-feature: var(--color-bg-primary);
+
   --color-shadow-primary: rgba(0, 0, 0, 0.16);
   --color-shadow-secondary: rgba(0, 0, 0, 0.24);
 `;
 
 export const darkTheme = css`
   --color-primary: #0098f7;
-  --color-primary-dark: #0078d6;
+  --color-primary-variant: #2ca7f8;
 
   --color-link: var(--color-primary);
 

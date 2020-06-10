@@ -36,13 +36,17 @@ export const GlobalStyle = createGlobalStyle<GlobalProps>`
   }
 
   body {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: normal;
     color: var(--color-body-text);
   }
 
   a {
     text-decoration: none;
+  }
+
+  p {
+    line-height: 1.4;
   }
 
 `;

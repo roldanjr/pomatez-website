@@ -1,8 +1,15 @@
+type FeatureList = {
+  icon: string;
+  heading: string;
+  description: string;
+};
+
 type Edges = {
   node: {
     frontmatter: {
       title: string;
-      sub_title?: string;
+      subTitle?: string;
+      featureList?: FeatureList[];
     };
   };
 };

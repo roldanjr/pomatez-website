@@ -4,8 +4,11 @@ type LinkProps = {
 };
 
 export const navLinks: LinkProps[] = [
-  { label: "Features", link: "#" },
-  { label: "How to start", link: "#" },
+  { label: "App's Features", link: "#" },
+  { label: "How It Works", link: "#" },
   { label: "Road Map", link: "#" },
-  { label: "Release Notes", link: "#" },
+  {
+    label: "Release Notes",
+    link: "https://github.com/roldanjrCodeArts9711/productivity-timer/releases",
+  },
 ];
