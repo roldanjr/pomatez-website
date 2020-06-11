@@ -55,7 +55,10 @@ const Hero: React.FC = () => {
             <SVG name="windows" />
             Download for Windows
           </StyledHeroCtaDownloadButton>
-          <StyledHeroCtaGithubLink>
+          <StyledHeroCtaGithubLink
+            as={"a"}
+            href="https://github.com/roldanjrCodeArts9711/productivity-timer"
+          >
             <SVG name="github" />
             View on Github
           </StyledHeroCtaGithubLink>
