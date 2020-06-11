@@ -52,7 +52,7 @@ export const StyledNavLinks = styled.ul`
   }
 
   & > li:hover {
-    color: var(--color-link);
+    color: var(--color-primary-variant);
   }
 `;
 

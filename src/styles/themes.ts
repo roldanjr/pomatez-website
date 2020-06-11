@@ -3,9 +3,6 @@ import { css } from "styled-components";
 export const lightTheme = css`
   --color-primary: #0098f7;
   --color-primary-variant: #0078d6;
-  --color-primary-variant-rgb: 0, 120, 214;
-
-  --color-link: var(--color-primary-variant);
 
   --color-heading-text: #212121;
   --color-body-text: #666666;
@@ -43,8 +40,6 @@ export const lightTheme = css`
 export const darkTheme = css`
   --color-primary: #0098f7;
   --color-primary-variant: #2ca7f8;
-
-  --color-link: var(--color-primary);
 
   --color-heading-text: #e3e4e5;
   --color-body-text: #a7abae;

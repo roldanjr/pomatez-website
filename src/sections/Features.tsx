@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import {
   StyledFeatures,
@@ -30,9 +30,36 @@ const Features: React.FC = () => {
     }
   `);
 
+  const [limit, setLimit] = useState(5);
+
   const { frontmatter } = allMarkdownRemark.edges[0].node;
 
   const titleParts = frontmatter.title.split(" ");
+
+  const renderLastItem = () => {
+    if (frontmatter.featureList && frontmatter.featureList.length > limit) {
+      return (
+        <StyledFeatureItem
+          onClick={() => {
+            setLimit(prevLimit => prevLimit + 5);
+          }}
+        >
+          <h3>
+            <SVG name="more" />
+            Show more...
+          </h3>
+        </StyledFeatureItem>
+      );
+    }
+    return (
+      <StyledFeatureItem as={"a"} href="#road-map">
+        <h3>
+          <SVG name="more" />
+          More of it soon...
+        </h3>
+      </StyledFeatureItem>
+    );
+  };
 
   return (
     <StyledFeatures id="app-features">
@@ -56,13 +83,8 @@ const Features: React.FC = () => {
               <p>{feature.description}</p>
             </StyledFeatureItem>
           ))
-          .slice(0, 5)}
-        <StyledFeatureItem>
-          <h3>
-            <SVG name="more" />
-            More of it soon...
-          </h3>
-        </StyledFeatureItem>
+          .slice(0, limit)}
+        {renderLastItem()}
       </StyledFeatureList>
     </StyledFeatures>
   );

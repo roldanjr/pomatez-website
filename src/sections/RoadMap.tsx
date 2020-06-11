@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import {
   StyledRoadMap,
@@ -30,9 +30,36 @@ const RoadMap: React.FC = () => {
     }
   `);
 
+  const [limit, setLimit] = useState(5);
+
   const { frontmatter } = allMarkdownRemark.edges[0].node;
 
   const titleParts = frontmatter.title.split(" ");
+
+  const renderLastItem = () => {
+    if (frontmatter.featureList && frontmatter.featureList.length > limit) {
+      return (
+        <StyledRoadMapItem
+          onClick={() => {
+            setLimit(prevLimit => prevLimit + 5);
+          }}
+        >
+          <h3>
+            <SVG name="more" />
+            Show more...
+          </h3>
+        </StyledRoadMapItem>
+      );
+    }
+    return (
+      <StyledRoadMapItem as={"a"} href="#road-map">
+        <h3>
+          <SVG name="more" />
+          More of it soon...
+        </h3>
+      </StyledRoadMapItem>
+    );
+  };
 
   return (
     <StyledRoadMap id="road-map">
@@ -46,21 +73,18 @@ const RoadMap: React.FC = () => {
       </StyledHeader>
 
       <StyledRoadMapList>
-        {frontmatter.featureList?.map((feature, index) => (
-          <StyledRoadMapItem key={index}>
-            <h3>
-              <SVG name={feature.icon} />
-              {feature.heading}
-            </h3>
-            <p>{feature.description}</p>
-          </StyledRoadMapItem>
-        ))}
-        <StyledRoadMapItem>
-          <h3>
-            <SVG name="more" />
-            More of it soon...
-          </h3>
-        </StyledRoadMapItem>
+        {frontmatter.featureList
+          ?.map((feature, index) => (
+            <StyledRoadMapItem key={index}>
+              <h3>
+                <SVG name={feature.icon} />
+                {feature.heading}
+              </h3>
+              <p>{feature.description}</p>
+            </StyledRoadMapItem>
+          ))
+          .splice(0, limit)}
+        {renderLastItem()}
       </StyledRoadMapList>
     </StyledRoadMap>
   );
