@@ -15,6 +15,7 @@ export const StyledGithubLink = styled.a`
 export const StyledCopyrightText = styled.p`
   font-size: 1.4rem;
   font-weight: 500;
+  text-transform: uppercase;
 `;
 
 export const StyledFooterNote = styled.p`
@@ -30,6 +31,10 @@ export const StyledFooterNote = styled.p`
 export const StyledFooterContent = styled.div`
   display: grid;
   row-gap: 0.8rem;
+  width: max-content;
+  height: max-content;
+
+  margin: 0 auto;
 `;
 
 export const StyledFooter = styled.footer`
