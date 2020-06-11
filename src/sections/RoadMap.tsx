@@ -1,18 +1,18 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import {
-  StyledFeatures,
+  StyledRoadMap,
   StyledHeader,
-  StyledFeatureList,
-  StyledFeatureItem,
+  StyledRoadMapList,
+  StyledRoadMapItem,
 } from "styles";
 import { MarkDownProps } from "types";
 import { SVG } from "components";
 
-const Features: React.FC = () => {
+const RoadMap: React.FC = () => {
   const { allMarkdownRemark } = useStaticQuery<MarkDownProps>(graphql`
     {
-      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/features/" } }) {
+      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/roadMap/" } }) {
         edges {
           node {
             frontmatter {
@@ -35,7 +35,7 @@ const Features: React.FC = () => {
   const titleParts = frontmatter.title.split(" ");
 
   return (
-    <StyledFeatures id="app-features">
+    <StyledRoadMap id="road-map">
       <StyledHeader>
         <h2>
           <span>{titleParts[0]}</span>
@@ -45,27 +45,25 @@ const Features: React.FC = () => {
         <p>{frontmatter.subTitle}</p>
       </StyledHeader>
 
-      <StyledFeatureList>
-        {frontmatter.featureList
-          ?.map((feature, index) => (
-            <StyledFeatureItem key={index}>
-              <h3>
-                <SVG name={feature.icon} />
-                {feature.heading}
-              </h3>
-              <p>{feature.description}</p>
-            </StyledFeatureItem>
-          ))
-          .slice(0, 5)}
-        <StyledFeatureItem>
+      <StyledRoadMapList>
+        {frontmatter.featureList?.map((feature, index) => (
+          <StyledRoadMapItem key={index}>
+            <h3>
+              <SVG name={feature.icon} />
+              {feature.heading}
+            </h3>
+            <p>{feature.description}</p>
+          </StyledRoadMapItem>
+        ))}
+        <StyledRoadMapItem>
           <h3>
             <SVG name="more" />
             More of it soon...
           </h3>
-        </StyledFeatureItem>
-      </StyledFeatureList>
-    </StyledFeatures>
+        </StyledRoadMapItem>
+      </StyledRoadMapList>
+    </StyledRoadMap>
   );
 };
 
-export default Features;
+export default RoadMap;

@@ -15,6 +15,9 @@ import KeypadSVG from "assets/icons/keypad.svg";
 import CogSVG from "assets/icons/cog.svg";
 import CreateSVG from "assets/icons/create.svg";
 import MoreSVG from "assets/icons/more.svg";
+import BrowserSVG from "assets/icons/browser.svg";
+import CloudSVG from "assets/icons/cloud.svg";
+import BarChartSVG from "assets/icons/bar-chart.svg";
 
 type Props = {
   name?: string;
@@ -54,6 +57,12 @@ const SVG: React.FC<Props> = ({ name }) => {
       return <CreateSVG />;
     case "more":
       return <MoreSVG />;
+    case "browser":
+      return <BrowserSVG />;
+    case "cloud":
+      return <CloudSVG />;
+    case "bar-chart":
+      return <BarChartSVG />;
     default:
       return <GithubSVG />;
   }

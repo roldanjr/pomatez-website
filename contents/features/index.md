@@ -1,6 +1,6 @@
 ---
 title: App's Features
-subTitle: This app comes with a lot of useful features that might help you to be more productive and effective.
+subTitle: List of features that might help you be more productive and effective.
 
 featureList:
   - icon: copy

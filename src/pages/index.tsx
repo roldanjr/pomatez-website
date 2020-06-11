@@ -1,6 +1,6 @@
 import React from "react";
 import { SEO, Layout } from "components";
-import { Hero, Features, HowItWorks } from "sections";
+import { Hero, Features, HowItWorks, RoadMap } from "sections";
 
 export default () => (
   <Layout>
@@ -8,5 +8,6 @@ export default () => (
     <Hero />
     <Features />
     <HowItWorks />
+    <RoadMap />
   </Layout>
 );

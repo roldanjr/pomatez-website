@@ -4,12 +4,9 @@ import { SectionStyle } from "styles/mixins";
 export const StyledFeatures = styled.section`
   ${SectionStyle};
 
+  padding-bottom: 14rem;
+
   position: relative;
-  overflow: hidden;
-
-  width: 100%;
-  height: max-content;
-
   background: var(--color-bg-primary);
   box-shadow: 0 1px 4px -1px var(--color-shadow-primary);
 `;
@@ -21,13 +18,13 @@ export const StyledFeatureList = styled.ul`
   align-content: start;
   justify-content: center;
   grid-template-columns: repeat(3, max-content);
-  row-gap: 2rem;
+  row-gap: 6rem;
   column-gap: 6rem;
 `;
 
 export const StyledFeatureItem = styled.li`
   max-width: 40rem;
-  height: max-content;
+  height: 100%;
 
   text-align: center;
 
@@ -36,20 +33,24 @@ export const StyledFeatureItem = styled.li`
   row-gap: 1.2rem;
   padding: 4rem;
 
-  border-radius: 3px;
   color: var(--color-heading-text);
-  background-color: transparent;
-  box-shadow: 0 0 0 0 var(--color-shadow-primary);
+
+  border-radius: 3px;
+  border: 1px solid var(--color-border-secondary);
+  background: var(--color-bg-secondary);
+  box-shadow: 0 0 0 0 var(--color-primary-variant);
   transition: all 200ms ease;
 
   &:hover {
     color: var(--color-primary-variant);
-    background: var(--color-bg-button-normal);
-    box-shadow: 0 3px 16px -3px var(--color-shadow-secondary);
+    border-color: var(--color-primary-variant);
+    background-color: var(--color-bg-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-variant);
   }
 
   &:last-of-type {
     cursor: pointer;
+    height: max-content;
   }
 
   & > h3 {

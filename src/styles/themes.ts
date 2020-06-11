@@ -3,6 +3,7 @@ import { css } from "styled-components";
 export const lightTheme = css`
   --color-primary: #0098f7;
   --color-primary-variant: #0078d6;
+  --color-primary-variant-rgb: 0, 120, 214;
 
   --color-link: var(--color-primary-variant);
 
@@ -33,6 +34,7 @@ export const lightTheme = css`
   );
 
   --color-border-primary: #e6e6e6;
+  --color-border-secondary: #f4f4f4;
 
   --color-shadow-primary: rgba(0, 0, 0, 0.16);
   --color-shadow-secondary: rgba(0, 0, 0, 0.24);
@@ -63,6 +65,7 @@ export const darkTheme = css`
   --color-bg-how-it-works: linear-gradient(to bottom right, #141c20, #12181b);
 
   --color-border-primary: rgba(255, 255, 255, 0.16);
+  --color-border-secondary: rgba(255, 255, 255, 0.1);
 
   --color-shadow-primary: rgba(0, 0, 0, 0.24);
   --color-shadow-secondary: rgba(0, 0, 0, 0.4);

@@ -5,6 +5,7 @@ export const StyledHowItWorks = styled.section`
   ${SectionStyle}
 
   background: var(--color-bg-how-it-works);
+  padding-bottom: 16rem;
 `;
 
 export const StyledHowItWorkContent = styled.div`
@@ -68,5 +69,5 @@ export const StyledHowItWorkStep = styled.li`
 export const StyledHowItWorkVideo = styled.div`
   border-radius: 3px;
   background-color: var(--color-bg-primary);
-  box-shadow: 0 3px 6px 0 var(--color-shadow-primary);
+  box-shadow: 0 2px 6px -1px var(--color-shadow-primary);
 `;
