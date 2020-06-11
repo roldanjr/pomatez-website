@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
 import {
@@ -41,10 +41,14 @@ const Hero: React.FC = () => {
 
   const { frontmatter } = allMarkdownRemark.edges[0].node;
 
-  console.log(detectOS());
+  const [operatingSystem, setOperatingSystem] = useState("");
+
+  useEffect(() => {
+    setOperatingSystem(detectOS());
+  }, []);
 
   const renderDownloadButton = () => {
-    switch (detectOS()) {
+    switch (operatingSystem) {
       case "Windows":
         return (
           <StyledHeroCtaDownloadButton as={"a"} href={WINDOWS_INSTALLER}>
