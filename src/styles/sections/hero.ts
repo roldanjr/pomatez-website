@@ -70,6 +70,10 @@ export const StyledHeroCtaDownloadButton = styled(StyledButtonPrimary)`
   padding: 1.2rem 2.4rem;
   box-shadow: 0 2px 4px 0 var(--color-shadow-secondary);
 
+  &:hover {
+    box-shadow: 0 3px 6px 0 var(--color-shadow-primary);
+  }
+
   & > svg {
     width: 2.2rem;
     height: 2.2rem;
@@ -83,6 +87,10 @@ export const StyledHeroCtaGithubLink = styled(StyledButtonNormal)`
   font-size: 1.6rem;
   padding: 1.2rem 2.4rem;
   box-shadow: 0 2px 4px 0 var(--color-shadow-primary);
+
+  &:hover {
+    box-shadow: 0 3px 6px 0 var(--color-shadow-primary);
+  }
 
   & > svg {
     width: 2.2rem;

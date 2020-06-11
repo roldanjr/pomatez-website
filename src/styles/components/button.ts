@@ -12,6 +12,8 @@ export const ButtonStyles = css`
 
   font-weight: 500;
 
+  transition: box-shadow 200ms ease;
+
   & > svg {
     width: 1.25em;
     height: 1.25em;
@@ -28,6 +30,10 @@ export const StyledButtonNormal = styled.button`
 
   color: var(--color-heading-text);
   background: var(--color-bg-button-normal);
+
+  &:hover {
+    background: var(--color-bg-button-normal-hover);
+  }
 `;
 
 export const StyledButtonPrimary = styled.button`
@@ -35,4 +41,8 @@ export const StyledButtonPrimary = styled.button`
 
   color: white;
   background: var(--color-bg-button-primary);
+
+  &:hover {
+    background: var(--color-bg-button-primary-hover);
+  }
 `;
