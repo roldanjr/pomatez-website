@@ -18,12 +18,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Productivity Timer Website`,
-        short_name: `Productivity Timer Website`,
+        name: `PRODUCTIVITY TIMER`,
+        short_name: `Productivity Timer`,
         start_url: `/`,
-        background_color: `#12181b`,
+        background_color: `#ffffff`,
         theme_color: `#12181b`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/assets/images/logo-light.png`, // This path is relative to the root of the site.
       },
     },
