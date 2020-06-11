@@ -1,24 +1,15 @@
 import styled from "styled-components";
-// import Image from "gatsby-image";
-
 import { SectionStyle } from "styles/mixins";
 import { StyledButtonPrimary, StyledButtonNormal } from "styles";
 
 import WaterMarkLeft from "assets/images/watermark-left.svg";
 import WaterMarkRight from "assets/images/watermark-right.svg";
 
-// import PreviewImageLight from "assets/images/preview-image-light.svg";
-// import PreviewImageDark from "assets/images/preview-image-dark.svg";
-
 export const StyledHero = styled.section`
   ${SectionStyle};
-
   position: relative;
   overflow: hidden;
-
-  /* height: calc(100vh - 5.6rem); */
   padding-bottom: 14rem;
-  background: var(--color-bg-hero);
 `;
 
 export const StyledWaterMarkLeft = styled(WaterMarkLeft)`

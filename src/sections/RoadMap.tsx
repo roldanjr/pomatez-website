@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import {
-  StyledRoadMap,
-  StyledHeader,
-  StyledRoadMapList,
-  StyledRoadMapItem,
-} from "styles";
+import { StyledRoadMap, StyledRoadMapList, StyledRoadMapItem } from "styles";
+import { SVG, Header } from "components";
 import { MarkDownProps } from "types";
-import { SVG } from "components";
 
 const RoadMap: React.FC = () => {
   const { allMarkdownRemark } = useStaticQuery<MarkDownProps>(graphql`
@@ -33,8 +28,6 @@ const RoadMap: React.FC = () => {
   const [limit, setLimit] = useState(5);
 
   const { frontmatter } = allMarkdownRemark.edges[0].node;
-
-  const titleParts = frontmatter.title.split(" ");
 
   const renderLastItem = () => {
     if (frontmatter.featureList && frontmatter.featureList.length > limit) {
@@ -63,14 +56,7 @@ const RoadMap: React.FC = () => {
 
   return (
     <StyledRoadMap id="road-map">
-      <StyledHeader>
-        <h2>
-          <span>{titleParts[0]}</span>
-          &nbsp;
-          {titleParts[1]}
-        </h2>
-        <p>{frontmatter.subTitle}</p>
-      </StyledHeader>
+      <Header frontMatter={frontmatter} />
 
       <StyledRoadMapList>
         {frontmatter.featureList

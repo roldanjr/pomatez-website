@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import {
-  StyledFeatures,
-  StyledHeader,
-  StyledFeatureList,
-  StyledFeatureItem,
-} from "styles";
+import { StyledFeatures, StyledFeatureList, StyledFeatureItem } from "styles";
+import { SVG, Header } from "components";
 import { MarkDownProps } from "types";
-import { SVG } from "components";
 
 const Features: React.FC = () => {
   const { allMarkdownRemark } = useStaticQuery<MarkDownProps>(graphql`
@@ -63,14 +58,7 @@ const Features: React.FC = () => {
 
   return (
     <StyledFeatures id="app-features">
-      <StyledHeader>
-        <h2>
-          <span>{titleParts[0]}</span>
-          &nbsp;
-          {titleParts[1]}
-        </h2>
-        <p>{frontmatter.subTitle}</p>
-      </StyledHeader>
+      <Header frontMatter={frontmatter} />
 
       <StyledFeatureList>
         {frontmatter.featureList

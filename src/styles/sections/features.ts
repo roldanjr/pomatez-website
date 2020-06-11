@@ -3,12 +3,6 @@ import { SectionStyle } from "styles/mixins";
 
 export const StyledFeatures = styled.section`
   ${SectionStyle};
-
-  padding-bottom: 14rem;
-
-  position: relative;
-  background: var(--color-bg-primary);
-  box-shadow: 0 1px 4px -1px var(--color-shadow-primary);
 `;
 
 export const StyledFeatureList = styled.ul`

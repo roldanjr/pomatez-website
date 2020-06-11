@@ -4,8 +4,6 @@ import { StyledFeatureList, StyledFeatureItem } from "./features";
 
 export const StyledRoadMap = styled.section`
   ${SectionStyle}
-  background: var(--color-bg-primary);
-  box-shadow: 0 1px 4px -1px var(--color-shadow-primary);
 `;
 
 export const StyledRoadMapList = styled(StyledFeatureList)`

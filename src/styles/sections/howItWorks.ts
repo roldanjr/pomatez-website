@@ -3,8 +3,6 @@ import { SectionStyle } from "styles/mixins";
 
 export const StyledHowItWorks = styled.section`
   ${SectionStyle}
-
-  background: var(--color-bg-how-it-works);
   padding-bottom: 16rem;
 `;
 

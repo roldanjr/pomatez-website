@@ -1,6 +1,6 @@
 import React from "react";
 import { SEO, Layout } from "components";
-import { Hero, Features, HowItWorks, RoadMap } from "sections";
+import { Hero, Features, HowItWorks, RoadMap, Download } from "sections";
 
 export default () => (
   <Layout>
@@ -9,5 +9,6 @@ export default () => (
     <Features />
     <HowItWorks />
     <RoadMap />
+    <Download />
   </Layout>
 );

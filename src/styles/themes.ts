@@ -12,7 +12,7 @@ export const lightTheme = css`
   --color-bg-secondary: #fafafa;
   --color-bg-tertiary: #f2f2f2;
 
-  --color-bg-hero: linear-gradient(
+  --color-section-gradient-1: linear-gradient(
     to bottom right,
     var(--color-bg-secondary),
     var(--color-bg-tertiary)
@@ -49,7 +49,11 @@ export const darkTheme = css`
   --color-bg-secondary: #1f2930;
   --color-bg-tertiary: #232d34;
 
-  --color-bg-hero: linear-gradient(to bottom right, #141c20, #12181b);
+  --color-section-gradient-1: linear-gradient(
+    to bottom right,
+    #141c20,
+    #12181b
+  );
 
   --color-bg-button-normal: linear-gradient(
     to bottom right,

@@ -2,13 +2,13 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import {
   StyledHowItWorks,
-  StyledHeader,
   StyledHowItWorkContent,
   StyledHowItWorkStepList,
   StyledHowItWorkStep,
   StyledHowItWorkVideo,
 } from "styles";
 import { MarkDownProps } from "types";
+import { Header } from "components";
 
 const HowItWorks: React.FC = () => {
   const { allMarkdownRemark } = useStaticQuery<MarkDownProps>(graphql`
@@ -34,18 +34,9 @@ const HowItWorks: React.FC = () => {
 
   const { frontmatter } = allMarkdownRemark.edges[0].node;
 
-  const titleParts = frontmatter.title.split(" ");
-
   return (
     <StyledHowItWorks id="how-it-works">
-      <StyledHeader>
-        <h2>
-          <span>{titleParts[0]}</span>
-          &nbsp;
-          {titleParts[1]}&nbsp;{titleParts[2]}
-        </h2>
-        <p>{frontmatter.subTitle}</p>
-      </StyledHeader>
+      <Header frontMatter={frontmatter} />
 
       <StyledHowItWorkContent>
         <StyledHowItWorkStepList>

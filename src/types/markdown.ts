@@ -9,14 +9,16 @@ type StepList = {
   description: string;
 };
 
+export type Frontmatter = {
+  title: string;
+  subTitle?: string;
+  featureList?: FeatureList[];
+  stepList?: StepList[];
+};
+
 type Edges = {
   node: {
-    frontmatter: {
-      title: string;
-      subTitle?: string;
-      featureList?: FeatureList[];
-      stepList?: StepList[];
-    };
+    frontmatter: Frontmatter;
   };
 };
 
