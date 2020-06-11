@@ -12,8 +12,9 @@ import {
   StyledHeroCtaGithubLink,
 } from "styles";
 import { MarkDownProps, FluidImageProps } from "types";
+
 import { SVG } from "components";
-import { detectOS } from "utils";
+import { detectOS, OSTypes } from "utils";
 import { WINDOWS_INSTALLER, MAC_INSTALLER } from "configurations";
 
 type QueryProps = MarkDownProps & {
@@ -41,10 +42,14 @@ const Hero: React.FC = () => {
 
   const { frontmatter } = allMarkdownRemark.edges[0].node;
 
-  const [operatingSystem, setOperatingSystem] = useState("");
+  const [operatingSystem, setOperatingSystem] = useState<OSTypes>("Mobile");
 
   useEffect(() => {
-    setOperatingSystem(detectOS());
+    const timeout = setTimeout(() => {
+      setOperatingSystem(detectOS());
+    }, 1000);
+
+    return () => clearTimeout(timeout);
   }, []);
 
   const renderDownloadButton = () => {

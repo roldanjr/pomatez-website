@@ -67,7 +67,7 @@ export const StyledHeroCtaWrapper = styled.div`
 
 export const StyledHeroCtaDownloadButton = styled(StyledButtonPrimary)`
   min-height: 4.8rem;
-  min-width: 24.4rem;
+  min-width: 25rem;
   font-size: 1.6rem;
   padding: 1.2rem 2.4rem;
   box-shadow: 0 2px 4px 0 var(--color-shadow-secondary);
@@ -86,7 +86,7 @@ export const StyledHeroCtaDownloadButton = styled(StyledButtonPrimary)`
 
 export const StyledHeroCtaGithubLink = styled(StyledButtonNormal)`
   min-height: 4.8rem;
-  min-width: 24.4rem;
+  min-width: 25rem;
   font-size: 1.6rem;
   padding: 1.2rem 2.4rem;
   box-shadow: 0 2px 4px 0 var(--color-shadow-primary);
