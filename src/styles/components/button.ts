@@ -33,10 +33,6 @@ export const StyledButtonNormal = styled.button`
 export const StyledButtonPrimary = styled.button`
   ${ButtonStyles};
 
-  color: #fff;
-  background: linear-gradient(
-    to bottom right,
-    var(--color-primary),
-    var(--color-primary-variant)
-  );
+  color: white;
+  background: var(--color-bg-button-primary);
 `;

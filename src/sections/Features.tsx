@@ -33,6 +33,7 @@ const Features: React.FC = () => {
     if (frontmatter.featureList && frontmatter.featureList.length > limit) {
       return (
         <StyledFeatureItem
+          as={"button"}
           onClick={() => {
             setLimit(prevLimit => prevLimit + 5);
           }}

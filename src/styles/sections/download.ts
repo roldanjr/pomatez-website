@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { SectionStyle } from "styles/mixins";
-import { StyledButtonPrimary } from "styles/components";
 
 export const StyledDownload = styled.section`
   ${SectionStyle};

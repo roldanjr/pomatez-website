@@ -24,10 +24,16 @@ export const lightTheme = css`
     var(--color-bg-primary)
   );
 
-  --color-bg-how-it-works: linear-gradient(
+  --color-bg-button-primary: linear-gradient(
+    to bottom right,
+    var(--color-primary),
+    var(--color-primary-variant)
+  );
+
+  --color-bg-footer: linear-gradient(
     to bottom,
     var(--color-bg-secondary),
-    var(--color-bg-tertiary)
+    var(--color-bg-primary)
   );
 
   --color-border-primary: #e6e6e6;
@@ -61,7 +67,17 @@ export const darkTheme = css`
     var(--color-bg-secondary)
   );
 
-  --color-bg-how-it-works: linear-gradient(to bottom right, #141c20, #12181b);
+  --color-bg-button-primary: linear-gradient(
+    to bottom right,
+    var(--color-primary-variant),
+    var(--color-primary)
+  );
+
+  --color-bg-footer: linear-gradient(
+    to bottom,
+    var(--color-bg-primary),
+    #12181b
+  );
 
   --color-border-primary: rgba(255, 255, 255, 0.16);
   --color-border-secondary: rgba(255, 255, 255, 0.1);
