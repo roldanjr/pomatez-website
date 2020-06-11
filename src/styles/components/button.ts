@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const ButtonStyles = css`
-  padding: 0.8rem 1.6rem;
+  padding: 0.8rem 2rem;
 
   border: none;
   border-radius: 3px;
@@ -18,7 +18,7 @@ export const ButtonStyles = css`
     width: 1.25em;
     height: 1.25em;
 
-    margin-right: 0.4rem;
+    margin-right: 0.8rem;
     margin-left: -0.4rem;
 
     fill: currentColor;

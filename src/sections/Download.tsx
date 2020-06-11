@@ -7,11 +7,18 @@ import {
   StyledDownloadForLinux,
   StyledDownloadForMac,
   StyledDownloadOSLogo,
-  StyledButtonPrimary,
+  StyledDownloadButton,
   StyledLinuxInstallerWrapper,
 } from "styles";
 import { MarkDownProps } from "types";
 import { Header, SVG } from "components";
+import {
+  WINDOWS_INSTALLER,
+  DEB_INSTALLER,
+  APP_IMAGE_INSTALLER,
+  RPM_INSTALLER,
+  MAC_INSTALLER,
+} from "configurations";
 
 const Download: React.FC = () => {
   const { allMarkdownRemark } = useStaticQuery<MarkDownProps>(graphql`
@@ -41,10 +48,10 @@ const Download: React.FC = () => {
             <SVG name="windows" />
           </StyledDownloadOSLogo>
 
-          <StyledButtonPrimary>
+          <StyledDownloadButton as={"a"} href={WINDOWS_INSTALLER}>
             <SVG name="download" />
             Windows 7, 8 and 10
-          </StyledButtonPrimary>
+          </StyledDownloadButton>
         </StyledDownloadForWindows>
 
         <StyledDownloadForLinux>
@@ -53,24 +60,28 @@ const Download: React.FC = () => {
           </StyledDownloadOSLogo>
 
           <StyledLinuxInstallerWrapper>
-            <StyledButtonPrimary>
+            <StyledDownloadButton as={"a"} href={DEB_INSTALLER}>
               <SVG name="download" />
               .deb
-            </StyledButtonPrimary>
-            <StyledButtonPrimary>
+            </StyledDownloadButton>
+            <StyledDownloadButton as={"a"} href={APP_IMAGE_INSTALLER}>
               <SVG name="download" />
               .AppImage
-            </StyledButtonPrimary>
-            <StyledButtonPrimary>
+            </StyledDownloadButton>
+            <StyledDownloadButton as={"a"} href={RPM_INSTALLER}>
               <SVG name="download" />
               .rpm
-            </StyledButtonPrimary>
+            </StyledDownloadButton>
 
             <span>Or</span>
 
-            <StyledButtonPrimary id="snap-store-btn">
+            <StyledDownloadButton
+              id="snap-store-btn"
+              as={"a"}
+              href="https://snapcraft.io/productivity-timer"
+            >
               <SVG name="snap-store" />
-            </StyledButtonPrimary>
+            </StyledDownloadButton>
           </StyledLinuxInstallerWrapper>
         </StyledDownloadForLinux>
 
@@ -79,10 +90,10 @@ const Download: React.FC = () => {
             <SVG name="apple" />
           </StyledDownloadOSLogo>
 
-          <StyledButtonPrimary>
+          <StyledDownloadButton as={"a"} href={MAC_INSTALLER}>
             <SVG name="download" />
             Mac OS 10.10+
-          </StyledButtonPrimary>
+          </StyledDownloadButton>
         </StyledDownloadForMac>
       </StyledDownloadContent>
     </StyledDownload>

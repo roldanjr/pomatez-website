@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { SectionStyle } from "styles/mixins";
+import { StyledButtonPrimary } from "styles/components";
 
 export const StyledDownload = styled.section`
   ${SectionStyle};
@@ -21,29 +22,30 @@ export const StyledDownloadContent = styled.div`
   grid-template-columns: repeat(3, 1fr);
 `;
 
+export const StyledDownloadButton = styled(StyledButtonPrimary)`
+  min-height: 4.8rem;
+  font-size: 1.6rem;
+  padding: 1.2rem 2.4rem;
+  box-shadow: 0 2px 4px 0 var(--color-shadow-secondary);
+
+  &:hover {
+    box-shadow: 0 3px 6px 0 var(--color-shadow-secondary);
+  }
+
+  & > svg {
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-right: 1rem;
+    margin-left: -0.6rem;
+  }
+`;
+
 export const StyledDownloadForWindows = styled.div`
   color: var(--color-primary-variant);
 
   display: grid;
   row-gap: 4.8rem;
   justify-items: center;
-
-  & > button {
-    font-size: 1.6rem;
-    padding: 1.2rem 2.4rem;
-    box-shadow: 0 2px 4px 0 var(--color-shadow-secondary);
-
-    &:hover {
-      box-shadow: 0 3px 6px 0 var(--color-shadow-secondary);
-    }
-
-    & > svg {
-      width: 2.2rem;
-      height: 2.2rem;
-      margin-right: 1rem;
-      margin-left: -0.6rem;
-    }
-  }
 `;
 
 export const StyledLinuxInstallerWrapper = styled.div`
@@ -66,7 +68,7 @@ export const StyledLinuxInstallerWrapper = styled.div`
     justify-content: center;
   }
 
-  & > button#snap-store-btn {
+  #snap-store-btn {
     grid-column: 1 / -1;
     justify-self: center;
 
@@ -86,23 +88,6 @@ export const StyledLinuxInstallerWrapper = styled.div`
       margin: 0 auto;
     }
   }
-
-  & > button {
-    font-size: 1.6rem;
-    padding: 1.2rem 2.4rem;
-    box-shadow: 0 2px 4px 0 var(--color-shadow-secondary);
-
-    &:hover {
-      box-shadow: 0 3px 6px 0 var(--color-shadow-secondary);
-    }
-
-    & > svg {
-      width: 2.2rem;
-      height: 2.2rem;
-      margin-right: 1rem;
-      margin-left: -0.6rem;
-    }
-  }
 `;
 
 export const StyledDownloadForLinux = styled.div`
@@ -117,21 +102,4 @@ export const StyledDownloadForMac = styled.div`
   display: grid;
   row-gap: 4.8rem;
   justify-items: center;
-
-  & > button {
-    font-size: 1.6rem;
-    padding: 1.2rem 2.4rem;
-    box-shadow: 0 2px 4px 0 var(--color-shadow-secondary);
-
-    &:hover {
-      box-shadow: 0 3px 6px 0 var(--color-shadow-secondary);
-    }
-
-    & > svg {
-      width: 2.2rem;
-      height: 2.2rem;
-      margin-right: 1rem;
-      margin-left: -0.6rem;
-    }
-  }
 `;

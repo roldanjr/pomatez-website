@@ -13,6 +13,8 @@ import {
 } from "styles";
 import { MarkDownProps, FluidImageProps } from "types";
 import { SVG } from "components";
+import { detectOS } from "utils";
+import { WINDOWS_INSTALLER, MAC_INSTALLER } from "configurations";
 
 type QueryProps = MarkDownProps & {
   previewImageLight: FluidImageProps;
@@ -39,6 +41,41 @@ const Hero: React.FC = () => {
 
   const { frontmatter } = allMarkdownRemark.edges[0].node;
 
+  console.log(detectOS());
+
+  const renderDownloadButton = () => {
+    switch (detectOS()) {
+      case "Windows":
+        return (
+          <StyledHeroCtaDownloadButton as={"a"} href={WINDOWS_INSTALLER}>
+            <SVG name="windows" />
+            Download for Windows
+          </StyledHeroCtaDownloadButton>
+        );
+      case "MacOS":
+        return (
+          <StyledHeroCtaDownloadButton as={"a"} href={MAC_INSTALLER}>
+            <SVG name="apple" />
+            Download for Mac OS
+          </StyledHeroCtaDownloadButton>
+        );
+      case "Linux":
+        return (
+          <StyledHeroCtaDownloadButton as={"a"} href="#download-now">
+            <SVG name="tux" />
+            Download for Linux OS
+          </StyledHeroCtaDownloadButton>
+        );
+      default:
+        return (
+          <StyledHeroCtaDownloadButton as={"a"} href="#download-now">
+            <SVG name="download" />
+            Download Installer
+          </StyledHeroCtaDownloadButton>
+        );
+    }
+  };
+
   return (
     <StyledHero>
       <StyledWaterMarkLeft />
@@ -51,10 +88,7 @@ const Hero: React.FC = () => {
         </StyledHeroHeader>
 
         <StyledHeroCtaWrapper>
-          <StyledHeroCtaDownloadButton>
-            <SVG name="windows" />
-            Download for Windows
-          </StyledHeroCtaDownloadButton>
+          {renderDownloadButton()}
           <StyledHeroCtaGithubLink
             as={"a"}
             href="https://github.com/roldanjrCodeArts9711/productivity-timer"

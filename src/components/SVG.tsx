@@ -21,6 +21,7 @@ import BarChartSVG from "assets/icons/bar-chart.svg";
 import AppleSVG from "assets/icons/apple.svg";
 import LinuxSVG from "assets/icons/linux.svg";
 import SnapStoreSVG from "assets/icons/snap-store.svg";
+import TuxSVG from "assets/icons/tux.svg";
 
 type Props = {
   name?: string;
@@ -72,6 +73,8 @@ const SVG: React.FC<Props> = ({ name }) => {
       return <LinuxSVG />;
     case "snap-store":
       return <SnapStoreSVG />;
+    case "tux":
+      return <TuxSVG />;
     default:
       return <GithubSVG />;
   }
