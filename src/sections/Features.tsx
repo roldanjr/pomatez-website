@@ -29,8 +29,6 @@ const Features: React.FC = () => {
 
   const { frontmatter } = allMarkdownRemark.edges[0].node;
 
-  const titleParts = frontmatter.title.split(" ");
-
   const renderLastItem = () => {
     if (frontmatter.featureList && frontmatter.featureList.length > limit) {
       return (
