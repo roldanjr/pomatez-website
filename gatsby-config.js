@@ -21,8 +21,8 @@ module.exports = {
         name: `Productivity Timer Website`,
         short_name: `Productivity Timer Website`,
         start_url: `/`,
-        background_color: `#000`,
-        theme_color: `#000`,
+        background_color: `#12181b`,
+        theme_color: `#12181b`,
         display: `minimal-ui`,
         icon: `src/assets/images/logo-light.png`, // This path is relative to the root of the site.
       },
