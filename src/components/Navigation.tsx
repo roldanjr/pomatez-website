@@ -78,7 +78,7 @@ const Navigation: React.FC = () => {
           <SVG name={isDarkMode ? "moon" : "sunny"} />
         </StyledNavThemeToggler>
 
-        <StyledButtonPrimary>
+        <StyledButtonPrimary as={"a"} href="#download-now">
           <SVG name="download" />
           Download Now
         </StyledButtonPrimary>

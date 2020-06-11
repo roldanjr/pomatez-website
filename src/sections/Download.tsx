@@ -32,7 +32,7 @@ const Download: React.FC = () => {
   const { frontmatter } = allMarkdownRemark.edges[0].node;
 
   return (
-    <StyledDownload>
+    <StyledDownload id="download-now">
       <Header frontMatter={frontmatter} />
 
       <StyledDownloadContent>
