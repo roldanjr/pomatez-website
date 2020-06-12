@@ -11,7 +11,7 @@ export const StyledFeatureList = styled.ul`
   display: grid;
   align-content: start;
   justify-content: center;
-  grid-template-columns: repeat(3, max-content);
+  grid-template-columns: repeat(3, 1fr);
   row-gap: 6rem;
   column-gap: 6rem;
 `;

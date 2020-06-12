@@ -9,23 +9,23 @@ featureList:
 
   - icon: laptop
     heading: Full Screen Breaks
-    description: If enabled, the app will interrupt user and occupy the screen so that the user will be force to take a break.
+    description: If enabled, the app will interrupt the user by occupying the whole screen so that the user will be force to take a break.
 
   - icon: food
     heading: Special Breaks
-    description: If enabled, user will be able to set some special time when they really need to take a break.
+    description: If enabled, the user will be allowed to set some special time when the user really need to take a break.
 
   - icon: alert
     heading: Strict Mode
-    description: If enabled, the app will strictly follow user's configuration and prevent user from resetting,pausing and skipping once the timer has started.
+    description: If enabled, the app will strictly follow user's configuration and prevent the user from resetting, pausing and skipping the timer when it has started.
 
   - icon: moon-outline
     heading: Dark Theme
-    description: If enabled, the app will allow the user to use Dark Mode to reduce eye strain caused by to much glare on too bright colors.
+    description: Allowing the user to use Dark Mode to reduce eye strain and improves visibility for user with low vision and those who are sensitive to bright light.
 
   - icon: timer
     heading: Timer Animation
-    description: If enabled, the app will allow the user to disable timer progress animation to reduce the CPU usage to the app least required. It is really useful for some people.
+    description: Allowing the user to disable timer progress animation to reduce the CPU usage to the app least required. It is really useful for some people.
 
   - icon: notification
     heading: Desktop Notification
@@ -37,9 +37,9 @@ featureList:
 
   - icon: cog
     heading: Customizable Rules
-    description: Allowing the user to modified the default rules of Pomodoro Principle to fit on their personal preference.
+    description: Allowing the user to modify the default rules of Pomodoro Principle to fit on their personal preference.
 
   - icon: create
     heading: Built-in Task List
-    description: Allowing the user to create tasks they want to accomplish and enable them to mark a particular task as done showing some accomplishments.
+    description: Allowing the user to create tasks they wanted to accomplish and enable them to mark a particular task as done showing some accomplishments.
 ---

@@ -17,5 +17,5 @@ featureList:
 
   - icon: bar-chart
     heading: Productivity Report
-    description: Provide some useful summary about user's productivity to have sense of accomplishments.
+    description: Provide some useful summary about user's productivity to have some sense of accomplishments.
 ---
