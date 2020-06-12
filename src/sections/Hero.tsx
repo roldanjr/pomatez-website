@@ -44,6 +44,16 @@ const Hero: React.FC = () => {
 
   const [operatingSystem, setOperatingSystem] = useState<OSTypes>("Mobile");
 
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    function parallaxShift() {
+      setOffset(window.pageYOffset);
+    }
+    document.addEventListener("scroll", parallaxShift);
+    return () => document.removeEventListener("scroll", parallaxShift);
+  }, []);
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       setOperatingSystem(detectOS());
@@ -87,8 +97,8 @@ const Hero: React.FC = () => {
 
   return (
     <StyledHero>
-      <StyledWaterMarkLeft />
-      <StyledWaterMarkRight />
+      <StyledWaterMarkLeft style={{ top: offset / 4 }} />
+      <StyledWaterMarkRight style={{ top: offset / 4 }} />
 
       <StyledHeroContent>
         <StyledHeroHeader>
