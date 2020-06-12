@@ -4,12 +4,12 @@ subTitle: You can start by following the basic steps provided bellow.
 
 stepList:
   - heading: Create task lists
-    description: List down all the task you want to accomplished using the Built-in Task List feature of the app.
+    description: List down all the task you want to accomplished using the Built-in Task List.
 
-  - heading: Select task item
+  - heading: Choose a task item
     description: Choose a task item to be accomplished first and put it on the top of your priority list.
 
-  - heading: Start to work and focus
+  - heading: Start to focus on work
     description: Stay focus and work on the task until the Pomodoro ends.
 
   - heading: Take a short break

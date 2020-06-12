@@ -6,27 +6,15 @@ export const StyledHowItWorks = styled.section`
   padding-bottom: 16rem;
 `;
 
-export const StyledHowItWorkContent = styled.div`
-  display: grid;
-  column-gap: 6rem;
-  grid-template-columns: 40rem 1fr;
-  align-content: start;
-`;
-
 export const StyledHowItWorkStepList = styled.ol`
   list-style: none;
   counter-reset: step;
 
-  max-width: 40rem;
-
   display: grid;
-  row-gap: 1.6rem;
-
-  & > h3 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-primary-variant);
-  }
+  row-gap: 4rem;
+  column-gap: 6rem;
+  grid-template-rows: repeat(3, 1fr);
+  grid-auto-flow: column;
 `;
 
 export const StyledHowItWorkStep = styled.li`
@@ -34,6 +22,8 @@ export const StyledHowItWorkStep = styled.li`
 
   display: grid;
   row-gap: 0.8rem;
+
+  height: max-content;
 
   & > h4 {
     font-size: 2.4rem;
@@ -52,20 +42,16 @@ export const StyledHowItWorkStep = styled.li`
       content: "";
       display: block;
       width: 100%;
-      max-width: 60rem;
       height: 1px;
       background-color: var(--color-border-primary);
-      margin-top: 0.8rem;
+      margin-top: 1.2rem;
     }
   }
 
   & > p {
-    /* margin-left: 3.8rem; */
+    text-overflow: ellipsis;
+    width: 100%;
+    white-space: nowrap;
+    word-break: break-all;
   }
-`;
-
-export const StyledHowItWorkVideo = styled.div`
-  border-radius: 3px;
-  background-color: var(--color-bg-primary);
-  box-shadow: 0 2px 6px -1px var(--color-shadow-primary);
 `;
