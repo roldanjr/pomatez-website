@@ -59,14 +59,26 @@ const LandingCTA: React.FC = () => {
         );
       case "Linux":
         return (
-          <StyledLandingCtaDownloadButton as={"a"} href="#download-now">
+          <StyledLandingCtaDownloadButton
+            href="/"
+            to="download-now"
+            offset={-24}
+            duration={420}
+            smooth
+          >
             <SVG name="tux" />
             Download for Linux OS
           </StyledLandingCtaDownloadButton>
         );
       default:
         return (
-          <StyledLandingCtaDownloadButton as={"a"} href="#download-now">
+          <StyledLandingCtaDownloadButton
+            href="/"
+            to="download-now"
+            offset={-24}
+            duration={420}
+            smooth
+          >
             <SVG name="download" />
             Download Installer
           </StyledLandingCtaDownloadButton>

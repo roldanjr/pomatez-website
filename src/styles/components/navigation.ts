@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Link } from "gatsby";
+import { Link } from "react-scroll";
+import { ButtonStyles } from "./button";
 
 export const StyledNav = styled.nav`
   width: 100%;
@@ -47,12 +48,28 @@ export const StyledNavLinks = styled.ul`
   font-size: 1.6rem;
   text-transform: capitalize;
 
+  cursor: pointer;
+
   & > li:not(:last-of-type) {
     margin-right: 2rem;
   }
 
-  & > li:hover {
+  & > li a:hover,
+  & > li a.active {
     color: var(--color-primary-variant);
+  }
+`;
+
+export const StyledNavLinkAnchor = styled(Link)``;
+
+export const StyledNavDownloadButton = styled(Link)`
+  ${ButtonStyles};
+
+  color: white;
+  background: var(--color-bg-button-primary);
+
+  &:hover {
+    background: var(--color-bg-button-primary-hover);
   }
 `;
 

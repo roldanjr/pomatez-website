@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { Link } from "react-scroll";
 import { SectionStyle } from "styles/mixins";
 
 export const StyledFeatures = styled.section`
@@ -16,7 +17,7 @@ export const StyledFeatureList = styled.ul`
   column-gap: 6rem;
 `;
 
-export const StyledFeatureItem = styled.li`
+const FeatureItemStyle = css`
   max-width: 40rem;
   height: 100%;
 
@@ -69,4 +70,12 @@ export const StyledFeatureItem = styled.li`
   & > p {
     color: var(--color-body-text);
   }
+`;
+
+export const StyledFeatureItem = styled.li`
+  ${FeatureItemStyle};
+`;
+
+export const StyledShowMore = styled(Link)`
+  ${FeatureItemStyle};
 `;

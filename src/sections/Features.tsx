@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { StyledFeatures, StyledFeatureList, StyledFeatureItem } from "styles";
+import {
+  StyledFeatures,
+  StyledFeatureList,
+  StyledFeatureItem,
+  StyledShowMore,
+} from "styles";
 import { SVG, Header } from "components";
 import { MarkDownProps } from "types";
 
@@ -46,12 +51,19 @@ const Features: React.FC = () => {
       );
     }
     return (
-      <StyledFeatureItem as={"a"} href="#road-map">
+      <StyledShowMore
+        href="/"
+        to="road-map"
+        offset={-24}
+        duration={420}
+        smooth
+        spy
+      >
         <h3>
           <SVG name="more" />
           More of it soon...
         </h3>
-      </StyledFeatureItem>
+      </StyledShowMore>
     );
   };
 

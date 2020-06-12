@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { StyledRoadMap, StyledRoadMapList, StyledRoadMapItem } from "styles";
+import {
+  StyledRoadMap,
+  StyledRoadMapList,
+  StyledRoadMapItem,
+  StyledShowMore,
+} from "styles";
 import { SVG, Header } from "components";
 import { MarkDownProps } from "types";
 
@@ -45,12 +50,19 @@ const RoadMap: React.FC = () => {
       );
     }
     return (
-      <StyledRoadMapItem as={"a"} href="#road-map">
+      <StyledShowMore
+        href="/"
+        to="road-map"
+        offset={-24}
+        duration={420}
+        smooth
+        spy
+      >
         <h3>
           <SVG name="more" />
           More of it soon...
         </h3>
-      </StyledRoadMapItem>
+      </StyledShowMore>
     );
   };
 

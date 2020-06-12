@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import { Link } from "react-scroll";
 
 import {
   StyledNav,
@@ -7,6 +8,8 @@ import {
   StyledButtonPrimary,
   StyledNavThemeToggler,
   StyledNavButtonWrapper,
+  StyledNavLinkAnchor,
+  StyledNavDownloadButton,
 } from "styles";
 import { ThemeContext } from "contexts";
 import { navLinks } from "configurations";
@@ -54,6 +57,33 @@ const Navigation: React.FC = () => {
 
   const { isDarkMode, themeToggler } = useContext(ThemeContext);
 
+  const renderNavLinks = () => {
+    return navLinks.map((nav, index) => {
+      if (nav.offset) {
+        return (
+          <li key={index}>
+            <StyledNavLinkAnchor
+              href="/"
+              to={nav.link}
+              activeClass="active"
+              offset={nav.offset}
+              duration={420}
+              smooth
+              spy
+            >
+              {nav.label}
+            </StyledNavLinkAnchor>
+          </li>
+        );
+      }
+      return (
+        <li key={index}>
+          <a href={nav.link}>{nav.label}</a>
+        </li>
+      );
+    });
+  };
+
   return (
     <StyledNav>
       <Logo
@@ -64,13 +94,7 @@ const Navigation: React.FC = () => {
         }
         name={siteName.siteMetadata.title}
       />
-      <StyledNavLinks>
-        {navLinks.map((nav, index) => (
-          <li key={index}>
-            <a href={nav.link}>{nav.label}</a>
-          </li>
-        ))}
-      </StyledNavLinks>
+      <StyledNavLinks>{renderNavLinks()}</StyledNavLinks>
 
       <StyledNavButtonWrapper>
         <StyledNavThemeToggler onClick={themeToggler}>
@@ -78,10 +102,16 @@ const Navigation: React.FC = () => {
           <SVG name={isDarkMode ? "moon" : "sunny"} />
         </StyledNavThemeToggler>
 
-        <StyledButtonPrimary as={"a"} href="#download-now">
+        <StyledNavDownloadButton
+          href="/"
+          to="download-now"
+          offset={-24}
+          duration={420}
+          smooth
+        >
           <SVG name="download" />
           Download Now
-        </StyledButtonPrimary>
+        </StyledNavDownloadButton>
       </StyledNavButtonWrapper>
     </StyledNav>
   );

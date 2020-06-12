@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import Image from "gatsby-image";
 
+import { Link } from "react-scroll";
+
 import { SectionStyle } from "styles/mixins";
-import { StyledButtonPrimary, StyledButtonNormal } from "styles";
+import { ButtonStyles, StyledButtonNormal } from "styles";
 
 import WaterMarkLeft from "assets/images/watermark-left.svg";
 import WaterMarkRight from "assets/images/watermark-right.svg";
@@ -70,14 +72,20 @@ export const StyledLandingCtaWrapper = styled.div`
   column-gap: 2rem;
 `;
 
-export const StyledLandingCtaDownloadButton = styled(StyledButtonPrimary)`
+export const StyledLandingCtaDownloadButton = styled(Link)`
+  ${ButtonStyles};
+
   min-height: 4.8rem;
   min-width: 25rem;
   font-size: 1.6rem;
   padding: 1.2rem 2.4rem;
+
+  color: white;
+  background: var(--color-bg-button-primary);
   box-shadow: 0 2px 4px 0 var(--color-shadow-secondary);
 
   &:hover {
+    background: var(--color-bg-button-primary-hover);
     box-shadow: 0 3px 6px 0 var(--color-shadow-primary);
   }
 
