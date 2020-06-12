@@ -1,15 +1,20 @@
 import styled from "styled-components";
+import Image from "gatsby-image";
+
 import { SectionStyle } from "styles/mixins";
 import { StyledButtonPrimary, StyledButtonNormal } from "styles";
 
 import WaterMarkLeft from "assets/images/watermark-left.svg";
 import WaterMarkRight from "assets/images/watermark-right.svg";
 
-export const StyledHero = styled.section`
+export const StyledLanding = styled.section`
   ${SectionStyle};
   position: relative;
   overflow: hidden;
-  padding-bottom: 14rem;
+  min-height: calc(100vh - 5.6rem);
+  row-gap: 4.8rem;
+  padding: 6.4rem 14rem;
+  padding-bottom: 8rem;
 `;
 
 export const StyledWaterMarkLeft = styled(WaterMarkLeft)`
@@ -28,7 +33,7 @@ export const StyledWaterMarkRight = styled(WaterMarkRight)`
   margin-top: -2rem;
 `;
 
-export const StyledHeroContent = styled.div`
+export const StyledLandingContent = styled.div`
   display: grid;
   row-gap: 4rem;
   justify-content: center;
@@ -38,7 +43,7 @@ export const StyledHeroContent = styled.div`
   z-index: 10;
 `;
 
-export const StyledHeroHeader = styled.header`
+export const StyledLandingHeader = styled.header`
   text-align: center;
   max-width: 60rem;
 
@@ -59,13 +64,13 @@ export const StyledHeroHeader = styled.header`
   }
 `;
 
-export const StyledHeroCtaWrapper = styled.div`
+export const StyledLandingCtaWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, max-content);
   column-gap: 2rem;
 `;
 
-export const StyledHeroCtaDownloadButton = styled(StyledButtonPrimary)`
+export const StyledLandingCtaDownloadButton = styled(StyledButtonPrimary)`
   min-height: 4.8rem;
   min-width: 25rem;
   font-size: 1.6rem;
@@ -84,7 +89,7 @@ export const StyledHeroCtaDownloadButton = styled(StyledButtonPrimary)`
   }
 `;
 
-export const StyledHeroCtaGithubLink = styled(StyledButtonNormal)`
+export const StyledLandingCtaGithubLink = styled(StyledButtonNormal)`
   min-height: 4.8rem;
   min-width: 25rem;
   font-size: 1.6rem;
@@ -102,14 +107,61 @@ export const StyledHeroCtaGithubLink = styled(StyledButtonNormal)`
   }
 `;
 
-export const StyledHeroPreview = styled.div`
-  width: 100%;
-  height: 100%;
-  max-height: 33rem;
+export const StyledAppPreviewWrapper = styled.div`
+  position: relative;
+  z-index: 10;
 
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  display: grid;
+  grid-template-columns: repeat(6, max-content);
+  align-items: center;
+  justify-content: center;
+`;
 
+export const StyledAppPreviewImage = styled(Image)`
   background-color: var(--color-bg-primary);
+  position: relative;
+
+  &:nth-child(1),
+  &:nth-child(6) {
+    width: 20rem;
+    height: max-content;
+    z-index: 2;
+    box-shadow: 0 2px 4px -1px var(--color-shadow-secondary);
+  }
+
+  &:nth-child(1) {
+    margin-right: -1.6rem;
+  }
+
+  &:nth-child(6) {
+    margin-left: -1.6rem;
+  }
+
+  &:nth-child(2),
+  &:nth-child(5) {
+    width: 22rem;
+    height: max-content;
+    z-index: 4;
+    box-shadow: 0 2px 5px -1px var(--color-shadow-secondary);
+  }
+
+  &:nth-child(2) {
+    margin-right: -1.6rem;
+  }
+
+  &:nth-child(5) {
+    margin-left: -1.6rem;
+  }
+
+  &:nth-child(3),
+  &:nth-child(4) {
+    width: 25rem;
+    height: max-content;
+    z-index: 8;
+    box-shadow: 0 2px 6px -1px var(--color-shadow-secondary);
+  }
+
+  &:nth-child(3) {
+    margin-right: 2rem;
+  }
 `;

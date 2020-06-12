@@ -9,7 +9,7 @@ type Props = {
 
 const Logo: React.FC<Props> = ({ name, src }) => {
   return (
-    <StyledNavLogo to="/">
+    <StyledNavLogo to="#landing">
       <Image fixed={src} alt="Productivity Timer Logo" />
       <label>{name}</label>
     </StyledNavLogo>

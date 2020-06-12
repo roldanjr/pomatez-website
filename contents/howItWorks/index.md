@@ -4,7 +4,7 @@ subTitle: You can start by following the basic steps provided bellow.
 
 stepList:
   - heading: Create task lists
-    description: List down all the task you want to accomplished using the Task List feature.
+    description: List down all the task you want to accomplished using the Built-in Task List feature of the app.
 
   - heading: Select task item
     description: Choose a task item to be accomplished first and put it on the top of your priority list.

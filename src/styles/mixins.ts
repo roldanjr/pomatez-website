@@ -20,5 +20,7 @@ export const SectionStyle = css`
     box-shadow: 0 1px 4px -1px var(--color-shadow-primary);
 
     padding-bottom: 14rem;
+
+    z-index: 20;
   }
 `;
