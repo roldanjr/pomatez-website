@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-scroll";
 import { SectionStyle, SectionContentStyle } from "styles/mixins";
+import media from "styles/media";
 
 export const StyledFeatures = styled.section`
   ${SectionStyle};
@@ -17,12 +18,26 @@ export const StyledFeatureList = styled.ul`
   align-content: start;
   justify-content: center;
   grid-template-columns: repeat(3, 1fr);
-  row-gap: 6rem;
-  column-gap: 6rem;
+  gap: 6rem;
+
+  ${media.laptopMd} {
+    gap: 4rem;
+  }
+
+  ${media.laptopSm} {
+    gap: 3.2rem;
+  }
+
+  ${media.tabletXl} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  ${media.tabletMd} {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const FeatureItemStyle = css`
-  max-width: 40rem;
   height: 100%;
 
   text-align: center;
@@ -39,6 +54,12 @@ const FeatureItemStyle = css`
   background: var(--color-bg-secondary);
   box-shadow: 0 0 0 0 var(--color-primary-variant);
   transition: all 200ms ease;
+
+  ${media.laptopSm} {
+    row-gap: 0.8rem;
+    padding: 2.4rem;
+    padding-bottom: 3.2rem;
+  }
 
   &:hover {
     color: var(--color-primary-variant);

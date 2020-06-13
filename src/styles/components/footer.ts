@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styles/media";
 
 export const StyledGithubLink = styled.a`
   &:hover {
@@ -31,7 +32,6 @@ export const StyledFooterNote = styled.p`
 export const StyledFooterContent = styled.div`
   display: grid;
   row-gap: 0.8rem;
-  width: max-content;
   height: max-content;
 
   margin: 0 auto;
@@ -46,4 +46,8 @@ export const StyledFooter = styled.footer`
 
   background: var(--color-bg-footer);
   box-shadow: 0 1px 4px -1px var(--color-shadow-secondary);
+
+  ${media.mobileLg} {
+    padding: 3.2rem 2rem;
+  }
 `;

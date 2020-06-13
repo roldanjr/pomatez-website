@@ -18,6 +18,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "suppressImplicitAnyIndexErrors": true,
     "baseUrl": "src"
   },
   "include": ["src", "gatsby-browser.js"],

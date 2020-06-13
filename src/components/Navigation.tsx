@@ -9,10 +9,12 @@ import {
   StyledNavLinkAnchor,
   StyledNavDownloadButton,
   StyledNavContent,
+  StyledNavAsideWrapper,
+  StyledNavMenu,
 } from "styles";
 import { ThemeContext } from "contexts";
 import { navLinks } from "configurations";
-import { FixedImageProps } from "types";
+import { FluidImageProps } from "types";
 import { SVG } from "components";
 
 import Logo from "./Logo";
@@ -23,8 +25,8 @@ type QueryProps = {
       title: string;
     };
   };
-  siteLogoLight: FixedImageProps;
-  siteLogoDark: FixedImageProps;
+  siteLogoLight: FluidImageProps;
+  siteLogoDark: FluidImageProps;
 };
 
 const Navigation: React.FC = () => {
@@ -39,15 +41,17 @@ const Navigation: React.FC = () => {
       }
       siteLogoLight: file(relativePath: { eq: "logo-light.png" }) {
         childImageSharp {
-          fixed(width: 28) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 28, quality: 100) {
+            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluidLimitPresentationSize
           }
         }
       }
       siteLogoDark: file(relativePath: { eq: "logo-dark.png" }) {
         childImageSharp {
-          fixed(width: 28) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 28, quality: 100) {
+            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluidLimitPresentationSize
           }
         }
       }
@@ -89,30 +93,39 @@ const Navigation: React.FC = () => {
         <Logo
           src={
             isDarkMode
-              ? siteLogoDark.childImageSharp.fixed
-              : siteLogoLight.childImageSharp.fixed
+              ? siteLogoDark.childImageSharp.fluid
+              : siteLogoLight.childImageSharp.fluid
           }
           name={siteName.siteMetadata.title}
         />
-        <StyledNavLinks>{renderNavLinks()}</StyledNavLinks>
 
-        <StyledNavButtonWrapper>
-          <StyledNavThemeToggler onClick={themeToggler}>
-            Toggle Theme
-            <SVG name={isDarkMode ? "moon" : "sunny"} />
-          </StyledNavThemeToggler>
+        <StyledNavAsideWrapper>
+          <StyledNavLinks>{renderNavLinks()}</StyledNavLinks>
 
-          <StyledNavDownloadButton
-            href="/"
-            to="download-now"
-            offset={-24}
-            duration={420}
-            smooth
-          >
-            <SVG name="download" />
-            Download Now
-          </StyledNavDownloadButton>
-        </StyledNavButtonWrapper>
+          <StyledNavButtonWrapper>
+            <StyledNavThemeToggler onClick={themeToggler}>
+              Toggle Theme
+              <SVG name={isDarkMode ? "moon" : "sunny"} />
+            </StyledNavThemeToggler>
+
+            <StyledNavDownloadButton
+              href="/"
+              to="download-now"
+              offset={-24}
+              duration={420}
+              smooth
+            >
+              <SVG name="download" />
+              Download Now
+            </StyledNavDownloadButton>
+          </StyledNavButtonWrapper>
+        </StyledNavAsideWrapper>
+
+        <StyledNavMenu>
+          <span>&nbsp;</span>
+          <span>&nbsp;</span>
+          <span>&nbsp;</span>
+        </StyledNavMenu>
       </StyledNavContent>
     </StyledNav>
   );

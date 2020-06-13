@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Image from "gatsby-image";
 
 import { Link } from "react-scroll";
@@ -9,11 +9,18 @@ import { ButtonStyles, StyledButtonNormal } from "styles";
 import WaterMarkLeft from "assets/images/watermark-left.svg";
 import WaterMarkRight from "assets/images/watermark-right.svg";
 
+import media from "styles/media";
+
 export const StyledLanding = styled.section`
   ${SectionStyle};
   position: relative;
   overflow: hidden;
   padding-top: 8rem;
+
+  ${media.laptopSm} {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
 `;
 
 export const StyledLandingContent = styled.div`
@@ -21,17 +28,50 @@ export const StyledLandingContent = styled.div`
   row-gap: 4.8rem;
 `;
 
-export const StyledWaterMarkLeft = styled(WaterMarkLeft)`
+const WaterMarkStyle = css`
   position: absolute;
   top: 0;
+
+  ${media.laptopXs} {
+    width: 38rem;
+    height: 38rem;
+  }
+
+  ${media.tabletXl} {
+    width: 32rem;
+    height: 32rem;
+  }
+
+  ${media.tabletMd} {
+    width: 28rem;
+    height: 28rem;
+  }
+
+  ${media.tabletSm} {
+    width: 24rem;
+    height: 24rem;
+  }
+
+  ${media.mobileLg} {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  ${media.mobileXs} {
+    width: 16rem;
+    height: 16rem;
+  }
+`;
+
+export const StyledWaterMarkLeft = styled(WaterMarkLeft)`
+  ${WaterMarkStyle};
   left: 0;
   margin-left: -2.4rem;
   margin-top: -2rem;
 `;
 
 export const StyledWaterMarkRight = styled(WaterMarkRight)`
-  position: absolute;
-  top: 0;
+  ${WaterMarkStyle};
   right: 0;
   margin-right: -2.4rem;
   margin-top: -2rem;
@@ -71,7 +111,12 @@ export const StyledLandingHeader = styled.header`
 export const StyledLandingCtaWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, max-content);
-  column-gap: 2rem;
+  gap: 2rem;
+
+  ${media.tabletMd} {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const StyledLandingCtaDownloadButton = styled(Link)`
@@ -97,6 +142,10 @@ export const StyledLandingCtaDownloadButton = styled(Link)`
     margin-right: 1rem;
     margin-left: -0.6rem;
   }
+
+  ${media.laptopSm} {
+    min-width: 24rem;
+  }
 `;
 
 export const StyledLandingCtaGithubLink = styled(StyledButtonNormal)`
@@ -115,6 +164,10 @@ export const StyledLandingCtaGithubLink = styled(StyledButtonNormal)`
     height: 2.2rem;
     margin-right: 1rem;
   }
+
+  ${media.laptopSm} {
+    min-width: 24rem;
+  }
 `;
 
 export const StyledAppPreviewWrapper = styled.div`
@@ -125,6 +178,16 @@ export const StyledAppPreviewWrapper = styled.div`
   grid-template-columns: repeat(6, max-content);
   align-items: center;
   justify-content: center;
+
+  ${media.tabletLg} {
+    grid-template-columns: repeat(3, max-content);
+    row-gap: 3.2rem;
+    column-gap: -2rem;
+  }
+
+  @media screen and (max-width: 424px) {
+    display: none;
+  }
 `;
 
 export const StyledAppPreviewImage = styled(Image)`
@@ -137,14 +200,74 @@ export const StyledAppPreviewImage = styled(Image)`
     height: max-content;
     z-index: 2;
     box-shadow: 0 2px 4px -1px var(--color-shadow-secondary);
+
+    ${media.laptopSm} {
+      width: 18rem;
+    }
   }
 
   &:nth-child(1) {
+    /* Task List */
     margin-right: -1.6rem;
+
+    ${media.laptopMd} {
+      margin-right: -4.8rem;
+    }
+
+    ${media.laptopXs} {
+      margin-right: -8.6rem;
+    }
+
+    ${media.tabletXl} {
+      margin-right: -12.2rem;
+    }
+
+    ${media.tabletLg} {
+      grid-column: 1 / 2;
+
+      width: 20rem;
+      margin-right: -2.4rem;
+    }
+
+    ${media.tabletMd} {
+      grid-column: 1 / 2;
+
+      width: 20rem;
+      margin-right: -10.4rem;
+    }
   }
 
   &:nth-child(6) {
+    /* Long Break */
     margin-left: -1.6rem;
+
+    ${media.laptopMd} {
+      margin-left: -4.8rem;
+    }
+
+    ${media.laptopXs} {
+      margin-left: -8.6rem;
+    }
+
+    ${media.tabletXl} {
+      margin-left: -12.2rem;
+    }
+
+    ${media.tabletLg} {
+      grid-row: 1 / 2;
+      grid-column: 3 / 4;
+
+      width: 20rem;
+      margin-left: -2.4rem;
+    }
+
+    ${media.tabletMd} {
+      grid-row: 1 / 2;
+      grid-column: 3 / 4;
+
+      width: 20rem;
+      margin-left: -10.4rem;
+    }
   }
 
   &:nth-child(2),
@@ -153,14 +276,76 @@ export const StyledAppPreviewImage = styled(Image)`
     height: max-content;
     z-index: 4;
     box-shadow: 0 2px 5px -1px var(--color-shadow-secondary);
+
+    ${media.laptopSm} {
+      width: 20rem;
+    }
   }
 
   &:nth-child(2) {
+    /* Settings */
     margin-right: -1.6rem;
+
+    ${media.laptopMd} {
+      margin-right: -4.8rem;
+    }
+
+    ${media.laptopXs} {
+      margin-right: -8.6rem;
+    }
+
+    ${media.tabletXl} {
+      margin-right: -12.2rem;
+    }
+
+    ${media.tabletLg} {
+      grid-row: 2 / 3;
+      grid-column: 3 / 4;
+
+      margin: 0;
+      margin-left: -2.4rem;
+    }
+
+    ${media.tabletMd} {
+      grid-row: 2 / 3;
+      grid-column: 3 / 4;
+
+      margin: 0;
+      margin-left: -10.4rem;
+    }
   }
 
   &:nth-child(5) {
+    /* Short Break */
     margin-left: -1.6rem;
+
+    ${media.laptopMd} {
+      margin-left: -4.8rem;
+    }
+
+    ${media.laptopXs} {
+      margin-left: -8.6rem;
+    }
+
+    ${media.tabletXl} {
+      margin-left: -12.2rem;
+    }
+
+    ${media.tabletLg} {
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+
+      margin: 0;
+      margin-right: -2.4rem;
+    }
+
+    ${media.tabletMd} {
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+
+      margin: 0;
+      margin-right: -10.4rem;
+    }
   }
 
   &:nth-child(3),
@@ -169,9 +354,31 @@ export const StyledAppPreviewImage = styled(Image)`
     height: max-content;
     z-index: 8;
     box-shadow: 0 2px 6px -1px var(--color-shadow-secondary);
+
+    ${media.laptopSm} {
+      width: 24rem;
+    }
   }
 
   &:nth-child(3) {
+    /* Config */
     margin-right: 2rem;
+
+    ${media.tabletLg} {
+      grid-row: 2 / 3;
+      grid-column: 2 / 3;
+
+      margin: 0;
+    }
+  }
+
+  &:nth-child(4) {
+    /* Work Time */
+    ${media.tabletLg} {
+      grid-row: 1 / 2;
+      grid-column: 2 / 3;
+
+      margin: 0;
+    }
   }
 `;

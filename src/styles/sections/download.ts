@@ -1,9 +1,14 @@
 import styled from "styled-components";
 import { SectionStyle, SectionContentStyle } from "styles/mixins";
 import { StyledButtonPrimary } from "styles/components";
+import media from "styles/media";
 
 export const StyledDownload = styled.section`
   ${SectionStyle};
+
+  ${media.laptopSm} {
+    padding-bottom: 8rem;
+  }
 `;
 
 export const StyledDownloadContent = styled.div`
@@ -22,7 +27,16 @@ export const StyledDownloadButtonWrapper = styled.div`
   display: grid;
   align-items: start;
   grid-template-columns: 1fr 2fr 1fr;
-  column-gap: 6rem;
+
+  ${media.laptopSm} {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3.2rem;
+  }
+
+  ${media.tabletMd} {
+    grid-template-columns: 1fr;
+    row-gap: 4.8rem;
+  }
 `;
 
 export const StyledDownloadButton = styled(StyledButtonPrimary)`
@@ -50,6 +64,10 @@ export const StyledDownloadForWindows = styled.div`
   display: grid;
   row-gap: 4.8rem;
   justify-items: center;
+
+  ${media.tabletMd} {
+    row-gap: 3.2rem;
+  }
 `;
 
 export const StyledLinuxInstallerWrapper = styled.div`
@@ -58,6 +76,24 @@ export const StyledLinuxInstallerWrapper = styled.div`
   justify-content: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+
+  ${media.tabletXl} {
+    grid-template-columns: repeat(2, 1fr);
+
+    & > a:nth-last-of-type(2) {
+      grid-row: 1 / 2;
+      grid-column: 2 / -1;
+    }
+
+    & > a:nth-last-of-type(3) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  ${media.tabletMd} {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   & > span {
     grid-column: 2 / 3;
@@ -70,13 +106,17 @@ export const StyledLinuxInstallerWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    ${media.tabletXl} {
+      grid-column: 1 / -1;
+    }
   }
 
   #snap-store-btn {
     grid-column: 1 / -1;
     justify-self: center;
 
-    width: 20rem;
+    width: 200px;
     padding: 0;
     padding-top: 0.4rem;
 
@@ -85,8 +125,8 @@ export const StyledLinuxInstallerWrapper = styled.div`
     justify-content: center;
 
     & > svg {
-      width: 18.2rem;
-      height: 5.6rem;
+      width: 182px;
+      height: 56px;
       fill: transparent;
 
       margin: 0 auto;
@@ -98,6 +138,10 @@ export const StyledDownloadForLinux = styled.div`
   display: grid;
   row-gap: 4.8rem;
   justify-items: center;
+
+  ${media.tabletMd} {
+    row-gap: 3.2rem;
+  }
 `;
 
 export const StyledDownloadForMac = styled.div`
@@ -106,4 +150,8 @@ export const StyledDownloadForMac = styled.div`
   display: grid;
   row-gap: 4.8rem;
   justify-items: center;
+
+  ${media.tabletMd} {
+    row-gap: 3.2rem;
+  }
 `;

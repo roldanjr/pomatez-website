@@ -1,9 +1,14 @@
 import styled from "styled-components";
 import { SectionStyle, SectionContentStyle } from "styles/mixins";
+import media from "styles/media";
 
 export const StyledHowItWorks = styled.section`
   ${SectionStyle}
   padding-bottom: 16rem;
+
+  ${media.laptopSm} {
+    padding-bottom: 10rem;
+  }
 `;
 
 export const StyledHowItWorkContent = styled.div`
@@ -19,6 +24,21 @@ export const StyledHowItWorkStepList = styled.ol`
   column-gap: 6rem;
   grid-template-rows: repeat(3, 1fr);
   grid-auto-flow: column;
+
+  ${media.laptopMd} {
+    row-gap: 2.4rem;
+    column-gap: 4rem;
+  }
+
+  ${media.laptopSm} {
+    row-gap: 2.4rem;
+    column-gap: 3.2rem;
+  }
+
+  ${media.tabletMd} {
+    grid-template-rows: 1fr;
+    grid-auto-flow: row;
+  }
 `;
 
 export const StyledHowItWorkStep = styled.li`
@@ -27,6 +47,7 @@ export const StyledHowItWorkStep = styled.li`
   display: grid;
   row-gap: 0.8rem;
 
+  width: 100%;
   height: max-content;
 
   & > h4 {
@@ -50,12 +71,5 @@ export const StyledHowItWorkStep = styled.li`
       background-color: var(--color-border-primary);
       margin-top: 1.2rem;
     }
-  }
-
-  & > p {
-    text-overflow: ellipsis;
-    width: 100%;
-    white-space: nowrap;
-    word-break: break-all;
   }
 `;

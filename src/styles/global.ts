@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { darkTheme, lightTheme } from "./themes";
+import media from "./media";
 
 type GlobalProps = {
   isDarkMode?: boolean;
@@ -33,6 +34,10 @@ export const GlobalStyle = createGlobalStyle<GlobalProps>`
     font-size: 62.5%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: normal;
+
+    ${media.laptopSm}{
+      font-size: 56.25%;
+    }
   }
 
   body {
