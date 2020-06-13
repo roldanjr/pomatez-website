@@ -6,10 +6,6 @@ export const SectionStyle = css`
 
   padding: 10rem 14rem;
 
-  display: grid;
-  row-gap: 6rem;
-  align-content: start;
-
   &:nth-child(odd) {
     background: var(--color-section-gradient-1);
   }
@@ -23,4 +19,16 @@ export const SectionStyle = css`
 
     z-index: 20;
   }
+`;
+
+export const SectionContentStyle = css`
+  width: 100%;
+  max-width: 130rem;
+  height: 100%;
+
+  margin: 0 auto;
+
+  display: grid;
+  row-gap: 6rem;
+  align-content: start;
 `;

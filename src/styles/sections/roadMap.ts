@@ -1,9 +1,13 @@
 import styled from "styled-components";
-import { SectionStyle } from "styles/mixins";
+import { SectionStyle, SectionContentStyle } from "styles/mixins";
 import { StyledFeatureList, StyledFeatureItem } from "./features";
 
 export const StyledRoadMap = styled.section`
   ${SectionStyle}
+`;
+
+export const StyledRoadMapContent = styled.div`
+  ${SectionContentStyle};
 `;
 
 export const StyledRoadMapList = styled(StyledFeatureList)`

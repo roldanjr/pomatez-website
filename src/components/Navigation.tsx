@@ -1,15 +1,14 @@
 import React, { useContext } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { Link } from "react-scroll";
 
 import {
   StyledNav,
   StyledNavLinks,
-  StyledButtonPrimary,
   StyledNavThemeToggler,
   StyledNavButtonWrapper,
   StyledNavLinkAnchor,
   StyledNavDownloadButton,
+  StyledNavContent,
 } from "styles";
 import { ThemeContext } from "contexts";
 import { navLinks } from "configurations";
@@ -86,33 +85,35 @@ const Navigation: React.FC = () => {
 
   return (
     <StyledNav>
-      <Logo
-        src={
-          isDarkMode
-            ? siteLogoDark.childImageSharp.fixed
-            : siteLogoLight.childImageSharp.fixed
-        }
-        name={siteName.siteMetadata.title}
-      />
-      <StyledNavLinks>{renderNavLinks()}</StyledNavLinks>
+      <StyledNavContent>
+        <Logo
+          src={
+            isDarkMode
+              ? siteLogoDark.childImageSharp.fixed
+              : siteLogoLight.childImageSharp.fixed
+          }
+          name={siteName.siteMetadata.title}
+        />
+        <StyledNavLinks>{renderNavLinks()}</StyledNavLinks>
 
-      <StyledNavButtonWrapper>
-        <StyledNavThemeToggler onClick={themeToggler}>
-          Toggle Theme
-          <SVG name={isDarkMode ? "moon" : "sunny"} />
-        </StyledNavThemeToggler>
+        <StyledNavButtonWrapper>
+          <StyledNavThemeToggler onClick={themeToggler}>
+            Toggle Theme
+            <SVG name={isDarkMode ? "moon" : "sunny"} />
+          </StyledNavThemeToggler>
 
-        <StyledNavDownloadButton
-          href="/"
-          to="download-now"
-          offset={-24}
-          duration={420}
-          smooth
-        >
-          <SVG name="download" />
-          Download Now
-        </StyledNavDownloadButton>
-      </StyledNavButtonWrapper>
+          <StyledNavDownloadButton
+            href="/"
+            to="download-now"
+            offset={-24}
+            duration={420}
+            smooth
+          >
+            <SVG name="download" />
+            Download Now
+          </StyledNavDownloadButton>
+        </StyledNavButtonWrapper>
+      </StyledNavContent>
     </StyledNav>
   );
 };

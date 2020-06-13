@@ -8,11 +8,6 @@ export const StyledNav = styled.nav`
 
   padding: 0 14rem;
 
-  display: grid;
-  align-items: center;
-  grid-template-columns: max-content 1fr max-content;
-  column-gap: 4rem;
-
   background-color: var(--color-bg-primary);
   box-shadow: 0 2px 4px 0 var(--color-shadow-primary);
 
@@ -20,6 +15,19 @@ export const StyledNav = styled.nav`
   top: 0;
   left: 0;
   z-index: 100;
+`;
+
+export const StyledNavContent = styled.div`
+  width: 100%;
+  max-width: 130rem;
+  height: 100%;
+
+  margin: 0 auto;
+
+  display: grid;
+  align-items: center;
+  grid-template-columns: max-content 1fr max-content;
+  column-gap: 4rem;
 `;
 
 export const StyledNavLogo = styled(Link)`

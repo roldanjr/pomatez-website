@@ -1,9 +1,13 @@
 import styled from "styled-components";
-import { SectionStyle } from "styles/mixins";
+import { SectionStyle, SectionContentStyle } from "styles/mixins";
 import { StyledButtonPrimary } from "styles/components";
 
 export const StyledDownload = styled.section`
   ${SectionStyle};
+`;
+
+export const StyledDownloadContent = styled.div`
+  ${SectionContentStyle};
 `;
 
 export const StyledDownloadOSLogo = styled.div`
@@ -14,15 +18,15 @@ export const StyledDownloadOSLogo = styled.div`
   }
 `;
 
-export const StyledDownloadContent = styled.div`
+export const StyledDownloadButtonWrapper = styled.div`
   display: grid;
   align-items: start;
-  justify-items: center;
-  justify-content: center;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 2fr 1fr;
+  column-gap: 6rem;
 `;
 
 export const StyledDownloadButton = styled(StyledButtonPrimary)`
+  width: 100%;
   min-height: 4.8rem;
   font-size: 1.6rem;
   padding: 1.2rem 2.4rem;
@@ -52,7 +56,7 @@ export const StyledLinuxInstallerWrapper = styled.div`
   display: grid;
   align-items: center;
   justify-content: center;
-  grid-template-columns: repeat(3, max-content);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 
   & > span {

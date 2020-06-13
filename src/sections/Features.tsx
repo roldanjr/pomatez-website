@@ -5,6 +5,7 @@ import {
   StyledFeatureList,
   StyledFeatureItem,
   StyledShowMore,
+  StyledFeatureContent,
 } from "styles";
 import { SVG, Header } from "components";
 import { MarkDownProps } from "types";
@@ -69,22 +70,24 @@ const Features: React.FC = () => {
 
   return (
     <StyledFeatures id="app-features">
-      <Header frontMatter={frontmatter} />
+      <StyledFeatureContent>
+        <Header frontMatter={frontmatter} />
 
-      <StyledFeatureList>
-        {frontmatter.featureList
-          ?.map((feature, index) => (
-            <StyledFeatureItem key={index}>
-              <h3>
-                <SVG name={feature.icon} />
-                {feature.heading}
-              </h3>
-              <p>{feature.description}</p>
-            </StyledFeatureItem>
-          ))
-          .slice(0, limit)}
-        {renderLastItem()}
-      </StyledFeatureList>
+        <StyledFeatureList>
+          {frontmatter.featureList
+            ?.map((feature, index) => (
+              <StyledFeatureItem key={index}>
+                <h3>
+                  <SVG name={feature.icon} />
+                  {feature.heading}
+                </h3>
+                <p>{feature.description}</p>
+              </StyledFeatureItem>
+            ))
+            .slice(0, limit)}
+          {renderLastItem()}
+        </StyledFeatureList>
+      </StyledFeatureContent>
     </StyledFeatures>
   );
 };

@@ -3,8 +3,9 @@ import {
   StyledLanding,
   StyledWaterMarkLeft,
   StyledWaterMarkRight,
-  StyledLandingContent,
+  StyledLandingCTAWrapper,
   StyledAppPreviewWrapper,
+  StyledLandingContent,
 } from "styles";
 import { useParallax } from "hooks";
 
@@ -16,14 +17,16 @@ const Landing: React.FC = () => {
 
   return (
     <StyledLanding id="landing">
-      <StyledWaterMarkLeft style={{ top: offset / 3 }} />
-      <StyledWaterMarkRight style={{ top: offset / 3 }} />
-      <StyledLandingContent style={{ top: offset / 6 }}>
-        <LandingCTA />
+      <StyledLandingContent>
+        <StyledWaterMarkLeft style={{ top: offset / 3 }} />
+        <StyledWaterMarkRight style={{ top: offset / 3 }} />
+        <StyledLandingCTAWrapper style={{ top: offset / 6 }}>
+          <LandingCTA />
+        </StyledLandingCTAWrapper>
+        <StyledAppPreviewWrapper style={{ top: offset / 6 }}>
+          <PreviewImages />
+        </StyledAppPreviewWrapper>
       </StyledLandingContent>
-      <StyledAppPreviewWrapper style={{ top: offset / 6 }}>
-        <PreviewImages />
-      </StyledAppPreviewWrapper>
     </StyledLanding>
   );
 };

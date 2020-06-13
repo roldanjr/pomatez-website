@@ -2,13 +2,14 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import {
   StyledDownload,
-  StyledDownloadContent,
+  StyledDownloadButtonWrapper,
   StyledDownloadForWindows,
   StyledDownloadForLinux,
   StyledDownloadForMac,
   StyledDownloadOSLogo,
   StyledDownloadButton,
   StyledLinuxInstallerWrapper,
+  StyledDownloadContent,
 } from "styles";
 import { MarkDownProps } from "types";
 import { Header, SVG } from "components";
@@ -40,61 +41,63 @@ const Download: React.FC = () => {
 
   return (
     <StyledDownload id="download-now">
-      <Header frontMatter={frontmatter} />
-
       <StyledDownloadContent>
-        <StyledDownloadForWindows>
-          <StyledDownloadOSLogo>
-            <SVG name="windows" />
-          </StyledDownloadOSLogo>
+        <Header frontMatter={frontmatter} />
 
-          <StyledDownloadButton as={"a"} href={WINDOWS_INSTALLER}>
-            <SVG name="download" />
-            Windows 7, 8 and 10
-          </StyledDownloadButton>
-        </StyledDownloadForWindows>
+        <StyledDownloadButtonWrapper>
+          <StyledDownloadForWindows>
+            <StyledDownloadOSLogo>
+              <SVG name="windows" />
+            </StyledDownloadOSLogo>
 
-        <StyledDownloadForLinux>
-          <StyledDownloadOSLogo>
-            <SVG name="linux" />
-          </StyledDownloadOSLogo>
-
-          <StyledLinuxInstallerWrapper>
-            <StyledDownloadButton as={"a"} href={DEB_INSTALLER}>
+            <StyledDownloadButton as={"a"} href={WINDOWS_INSTALLER}>
               <SVG name="download" />
-              .deb
+              Windows 7, 8 and 10
             </StyledDownloadButton>
-            <StyledDownloadButton as={"a"} href={APP_IMAGE_INSTALLER}>
+          </StyledDownloadForWindows>
+
+          <StyledDownloadForLinux>
+            <StyledDownloadOSLogo>
+              <SVG name="linux" />
+            </StyledDownloadOSLogo>
+
+            <StyledLinuxInstallerWrapper>
+              <StyledDownloadButton as={"a"} href={DEB_INSTALLER}>
+                <SVG name="download" />
+                .deb
+              </StyledDownloadButton>
+              <StyledDownloadButton as={"a"} href={APP_IMAGE_INSTALLER}>
+                <SVG name="download" />
+                .AppImage
+              </StyledDownloadButton>
+              <StyledDownloadButton as={"a"} href={RPM_INSTALLER}>
+                <SVG name="download" />
+                .rpm
+              </StyledDownloadButton>
+
+              <span>Or</span>
+
+              <StyledDownloadButton
+                id="snap-store-btn"
+                as={"a"}
+                href="https://snapcraft.io/productivity-timer"
+              >
+                <SVG name="snap-store" />
+              </StyledDownloadButton>
+            </StyledLinuxInstallerWrapper>
+          </StyledDownloadForLinux>
+
+          <StyledDownloadForMac>
+            <StyledDownloadOSLogo>
+              <SVG name="apple" />
+            </StyledDownloadOSLogo>
+
+            <StyledDownloadButton as={"a"} href={MAC_INSTALLER}>
               <SVG name="download" />
-              .AppImage
+              Mac OS 10.10+
             </StyledDownloadButton>
-            <StyledDownloadButton as={"a"} href={RPM_INSTALLER}>
-              <SVG name="download" />
-              .rpm
-            </StyledDownloadButton>
-
-            <span>Or</span>
-
-            <StyledDownloadButton
-              id="snap-store-btn"
-              as={"a"}
-              href="https://snapcraft.io/productivity-timer"
-            >
-              <SVG name="snap-store" />
-            </StyledDownloadButton>
-          </StyledLinuxInstallerWrapper>
-        </StyledDownloadForLinux>
-
-        <StyledDownloadForMac>
-          <StyledDownloadOSLogo>
-            <SVG name="apple" />
-          </StyledDownloadOSLogo>
-
-          <StyledDownloadButton as={"a"} href={MAC_INSTALLER}>
-            <SVG name="download" />
-            Mac OS 10.10+
-          </StyledDownloadButton>
-        </StyledDownloadForMac>
+          </StyledDownloadForMac>
+        </StyledDownloadButtonWrapper>
       </StyledDownloadContent>
     </StyledDownload>
   );

@@ -4,6 +4,7 @@ import {
   StyledHowItWorks,
   StyledHowItWorkStepList,
   StyledHowItWorkStep,
+  StyledFeatureContent,
 } from "styles";
 import { MarkDownProps } from "types";
 import { Header } from "components";
@@ -34,15 +35,18 @@ const HowItWorks: React.FC = () => {
 
   return (
     <StyledHowItWorks id="how-it-works">
-      <Header frontMatter={frontmatter} />
-      <StyledHowItWorkStepList>
-        {frontmatter.stepList?.map((step, index) => (
-          <StyledHowItWorkStep key={index}>
-            <h4>{step.heading}</h4>
-            <p>{step.description}</p>
-          </StyledHowItWorkStep>
-        ))}
-      </StyledHowItWorkStepList>
+      <StyledFeatureContent>
+        <Header frontMatter={frontmatter} />
+
+        <StyledHowItWorkStepList>
+          {frontmatter.stepList?.map((step, index) => (
+            <StyledHowItWorkStep key={index}>
+              <h4>{step.heading}</h4>
+              <p>{step.description}</p>
+            </StyledHowItWorkStep>
+          ))}
+        </StyledHowItWorkStepList>
+      </StyledFeatureContent>
     </StyledHowItWorks>
   );
 };

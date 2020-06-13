@@ -5,6 +5,7 @@ import {
   StyledRoadMapList,
   StyledRoadMapItem,
   StyledShowMore,
+  StyledRoadMapContent,
 } from "styles";
 import { SVG, Header } from "components";
 import { MarkDownProps } from "types";
@@ -68,22 +69,24 @@ const RoadMap: React.FC = () => {
 
   return (
     <StyledRoadMap id="road-map">
-      <Header frontMatter={frontmatter} />
+      <StyledRoadMapContent>
+        <Header frontMatter={frontmatter} />
 
-      <StyledRoadMapList>
-        {frontmatter.featureList
-          ?.map((feature, index) => (
-            <StyledRoadMapItem key={index}>
-              <h3>
-                <SVG name={feature.icon} />
-                {feature.heading}
-              </h3>
-              <p>{feature.description}</p>
-            </StyledRoadMapItem>
-          ))
-          .splice(0, limit)}
-        {renderLastItem()}
-      </StyledRoadMapList>
+        <StyledRoadMapList>
+          {frontmatter.featureList
+            ?.map((feature, index) => (
+              <StyledRoadMapItem key={index}>
+                <h3>
+                  <SVG name={feature.icon} />
+                  {feature.heading}
+                </h3>
+                <p>{feature.description}</p>
+              </StyledRoadMapItem>
+            ))
+            .splice(0, limit)}
+          {renderLastItem()}
+        </StyledRoadMapList>
+      </StyledRoadMapContent>
     </StyledRoadMap>
   );
 };

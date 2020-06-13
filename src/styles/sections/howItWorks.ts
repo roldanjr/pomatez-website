@@ -1,9 +1,13 @@
 import styled from "styled-components";
-import { SectionStyle } from "styles/mixins";
+import { SectionStyle, SectionContentStyle } from "styles/mixins";
 
 export const StyledHowItWorks = styled.section`
   ${SectionStyle}
   padding-bottom: 16rem;
+`;
+
+export const StyledHowItWorkContent = styled.div`
+  ${SectionContentStyle};
 `;
 
 export const StyledHowItWorkStepList = styled.ol`

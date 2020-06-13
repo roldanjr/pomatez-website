@@ -3,7 +3,7 @@ import Image from "gatsby-image";
 
 import { Link } from "react-scroll";
 
-import { SectionStyle } from "styles/mixins";
+import { SectionStyle, SectionContentStyle } from "styles/mixins";
 import { ButtonStyles, StyledButtonNormal } from "styles";
 
 import WaterMarkLeft from "assets/images/watermark-left.svg";
@@ -13,10 +13,12 @@ export const StyledLanding = styled.section`
   ${SectionStyle};
   position: relative;
   overflow: hidden;
-  min-height: calc(100vh - 5.6rem);
+  padding-top: 8rem;
+`;
+
+export const StyledLandingContent = styled.div`
+  ${SectionContentStyle};
   row-gap: 4.8rem;
-  padding: 6.4rem 14rem;
-  padding-bottom: 8rem;
 `;
 
 export const StyledWaterMarkLeft = styled(WaterMarkLeft)`
@@ -35,7 +37,7 @@ export const StyledWaterMarkRight = styled(WaterMarkRight)`
   margin-top: -2rem;
 `;
 
-export const StyledLandingContent = styled.div`
+export const StyledLandingCTAWrapper = styled.div`
   display: grid;
   row-gap: 4rem;
   justify-content: center;

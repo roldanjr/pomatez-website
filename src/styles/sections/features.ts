@@ -1,9 +1,13 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-scroll";
-import { SectionStyle } from "styles/mixins";
+import { SectionStyle, SectionContentStyle } from "styles/mixins";
 
 export const StyledFeatures = styled.section`
   ${SectionStyle};
+`;
+
+export const StyledFeatureContent = styled.div`
+  ${SectionContentStyle};
 `;
 
 export const StyledFeatureList = styled.ul`
