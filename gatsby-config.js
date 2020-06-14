@@ -19,7 +19,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `PRODUCTIVITY TIMER`,
-        short_name: `Productivity Timer`,
+        short_name: `PRODUCTIVITY TIMER`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#12181b`,

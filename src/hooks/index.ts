@@ -1,1 +1,1 @@
-export * from "./useParallax";
+export * from "./useTargetOutside";

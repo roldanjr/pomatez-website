@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-scroll";
 import { ButtonStyles } from "./button";
 import { SectionContentStyle } from "styles/mixins";
@@ -61,7 +61,11 @@ export const StyledNavLogo = styled(Link)`
   }
 `;
 
-export const StyledNavAsideWrapper = styled.div`
+type MenuProps = {
+  showSidebar?: boolean;
+};
+
+export const StyledNavAsideWrapper = styled.div<MenuProps>`
   display: grid;
   align-content: center;
   grid-template-columns: 1fr max-content;
@@ -82,14 +86,47 @@ export const StyledNavAsideWrapper = styled.div`
 
     width: 32rem;
     height: 100%;
+    overflow-y: auto;
 
     padding: 8rem 3.2rem;
 
     background: var(--color-bg-primary);
     box-shadow: 0 3px 6px var(--color-shadow-primary);
 
-    display: none;
+    ${p =>
+      p.showSidebar
+        ? css`
+            transition: transform 160ms ease;
+            transform: translateX(0);
+          `
+        : css`
+            transition: transform 160ms ease-out;
+            transform: translateX(100%);
+          `}
   }
+`;
+
+export const StyledSideNavDimmer = styled.div<MenuProps>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  backdrop-filter: blur(8px);
+  background-color: var(--color-shadow-primary);
+  transition: all 160ms ease;
+
+  ${p =>
+    p.showSidebar
+      ? css`
+          opacity: 1;
+          visibility: visible;
+        `
+      : css`
+          opacity: 0;
+          visibility: hidden;
+        `}
 `;
 
 export const StyledNavLinks = styled.ul`
@@ -186,10 +223,11 @@ export const StyledNavButtonWrapper = styled.div`
   ${media.laptopXs} {
     grid-template-columns: 1fr;
     row-gap: 2rem;
+    margin-bottom: 3.2rem;
   }
 `;
 
-export const StyledNavMenu = styled.button`
+export const StyledNavMenu = styled.div<MenuProps>`
   justify-self: end;
   border: none;
   border-radius: 3px;
@@ -208,6 +246,25 @@ export const StyledNavMenu = styled.button`
     height: 3px;
 
     border-radius: 3px;
-    background-color: var(--color-body-text);
+    background-color: ${p =>
+      p.showSidebar ? "var(--color-primary)" : "var(--color-body-text)"};
+    transition: all 160ms ease;
+
+    &:nth-of-type(1) {
+      transform-origin: left;
+      transform: ${p => (p.showSidebar ? "rotate(45deg)" : "rotate(0deg)")};
+      margin-bottom: ${p => (p.showSidebar ? "1.5px" : "0")};
+    }
+
+    &:nth-of-type(2) {
+      opacity: ${p => (p.showSidebar ? "0" : "1")};
+      transform: ${p => (p.showSidebar ? "translateX(12px)" : "translateX(0)")};
+    }
+
+    &:nth-of-type(3) {
+      transform-origin: left;
+      transform: ${p => (p.showSidebar ? "rotate(-45deg)" : "rotate(0deg)")};
+      margin-top: ${p => (p.showSidebar ? "1.5px" : "0")};
+    }
   }
 `;

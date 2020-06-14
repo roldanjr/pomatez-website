@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useRef } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
 import {
@@ -11,6 +11,7 @@ import {
   StyledNavContent,
   StyledNavAsideWrapper,
   StyledNavMenu,
+  StyledSideNavDimmer,
 } from "styles";
 import { ThemeContext } from "contexts";
 import { navLinks } from "configurations";
@@ -18,6 +19,7 @@ import { FluidImageProps } from "types";
 import { SVG } from "components";
 
 import Logo from "./Logo";
+import { useTargetOutside } from "hooks";
 
 type QueryProps = {
   siteName: {
@@ -60,12 +62,21 @@ const Navigation: React.FC = () => {
 
   const { isDarkMode, themeToggler } = useContext(ThemeContext);
 
+  const asideRef = useRef<HTMLDivElement>(null);
+
+  const [showSidebar, setShowSidebar] = useTargetOutside({ ref: asideRef });
+
+  const hideSidebarAction = () => {
+    setShowSidebar(false);
+  };
+
   const renderNavLinks = () => {
     return navLinks.map((nav, index) => {
       if (nav.offset) {
         return (
           <li key={index}>
             <StyledNavLinkAnchor
+              onClick={hideSidebarAction}
               href="/"
               to={nav.link}
               activeClass="active"
@@ -99,7 +110,9 @@ const Navigation: React.FC = () => {
           name={siteName.siteMetadata.title}
         />
 
-        <StyledNavAsideWrapper>
+        <StyledSideNavDimmer showSidebar={showSidebar} />
+
+        <StyledNavAsideWrapper showSidebar={showSidebar} ref={asideRef}>
           <StyledNavLinks>{renderNavLinks()}</StyledNavLinks>
 
           <StyledNavButtonWrapper>
@@ -114,6 +127,7 @@ const Navigation: React.FC = () => {
               offset={-24}
               duration={420}
               smooth
+              onClick={hideSidebarAction}
             >
               <SVG name="download" />
               Download Now
@@ -121,7 +135,12 @@ const Navigation: React.FC = () => {
           </StyledNavButtonWrapper>
         </StyledNavAsideWrapper>
 
-        <StyledNavMenu>
+        <StyledNavMenu
+          showSidebar={showSidebar}
+          onClick={() => {
+            setShowSidebar((prevState: boolean) => !prevState);
+          }}
+        >
           <span>&nbsp;</span>
           <span>&nbsp;</span>
           <span>&nbsp;</span>
