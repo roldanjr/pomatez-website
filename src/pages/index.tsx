@@ -4,7 +4,7 @@ import { Landing, Features, HowItWorks, RoadMap, Download } from "sections";
 
 export default () => (
   <Layout>
-    <SEO title="" />
+    <SEO />
     <Landing />
     <Features />
     <HowItWorks />
