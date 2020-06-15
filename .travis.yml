@@ -9,15 +9,10 @@ cache:
 
 before_script:
   - npm install -g gatsby-cli
-
-script:
-  - yarn build
+  - npm install -g typescript
 
 deploy:
-  provider: pages:git
-  token: $GH_TOKEN
-  repo: roldanjrCodeArts9711/productivity-timer
-  local_dir: public
+  provider: script
   cleanup: true
   on:
     branch: master

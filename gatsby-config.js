@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: `/productivity-timer`,
+  pathPrefix: `/productivity-timer-site`,
   siteMetadata: {
     title: `PRODUCTIVITY TIMER`,
     description: `Wonderful time management app based on Pomodoro Technique that will help boost your productivity.`,
@@ -24,7 +24,7 @@ module.exports = {
       "pomodoro principle timer",
     ],
     author: `Roldan Montilla Jr`,
-    siteUrl: `http://roldanjrcodearts9711.github.io/productivity-timer`,
+    siteUrl: `http://roldanjrcodearts9711.github.io/productivity-timer-site`,
     twitterUsername: `@roldan_montilla`,
   },
   plugins: [
