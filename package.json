@@ -18,7 +18,7 @@
     "start": "npm run develop",
     "serve": "yarn clean && yarn build && gatsby serve",
     "test": "echo \"Skipping Test as of Now\"",
-    "predeploy": "yarn clean && gatsby build --prefix-paths",
+    "predeploy": "yarn clean && yarn build --prefix-paths",
     "deploy": "gh-pages -d public -r https://$GH_TOKEN@github.com/roldanjrCodeArts9711/productivity-timer-site.git"
   },
   "dependencies": {
