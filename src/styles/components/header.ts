@@ -22,5 +22,6 @@ export const StyledHeader = styled.header`
 
   & > p {
     font-size: 1.8rem;
+    color: var(--color-body-text);
   }
 `;

@@ -124,6 +124,10 @@ export const StyledLinuxInstallerWrapper = styled.div`
     align-items: center;
     justify-content: center;
 
+    & > span {
+      display: none;
+    }
+
     & > svg {
       width: 182px;
       height: 56px;

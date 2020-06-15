@@ -47,6 +47,8 @@ export const StyledFooter = styled.footer`
   background: var(--color-bg-footer);
   box-shadow: 0 1px 4px -1px var(--color-shadow-secondary);
 
+  position: relative;
+
   ${media.mobileLg} {
     padding: 3.2rem 2rem;
   }

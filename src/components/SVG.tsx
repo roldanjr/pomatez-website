@@ -22,6 +22,7 @@ import AppleSVG from "assets/icons/apple.svg";
 import LinuxSVG from "assets/icons/linux.svg";
 import SnapStoreSVG from "assets/icons/snap-store.svg";
 import TuxSVG from "assets/icons/tux.svg";
+import ArrowBackSVG from "assets/icons/arrow-back.svg";
 
 type Props = {
   name?: string;
@@ -75,6 +76,8 @@ const SVG: React.FC<Props> = ({ name }) => {
       return <SnapStoreSVG />;
     case "tux":
       return <TuxSVG />;
+    case "arrow-back":
+      return <ArrowBackSVG />;
     default:
       return <GithubSVG />;
   }

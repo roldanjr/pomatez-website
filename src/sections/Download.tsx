@@ -82,6 +82,7 @@ const Download: React.FC = () => {
                 as={"a"}
                 href="https://snapcraft.io/productivity-timer"
               >
+                <span>Get it from Snap Store</span>
                 <SVG name="snap-store" />
               </StyledDownloadButton>
             </StyledLinuxInstallerWrapper>
