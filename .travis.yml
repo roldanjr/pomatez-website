@@ -13,7 +13,7 @@ deploy:
   provider: pages:git
   token: $GH_TOKEN
   repo: roldanjrCodeArts9711/productivity-timer
-  local-dir: public
+  local_dir: public
   cleanup: true
   on:
     branch: master
