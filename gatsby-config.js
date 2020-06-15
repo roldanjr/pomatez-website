@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/productivity-timer-site`,
   siteMetadata: {
     title: `PRODUCTIVITY TIMER`,
     description: `Wonderful time management app based on Pomodoro Technique that will help boost your productivity.`,
