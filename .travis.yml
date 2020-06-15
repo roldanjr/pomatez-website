@@ -13,6 +13,7 @@ before_script:
 
 deploy:
   provider: script
+  script: yarn deploy
   cleanup: true
   on:
     branch: master
