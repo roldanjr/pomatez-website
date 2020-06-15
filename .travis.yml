@@ -1,0 +1,20 @@
+language: node_js
+node_js: "stable"
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+script:
+  - yarn build
+
+deploy:
+  provider: pages:git
+  token: $GH_TOKEN
+  repo: roldanjrCodeArts9711/productivity-timer
+  local-dir: public
+  cleanup: true
+  on:
+    branch: master
+  edge: true
