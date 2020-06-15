@@ -8,7 +8,7 @@
     "email": "roldanjrmontilla@gmail.com",
     "url": "https://github.com/roldanjrCodeArts9711"
   },
-  "description": "Landing page for Productivity Timer App",
+  "description": "Landing page for PRODUCTIVITY TIMER",
   "scripts": {
     "commit": "git-cz",
     "clean": "gatsby clean",
