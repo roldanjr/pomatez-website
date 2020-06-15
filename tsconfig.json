@@ -21,6 +21,6 @@
     "suppressImplicitAnyIndexErrors": true,
     "baseUrl": "src"
   },
-  "include": ["src", "gatsby-browser.js"],
+  "include": ["src"],
   "exclude": ["node_modules", "public", ".cache"]
 }
