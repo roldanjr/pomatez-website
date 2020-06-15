@@ -92,6 +92,12 @@ const SEO: React.FC<Props> = ({ title, description, lang, meta }) => {
       title={metaTitle}
       titleTemplate={metaTitle}
       meta={getMeta()}
+      link={[
+        {
+          rel: "canonical",
+          href: site.siteMetadata.siteUrl,
+        },
+      ]}
       defer={false}
     />
   );
