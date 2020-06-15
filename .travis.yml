@@ -14,8 +14,6 @@ before_script:
 deploy:
   provider: script
   script: yarn deploy
-  overwrite: true
-  cleanup: true
+  skip_cleanup: true
   on:
     branch: master
-  edge: true
