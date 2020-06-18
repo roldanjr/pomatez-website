@@ -23,6 +23,7 @@ import LinuxSVG from "assets/icons/linux.svg";
 import SnapStoreSVG from "assets/icons/snap-store.svg";
 import TuxSVG from "assets/icons/tux.svg";
 import ArrowBackSVG from "assets/icons/arrow-back.svg";
+import AutoUpdateSVG from "assets/icons/auto-update.svg";
 
 type Props = {
   name?: string;
@@ -78,6 +79,8 @@ const SVG: React.FC<Props> = ({ name }) => {
       return <TuxSVG />;
     case "arrow-back":
       return <ArrowBackSVG />;
+    case "auto-update":
+      return <AutoUpdateSVG />;
     default:
       return <GithubSVG />;
   }

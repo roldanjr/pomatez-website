@@ -42,4 +42,8 @@ featureList:
   - icon: create
     heading: Built-in Task List
     description: Allowing the user to create tasks they wanted to accomplish and enable them to mark a particular task as done showing some accomplishments.
+
+  - icon: auto-update
+    heading: Auto Updates
+    description: With the Automatic Updates feature, it keep the app up to date with the latest updates and enhancements. User no longer have to search for critical updates; it delivers them directly to the computer.
 ---

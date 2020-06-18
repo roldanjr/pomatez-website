@@ -41,7 +41,7 @@ const Features: React.FC = () => {
         <StyledFeatureItem
           as={"button"}
           onClick={() => {
-            setLimit(prevLimit => prevLimit + 5);
+            setLimit(prevLimit => prevLimit + 6);
           }}
         >
           <h3>
