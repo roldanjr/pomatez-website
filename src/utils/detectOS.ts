@@ -7,9 +7,9 @@ export function detectOS(): OSTypes {
 
   if (regex.test(userAgent)) return "Mobile";
 
-  if (appVersion.indexOf("Win") != -1) return "Windows";
-  if (appVersion.indexOf("Mac") != -1) return "MacOS";
-  if (appVersion.indexOf("Linux") != -1) return "Linux";
+  if (appVersion.indexOf("Win") !== -1) return "Windows";
+  if (appVersion.indexOf("Mac") !== -1) return "MacOS";
+  if (appVersion.indexOf("Linux") !== -1) return "Linux";
 
   return "Windows";
 }

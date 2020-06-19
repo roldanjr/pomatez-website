@@ -11,10 +11,6 @@ featureList:
     heading: Full Screen Breaks
     description: If enabled, the app will interrupt the user by occupying the whole screen so that the user will be force to take a break.
 
-  - icon: food
-    heading: Special Breaks
-    description: If enabled, the user will be allowed to set some special time when the user really need to take a break.
-
   - icon: alert
     heading: Strict Mode
     description: If enabled, the app will strictly follow user's configuration and prevent the user from resetting, pausing and skipping the timer when it has started.
@@ -23,6 +19,10 @@ featureList:
     heading: Dark Theme
     description: Allowing the user to use Dark Mode to reduce eye strain and improves visibility for user with low vision and those who are sensitive to bright light.
 
+  - icon: browser
+    heading: Toggle Native Titlebar
+    description: Allowing the user to switch between default custom titlebar to a native one and vice versa. This feature is useful for some users.
+
   - icon: timer
     heading: Timer Animation
     description: Allowing the user to disable timer progress animation to reduce the CPU usage to the app least required. It is really useful for some people.
@@ -30,6 +30,10 @@ featureList:
   - icon: notification
     heading: Desktop Notification
     description: If enabled, the app will allow the user to be notified from time to time. Notification property is divided into 3 types NONE, NORMAL and EXTRA.
+
+  - icon: food
+    heading: Special Breaks
+    description: If enabled, the user will be allowed to set some special time when the user really need to take a break.
 
   - icon: keypad
     heading: Keyboard Shortcuts
