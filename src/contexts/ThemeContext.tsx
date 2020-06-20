@@ -10,9 +10,10 @@ type ThemeProps = {
 const ThemeContext = React.createContext<ThemeProps>({});
 
 const ThemeProvider: React.FC = ({ children }) => {
-  const [isDarkMode, setDarkMode] = useState(
-    getFromStorage("isDarkmode") || null
-  );
+  const useDarkMode =
+    typeof window !== "undefined" && getFromStorage("isDarkmode");
+
+  const [isDarkMode, setDarkMode] = useState(useDarkMode || null);
 
   useEffect(() => {
     if (isDarkMode === null) {
