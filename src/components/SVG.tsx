@@ -24,6 +24,7 @@ import SnapStoreSVG from "assets/icons/snap-store.svg";
 import TuxSVG from "assets/icons/tux.svg";
 import ArrowBackSVG from "assets/icons/arrow-back.svg";
 import AutoUpdateSVG from "assets/icons/auto-update.svg";
+import ExitSVG from "assets/icons/exit.svg";
 
 type Props = {
   name?: string;
@@ -81,6 +82,8 @@ const SVG: React.FC<Props> = ({ name }) => {
       return <ArrowBackSVG />;
     case "auto-update":
       return <AutoUpdateSVG />;
+    case "exit":
+      return <ExitSVG />;
     default:
       return <GithubSVG />;
   }

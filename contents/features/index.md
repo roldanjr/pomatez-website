@@ -35,6 +35,10 @@ featureList:
     heading: Special Breaks
     description: If enabled, the user will be allowed to set some special time when the user really need to take a break.
 
+  - icon: exit
+    heading: Close to Tray
+    description: The app will create a system tray icon with a context menu when the app is being hide or closed.
+
   - icon: keypad
     heading: Keyboard Shortcuts
     description: Provide some useful keyboard shortcuts allowing the user to use the app conveniently.

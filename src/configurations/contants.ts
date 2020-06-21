@@ -1,4 +1,4 @@
-export const APP_VERSION = "2.10.0-beta";
+export const APP_VERSION = "v2.10.4-beta";
 
 export const REPO_LINK =
   "https://github.com/roldanjrCodeArts9711/productivity-timer/releases/latest/download";
