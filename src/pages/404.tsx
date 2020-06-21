@@ -12,7 +12,7 @@ import {
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Page Not found" />
+    <SEO title="404: Page Not found" includeSchema={false} />
     <StyledPageNotFound>
       <Styled404Content>
         <StyledWaterMarkLeft />

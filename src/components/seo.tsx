@@ -13,9 +13,16 @@ type Props = {
   description?: string;
   lang?: string;
   meta?: MetaProps[];
+  includeSchema?: boolean;
 };
 
-const SEO: React.FC<Props> = ({ title, description, lang, meta }) => {
+const SEO: React.FC<Props> = ({
+  title,
+  description,
+  lang,
+  meta,
+  includeSchema,
+}) => {
   const { site } = useStaticQuery<SiteMetaProps>(
     graphql`
       query {
@@ -84,6 +91,8 @@ const SEO: React.FC<Props> = ({ title, description, lang, meta }) => {
     return defaultMeta;
   };
 
+  const schemaMarkup = {};
+
   return (
     <Helmet
       htmlAttributes={{
@@ -99,7 +108,13 @@ const SEO: React.FC<Props> = ({ title, description, lang, meta }) => {
         },
       ]}
       defer={false}
-    />
+    >
+      {includeSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(schemaMarkup)}
+        </script>
+      )}
+    </Helmet>
   );
 };
 
@@ -107,6 +122,7 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
+  includeSchema: true,
 };
 
 export default SEO;
