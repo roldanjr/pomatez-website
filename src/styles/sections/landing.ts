@@ -89,7 +89,7 @@ export const StyledLandingCTAWrapper = styled.div`
 
 export const StyledLandingHeader = styled.header`
   text-align: center;
-  max-width: 60rem;
+  max-width: 64rem;
 
   margin: 0 auto;
 
@@ -105,6 +105,10 @@ export const StyledLandingHeader = styled.header`
   & > p {
     font-size: 2rem;
     line-height: normal;
+
+    ${media.laptopSm} {
+      line-height: 1.4;
+    }
   }
 `;
 
