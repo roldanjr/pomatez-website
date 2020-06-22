@@ -9,9 +9,20 @@ type StepList = {
   description: string;
 };
 
+type Image = {
+  childImageSharp: {
+    resize: {
+      src: string;
+      width: number;
+      height: number;
+    };
+  };
+};
+
 export type Frontmatter = {
   title: string;
   subTitle?: string;
+  featuredImage: Image;
   featureList?: FeatureList[];
   stepList?: StepList[];
 };

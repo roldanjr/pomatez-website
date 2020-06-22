@@ -3,16 +3,23 @@ import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import { SiteMetaProps } from "types";
 
-type MetaProps = {
-  name: string;
-  content: string;
-};
+type MetaProps =
+  | React.DetailedHTMLProps<
+      React.MetaHTMLAttributes<HTMLMetaElement>,
+      HTMLMetaElement
+    >[]
+  | undefined;
 
 type Props = {
   title?: string;
   description?: string;
   lang?: string;
-  meta?: MetaProps[];
+  meta?: MetaProps;
+  metaImage?: {
+    src: string;
+    width: number;
+    height: number;
+  };
   includeSchema?: boolean;
 };
 
@@ -21,6 +28,7 @@ const SEO: React.FC<Props> = ({
   description,
   lang,
   meta,
+  metaImage,
   includeSchema,
 }) => {
   const { site } = useStaticQuery<SiteMetaProps>(
@@ -45,7 +53,7 @@ const SEO: React.FC<Props> = ({
   const metaDescription = description || site.siteMetadata.description;
 
   const getMeta = () => {
-    const defaultMeta = [
+    const defaultMeta: MetaProps = [
       {
         name: `description`,
         content: metaDescription,
@@ -67,8 +75,8 @@ const SEO: React.FC<Props> = ({
         content: `website`,
       },
       {
-        name: `twitter:card`,
-        content: `summary`,
+        property: `og:url`,
+        content: site.siteMetadata.siteUrl,
       },
       {
         name: `twitter:creator`,
@@ -82,7 +90,33 @@ const SEO: React.FC<Props> = ({
         name: `twitter:description`,
         content: metaDescription,
       },
-    ];
+    ].concat(
+      metaImage
+        ? [
+            {
+              property: "og:image",
+              content: `${site.siteMetadata.siteUrl}${metaImage.src}`,
+            },
+            {
+              property: "og:image:width",
+              content: `${metaImage.width}`,
+            },
+            {
+              property: "og:image:height",
+              content: `${metaImage.height}`,
+            },
+            {
+              name: "twitter:card",
+              content: "summary_large_image",
+            },
+          ]
+        : [
+            {
+              name: "twitter:card",
+              content: "summary",
+            },
+          ]
+    );
 
     if (meta) {
       defaultMeta.concat(meta);

@@ -21,7 +21,7 @@ featureList:
 
   - icon: browser
     heading: Toggle Native Titlebar
-    description: Allowing the user to switch between default custom titlebar to a native one and vice versa. This feature is useful for some users.
+    description: Allowing the user to switch between default custom titlebar to a native one and vice versa. This feature is useful for some users especially to those who don't like the default custom titlebar.
 
   - icon: timer
     heading: Timer Animation

@@ -6,7 +6,6 @@ export type SiteMetaProps = {
       keywords: string[];
       author: string;
       siteUrl: string;
-      image: string;
       twitterUsername: string;
     };
   };

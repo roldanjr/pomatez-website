@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://roldanjrcodearts9711.github.io/productivity-timer/">
-    <img src=".github/logo-light.png" alt="Productivity Timer logo" width="72" height="72">
+    <img src="src/assets/images/logo-light.png" alt="Productivity Timer logo" width="72" height="72">
   </a>
 </p>
 
@@ -21,9 +21,9 @@
 [![Version](https://img.shields.io/github/v/release/roldanjrCodeArts9711/productivity-timer)](https://github.com/roldanjrCodeArts9711/productivity-timer/releases)
 [![License](https://img.shields.io/github/license/roldanjrCodeArts9711/productivity-timer)](https://github.com/roldanjrCodeArts9711/productivity-timer/blob/master/LICENSE)
 
-![Preview Light](.github/preview-light.png)
+![Preview Light](src/assets/images/preview-light.png)
 
-![Preview Dark](.github/preview-dark.png)
+![Preview Dark](src/assets/images/preview-dark.png)
 
 ## 🛠 Installation & Set Up
 
