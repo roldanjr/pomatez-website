@@ -11,3 +11,17 @@ export type FluidImageProps = {
     fluid: FluidObject | FluidObject[] | undefined;
   };
 };
+
+type EdgesProps = {
+  node: {
+    resize: {
+      src: string;
+    };
+  };
+};
+
+export type AllImageSharpProps = {
+  allImageSharp: {
+    edges: EdgesProps[];
+  };
+};

@@ -13,15 +13,16 @@ const IndexPage: React.FC<Props> = ({ data }) => {
     data.allMarkdownRemark.edges[0].node.frontmatter.featuredImage
       .childImageSharp.resize;
 
-  const metaImage = {
-    src: socialImage.src,
-    width: socialImage.width,
-    height: socialImage.height,
-  };
-
   return (
     <Layout>
-      <SEO includeSchema={false} metaImage={metaImage} />
+      <SEO
+        includeSchema
+        metaImage={{
+          src: socialImage.src,
+          width: socialImage.width,
+          height: socialImage.height,
+        }}
+      />
       <Landing />
       <Features />
       <HowItWorks />

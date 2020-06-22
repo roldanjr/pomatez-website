@@ -1,7 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
-import { SiteMetaProps } from "types";
+import { SiteMetaProps, AllImageSharpProps } from "types";
+import { APP_VERSION } from "configurations";
+
+type QueryProps = SiteMetaProps & AllImageSharpProps;
 
 type MetaProps =
   | React.DetailedHTMLProps<
@@ -31,7 +34,7 @@ const SEO: React.FC<Props> = ({
   metaImage,
   includeSchema,
 }) => {
-  const { site } = useStaticQuery<SiteMetaProps>(
+  const { site, allImageSharp } = useStaticQuery<QueryProps>(
     graphql`
       query {
         site {
@@ -44,6 +47,15 @@ const SEO: React.FC<Props> = ({
             twitterUsername
           }
         }
+        allImageSharp(filter: { sizes: { presentationWidth: { eq: 340 } } }) {
+          edges {
+            node {
+              resize(width: 340) {
+                src
+              }
+            }
+          }
+        }
       }
     `
   );
@@ -51,6 +63,8 @@ const SEO: React.FC<Props> = ({
   const metaTitle = title || site.siteMetadata.title;
 
   const metaDescription = description || site.siteMetadata.description;
+
+  const socialPreviewImage = `${site.siteMetadata.siteUrl}${metaImage?.src}`;
 
   const getMeta = () => {
     const defaultMeta: MetaProps = [
@@ -95,7 +109,7 @@ const SEO: React.FC<Props> = ({
         ? [
             {
               property: "og:image",
-              content: `${site.siteMetadata.siteUrl}${metaImage.src}`,
+              content: socialPreviewImage,
             },
             {
               property: "og:image:width",
@@ -125,7 +139,27 @@ const SEO: React.FC<Props> = ({
     return defaultMeta;
   };
 
-  const schemaMarkup = {};
+  const appImages = allImageSharp.edges.map(
+    v => `${site.siteMetadata.siteUrl}${v.node.resize.src}`
+  );
+
+  const schemaMarkup = {
+    "@context": "http://schema.org",
+    "@type": "SoftwareApplication",
+    name: metaTitle,
+    image: socialPreviewImage,
+    url: site.siteMetadata.siteUrl,
+    author: {
+      "@type": "Person",
+      name: site.siteMetadata.author,
+    },
+    applicationCategory: "LifestyleApplication",
+    downloadUrl:
+      "https://github.com/roldanjrCodeArts9711/productivity-timer/releases",
+    operatingSystem: "Windows, Linux, macOs",
+    screenshot: appImages,
+    softwareVersion: APP_VERSION,
+  };
 
   return (
     <Helmet
