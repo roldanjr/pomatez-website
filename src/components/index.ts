@@ -1,6 +1,5 @@
-export { default as Layout } from "./Layout";
-export { default as SEO } from "./SEO";
+export * from "./Layout";
+export * from "./SEO";
+export * from "./Header";
 
 export { default as SVG } from "./SVG";
-
-export { default as Header } from "./Header";

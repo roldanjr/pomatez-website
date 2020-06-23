@@ -4,7 +4,7 @@ import { ThemeProvider } from "contexts";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
 
-const Layout: React.FC = ({ children }) => {
+export const Layout: React.FC = ({ children }) => {
   return (
     <ThemeProvider>
       <StyledLayout>
@@ -17,5 +17,3 @@ const Layout: React.FC = ({ children }) => {
     </ThemeProvider>
   );
 };
-
-export default Layout;
