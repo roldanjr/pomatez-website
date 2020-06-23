@@ -1,5 +1,6 @@
-export * from "./Layout";
-export * from "./SEO";
-export * from "./Header";
+import Layout from "./Layout";
+import SEO from "./SEO";
+import Header from "./Header";
+import SVG from "./SVG";
 
-export { default as SVG } from "./SVG";
+export { Layout, SEO, Header, SVG };

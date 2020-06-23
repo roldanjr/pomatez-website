@@ -6,7 +6,7 @@ type Props = {
   frontMatter: Frontmatter;
 };
 
-export const Header: React.FC<Props> = ({ frontMatter }) => {
+const Header: React.FC<Props> = ({ frontMatter }) => {
   const { title, subTitle } = frontMatter;
 
   return (
@@ -28,3 +28,5 @@ export const Header: React.FC<Props> = ({ frontMatter }) => {
     </StyledHeader>
   );
 };
+
+export default Header;
