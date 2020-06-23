@@ -156,7 +156,7 @@ const SEO: React.FC<Props> = ({
     applicationCategory: "LifestyleApplication",
     downloadUrl:
       "https://github.com/roldanjrCodeArts9711/productivity-timer/releases",
-    operatingSystem: "Windows, Linux, macOs",
+    operatingSystem: "Windows, Linux, macOS",
     screenshot: appImages,
     softwareVersion: APP_VERSION,
   };

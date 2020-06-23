@@ -39,7 +39,6 @@ const Features: React.FC = () => {
     if (frontmatter.featureList && frontmatter.featureList.length > limit) {
       return (
         <StyledFeatureItem
-          as={"button"}
           onClick={() => {
             setLimit(prevLimit => prevLimit + 6);
           }}
@@ -52,19 +51,21 @@ const Features: React.FC = () => {
       );
     }
     return (
-      <StyledShowMore
-        href="/"
-        to="road-map"
-        offset={-24}
-        duration={420}
-        smooth
-        spy
-      >
-        <h3>
-          <SVG name="more" />
-          More of it soon...
-        </h3>
-      </StyledShowMore>
+      <li>
+        <StyledShowMore
+          href="/"
+          to="road-map"
+          offset={-24}
+          duration={420}
+          smooth
+          spy
+        >
+          <h3>
+            <SVG name="more" />
+            More of it soon...
+          </h3>
+        </StyledShowMore>
+      </li>
     );
   };
 

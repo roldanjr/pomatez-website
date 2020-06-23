@@ -116,16 +116,19 @@ export const StyledLinuxInstallerWrapper = styled.div`
     grid-column: 1 / -1;
     justify-self: center;
 
-    width: 200px;
+    width: max-content;
     padding: 0;
-    padding-top: 0.4rem;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+    overflow: hidden;
+
     & > span {
-      display: none;
+      width: 0;
+      height: 0;
+      opacity: 0;
     }
 
     & > svg {

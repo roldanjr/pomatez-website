@@ -51,19 +51,21 @@ const RoadMap: React.FC = () => {
       );
     }
     return (
-      <StyledShowMore
-        href="/"
-        to="road-map"
-        offset={-24}
-        duration={420}
-        smooth
-        spy
-      >
-        <h3>
-          <SVG name="more" />
-          More of it soon...
-        </h3>
-      </StyledShowMore>
+      <li>
+        <StyledShowMore
+          href="/"
+          to="road-map"
+          offset={-24}
+          duration={420}
+          smooth
+          spy
+        >
+          <h3>
+            <SVG name="more" />
+            More of it soon...
+          </h3>
+        </StyledShowMore>
+      </li>
     );
   };
 
