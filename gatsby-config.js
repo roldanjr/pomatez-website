@@ -40,7 +40,8 @@ module.exports = {
       options: {
         trackingId: process.env.GA_TRACKING_ID,
         head: true,
-        pageTransitionDelay: 0,
+        anonymize: true,
+        respectDNT: true,
       },
     },
     `gatsby-plugin-react-helmet`,
