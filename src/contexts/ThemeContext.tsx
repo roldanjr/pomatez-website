@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { isPreferredDark, getFromStorage, saveToStorage } from "utils";
+import { isPreferredDark, getFromStorage, saveToStorage, isSSR } from "utils";
 import { GlobalStyle } from "styles";
 
 type ThemeProps = {
@@ -11,8 +11,7 @@ const ThemeContext = React.createContext<ThemeProps>({});
 
 const ThemeProvider: React.FC = ({ children }) => {
   const useDarkMode =
-    typeof window !== "undefined" && getFromStorage("isDarkmode");
-
+    (!isSSR && getFromStorage("isDarkmode")) || (!isSSR && isPreferredDark());
   const [isDarkMode, setDarkMode] = useState(useDarkMode || null);
 
   useEffect(() => {
