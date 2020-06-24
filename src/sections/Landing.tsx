@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-
 import {
   StyledLanding,
   StyledWaterMarkLeft,

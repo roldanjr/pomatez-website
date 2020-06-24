@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import LazyLoad from "react-lazyload";
 import {
   StyledFeatures,
   StyledFeatureList,
@@ -71,24 +72,26 @@ const Features: React.FC = () => {
 
   return (
     <StyledFeatures id="app-features">
-      <StyledFeatureContent>
-        <Header frontMatter={frontmatter} />
+      <LazyLoad offset={80} once={true}>
+        <StyledFeatureContent>
+          <Header frontMatter={frontmatter} />
 
-        <StyledFeatureList>
-          {frontmatter.featureList
-            ?.map((feature, index) => (
-              <StyledFeatureItem key={index}>
-                <h3>
-                  <SVG name={feature.icon} />
-                  {feature.heading}
-                </h3>
-                <p>{feature.description}</p>
-              </StyledFeatureItem>
-            ))
-            .slice(0, limit)}
-          {renderLastItem()}
-        </StyledFeatureList>
-      </StyledFeatureContent>
+          <StyledFeatureList>
+            {frontmatter.featureList
+              ?.map((feature, index) => (
+                <StyledFeatureItem key={index}>
+                  <h3>
+                    <SVG name={feature.icon} />
+                    {feature.heading}
+                  </h3>
+                  <p>{feature.description}</p>
+                </StyledFeatureItem>
+              ))
+              .slice(0, limit)}
+            {renderLastItem()}
+          </StyledFeatureList>
+        </StyledFeatureContent>
+      </LazyLoad>
     </StyledFeatures>
   );
 };
