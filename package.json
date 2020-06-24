@@ -32,6 +32,7 @@
     "gatsby-plugin-react-helmet": "^3.3.4",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.6.12",
+    "gatsby-plugin-sitemap": "^2.4.7",
     "gatsby-plugin-styled-components": "^3.3.4",
     "gatsby-source-filesystem": "^2.3.12",
     "gatsby-transformer-remark": "^2.8.17",
@@ -40,11 +41,13 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
+    "react-lazyload": "^2.6.8",
     "react-scroll": "^1.7.16",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@types/react-helmet": "^6.0.0",
+    "@types/react-lazyload": "^2.6.0",
     "@types/react-scroll": "^1.5.5",
     "@types/styled-components": "^5.1.0",
     "commitizen": "^4.1.2",

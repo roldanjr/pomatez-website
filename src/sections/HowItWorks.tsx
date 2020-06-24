@@ -1,5 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import LazyLoad from "react-lazyload";
 import {
   StyledHowItWorks,
   StyledHowItWorkStepList,
@@ -35,18 +36,20 @@ const HowItWorks: React.FC = () => {
 
   return (
     <StyledHowItWorks id="how-it-works">
-      <StyledFeatureContent>
-        <Header frontMatter={frontmatter} />
+      <LazyLoad offset={80} once={true}>
+        <StyledFeatureContent>
+          <Header frontMatter={frontmatter} />
 
-        <StyledHowItWorkStepList>
-          {frontmatter.stepList?.map((step, index) => (
-            <StyledHowItWorkStep key={index}>
-              <h4>{step.heading}</h4>
-              <p>{step.description}</p>
-            </StyledHowItWorkStep>
-          ))}
-        </StyledHowItWorkStepList>
-      </StyledFeatureContent>
+          <StyledHowItWorkStepList>
+            {frontmatter.stepList?.map((step, index) => (
+              <StyledHowItWorkStep key={index}>
+                <h4>{step.heading}</h4>
+                <p>{step.description}</p>
+              </StyledHowItWorkStep>
+            ))}
+          </StyledHowItWorkStepList>
+        </StyledFeatureContent>
+      </LazyLoad>
     </StyledHowItWorks>
   );
 };

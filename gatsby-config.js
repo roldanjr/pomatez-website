@@ -35,12 +35,14 @@ module.exports = {
     twitterUsername: `@roldan_montilla`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GA_TRACKING_ID,
         head: true,
-        pageTransitionDelay: 0,
+        anonymize: true,
+        respectDNT: true,
       },
     },
     `gatsby-plugin-react-helmet`,
