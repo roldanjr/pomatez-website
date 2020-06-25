@@ -21,6 +21,7 @@ import {
   RPM_INSTALLER,
   MAC_INSTALLER,
 } from "configurations";
+import { Preloader } from "components/Preloader";
 
 const Download: React.FC = () => {
   const { allMarkdownRemark } = useStaticQuery<MarkDownProps>(graphql`
@@ -42,7 +43,12 @@ const Download: React.FC = () => {
 
   return (
     <StyledDownload id="download-now">
-      <LazyLoad offset={80} once={true}>
+      <LazyLoad
+        once={true}
+        offset={80}
+        height={800}
+        placeholder={<Preloader />}
+      >
         <StyledDownloadContent>
           <Header frontMatter={frontmatter} />
 

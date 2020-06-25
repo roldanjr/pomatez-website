@@ -10,6 +10,7 @@ import {
 } from "styles";
 import { SVG, Header } from "components";
 import { MarkDownProps } from "types";
+import { Preloader } from "components/Preloader";
 
 const RoadMap: React.FC = () => {
   const { allMarkdownRemark } = useStaticQuery<MarkDownProps>(graphql`
@@ -72,7 +73,12 @@ const RoadMap: React.FC = () => {
 
   return (
     <StyledRoadMap id="road-map">
-      <LazyLoad offset={80} once={true}>
+      <LazyLoad
+        once={true}
+        offset={80}
+        height={800}
+        placeholder={<Preloader />}
+      >
         <StyledRoadMapContent>
           <Header frontMatter={frontmatter} />
 

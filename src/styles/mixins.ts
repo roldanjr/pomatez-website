@@ -2,6 +2,8 @@ import { css } from "styled-components";
 import media from "./media";
 
 export const SectionStyle = css`
+  position: relative;
+
   width: 100%;
   height: max-content;
 

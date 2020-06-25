@@ -9,6 +9,7 @@ import {
 } from "styles";
 import { MarkDownProps } from "types";
 import { Header } from "components";
+import { Preloader } from "components/Preloader";
 
 const HowItWorks: React.FC = () => {
   const { allMarkdownRemark } = useStaticQuery<MarkDownProps>(graphql`
@@ -36,7 +37,12 @@ const HowItWorks: React.FC = () => {
 
   return (
     <StyledHowItWorks id="how-it-works">
-      <LazyLoad offset={80} once={true}>
+      <LazyLoad
+        once={true}
+        offset={80}
+        height={800}
+        placeholder={<Preloader />}
+      >
         <StyledFeatureContent>
           <Header frontMatter={frontmatter} />
 
