@@ -13,7 +13,7 @@ import {
   StyledDownloadContent,
 } from "styles";
 import { MarkDownProps } from "types";
-import { Header, SVG } from "components";
+import { Header, SVG, Preloader } from "components";
 import {
   WINDOWS_INSTALLER,
   DEB_INSTALLER,
@@ -21,7 +21,6 @@ import {
   RPM_INSTALLER,
   MAC_INSTALLER,
 } from "configurations";
-import { Preloader } from "components/Preloader";
 
 const Download: React.FC = () => {
   const { allMarkdownRemark } = useStaticQuery<MarkDownProps>(graphql`

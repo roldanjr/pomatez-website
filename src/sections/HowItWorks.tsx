@@ -8,8 +8,7 @@ import {
   StyledFeatureContent,
 } from "styles";
 import { MarkDownProps } from "types";
-import { Header } from "components";
-import { Preloader } from "components/Preloader";
+import { Header, Preloader } from "components";
 
 const HowItWorks: React.FC = () => {
   const { allMarkdownRemark } = useStaticQuery<MarkDownProps>(graphql`
