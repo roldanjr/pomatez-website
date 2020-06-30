@@ -7,6 +7,7 @@ export type SiteMetaProps = {
       author: string;
       siteUrl: string;
       twitterUsername: string;
+      googleVerification: string;
     };
   };
 };

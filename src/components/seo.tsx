@@ -45,6 +45,7 @@ const SEO: React.FC<Props> = ({
             author
             siteUrl
             twitterUsername
+            googleVerification
           }
         }
         allImageSharp(filter: { sizes: { presentationWidth: { eq: 340 } } }) {
@@ -75,6 +76,10 @@ const SEO: React.FC<Props> = ({
       {
         name: `keywords`,
         content: site.siteMetadata.keywords.join(", "),
+      },
+      {
+        name: `google-site-verification`,
+        content: site.siteMetadata.googleVerification,
       },
       {
         property: `og:title`,

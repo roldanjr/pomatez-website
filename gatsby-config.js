@@ -33,6 +33,7 @@ module.exports = {
     author: `Roldan Montilla Jr`,
     siteUrl: `https://roldanjrcodearts9711.github.io/productivity-timer`,
     twitterUsername: `@roldan_montilla`,
+    googleVerification: `${process.env.GOOGLE_VERIFICATION}`,
   },
   plugins: [
     `gatsby-plugin-sitemap`,
