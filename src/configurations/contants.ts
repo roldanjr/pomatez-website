@@ -1,4 +1,4 @@
-export const APP_VERSION = "v2.10.4-beta";
+export const APP_VERSION = "v2.14.5-beta";
 
 export const INSTALLER = `https://github.com/roldanjrCodeArts9711/productivity-timer/releases/download/${APP_VERSION}/PRODUCTIVITY-TIMER-${APP_VERSION}`;
 
