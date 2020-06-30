@@ -35,9 +35,17 @@ featureList:
     heading: Special Breaks
     description: If enabled, the user will be allowed to set some special time when the user really need to take a break.
 
+  - icon: repeat
+    heading: Auto-Start Work Time
+    description: If enabled, the app will automatically start after the timer ends. It is useful when the user did not want to always start the timer manually from time to time.
+
+  - icon: remove
+    heading: Minimize to Tray
+    description: If enabled, clicking the minimize button will not minimize the app. It will be hidden and being send to Tray instead of minimizing on the Taskbar.
+
   - icon: exit
     heading: Close to Tray
-    description: The app will create a system tray icon with a context menu when the app is being hide or closed.
+    description: If enabled, clicking the close button will not quit the app. It will be hidden and being send to Tray instead of closing and quitting the app.
 
   - icon: keypad
     heading: Keyboard Shortcuts

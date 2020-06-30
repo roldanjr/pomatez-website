@@ -25,6 +25,8 @@ import TuxSVG from "assets/icons/tux.svg";
 import ArrowBackSVG from "assets/icons/arrow-back.svg";
 import AutoUpdateSVG from "assets/icons/auto-update.svg";
 import ExitSVG from "assets/icons/exit.svg";
+import RepeatSVG from "assets/icons/repeat.svg";
+import RemoveSVG from "assets/icons/remove.svg";
 
 type Props = {
   name?: string;
@@ -84,6 +86,10 @@ const SVG: React.FC<Props> = ({ name }) => {
       return <AutoUpdateSVG />;
     case "exit":
       return <ExitSVG />;
+    case "repeat":
+      return <RepeatSVG />;
+    case "remove":
+      return <RemoveSVG />;
     default:
       return <GithubSVG />;
   }
