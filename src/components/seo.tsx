@@ -152,7 +152,7 @@ const SEO: React.FC<Props> = ({
   const schemaMarkup = {
     "@context": "http://schema.org",
     "@type": "SoftwareApplication",
-    name: metaTitle,
+    name: site.siteMetadata.title,
     image: socialPreviewImage,
     url: site.siteMetadata.siteUrl,
     author: {
@@ -176,6 +176,11 @@ const SEO: React.FC<Props> = ({
       titleTemplate={metaTitle}
       meta={getMeta()}
       link={[
+        {
+          rel: "sitemap",
+          type: "application/xml",
+          href: "/sitemap.xml",
+        },
         {
           rel: "canonical",
           href: site.siteMetadata.siteUrl,

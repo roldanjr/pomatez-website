@@ -38,7 +38,6 @@ module.exports = {
     googleVerification: `${process.env.GOOGLE_VERIFICATION}`,
   },
   plugins: [
-    // `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

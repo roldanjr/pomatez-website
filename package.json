@@ -18,8 +18,8 @@
     "start": "npm run develop",
     "serve": "yarn clean && yarn build && gatsby serve",
     "test": "echo \"Skipping Test as of Now\"",
-    "mv:sitemap": "cp sitemap.xml public",
-    "predeploy": "yarn clean && yarn build --prefix-paths && yarn mv:sitemap",
+    "cp:sitemap": "cp sitemap.xml public",
+    "predeploy": "yarn clean && yarn build --prefix-paths && yarn cp:sitemap",
     "deploy": "gh-pages -d public -r https://$GH_TOKEN@github.com/roldanjrCodeArts9711/productivity-timer.git"
   },
   "dependencies": {
@@ -33,7 +33,6 @@
     "gatsby-plugin-react-helmet": "^3.3.4",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.6.12",
-    "gatsby-plugin-sitemap": "^2.4.7",
     "gatsby-plugin-styled-components": "^3.3.4",
     "gatsby-source-filesystem": "^2.3.12",
     "gatsby-transformer-remark": "^2.8.17",
