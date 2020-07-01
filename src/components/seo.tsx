@@ -61,7 +61,8 @@ const SEO: React.FC<Props> = ({
     `
   );
 
-  const metaTitle = title || site.siteMetadata.title;
+  const metaTitle =
+    title || `${site.siteMetadata.title} - Be Productive and Effective`;
 
   const metaDescription = description || site.siteMetadata.description;
 

@@ -6,7 +6,6 @@ require("dotenv").config({
 });
 
 module.exports = {
-  pathPrefix: `/productivity-timer`,
   siteMetadata: {
     title: `PRODUCTIVITY TIMER`,
     description: `Multi-platform time management app based on Pomodoro Technique that will help boost your productivity.`,
@@ -22,11 +21,13 @@ module.exports = {
       "productivity tool",
       "productivity timer",
       "productivity booster",
+      "pomodoro technique",
       "pomodoro technique app",
       "pomodoro technique timer",
       "time management",
       "time management app",
       "time management tool",
+      "pomodoro principle",
       "pomodoro principle app",
       "pomodoro principle timer",
     ],
