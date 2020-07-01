@@ -6,6 +6,7 @@ require("dotenv").config({
 });
 
 module.exports = {
+  pathPrefix: "/productivity-timer",
   siteMetadata: {
     title: `PRODUCTIVITY TIMER`,
     description: `Multi-platform time management app based on Pomodoro Technique that will help boost your productivity.`,
@@ -37,7 +38,7 @@ module.exports = {
     googleVerification: `${process.env.GOOGLE_VERIFICATION}`,
   },
   plugins: [
-    `gatsby-plugin-sitemap`,
+    // `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

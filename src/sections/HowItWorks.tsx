@@ -39,7 +39,7 @@ const HowItWorks: React.FC = () => {
       <LazyLoad
         once={true}
         offset={80}
-        height={800}
+        height="800px"
         placeholder={<Preloader />}
       >
         <StyledFeatureContent>
