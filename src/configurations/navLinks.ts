@@ -9,7 +9,8 @@ export const navLinks: LinkProps[] = [
   { label: "How It Works", link: "how-it-works", offset: -24 },
   { label: "Road Map", link: "road-map", offset: -24 },
   {
-    label: "Release Notes",
-    link: "https://github.com/roldanjrCodeArts9711/productivity-timer/releases",
+    label: "Released Notes",
+    link:
+      "https://github.com/roldanjrCodeArts9711/productivity-timer/releases/latest",
   },
 ];
