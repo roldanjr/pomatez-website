@@ -27,6 +27,7 @@ import AutoUpdateSVG from "assets/icons/auto-update.svg";
 import ExitSVG from "assets/icons/exit.svg";
 import RepeatSVG from "assets/icons/repeat.svg";
 import RemoveSVG from "assets/icons/remove.svg";
+import EllipseSVG from "assets/icons/ellipse.svg";
 
 type Props = {
   name?: string;
@@ -90,6 +91,8 @@ const SVG: React.FC<Props> = ({ name }) => {
       return <RepeatSVG />;
     case "remove":
       return <RemoveSVG />;
+    case "ellipse":
+      return <EllipseSVG />;
     default:
       return <GithubSVG />;
   }

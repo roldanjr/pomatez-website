@@ -47,6 +47,10 @@ featureList:
     heading: Close to Tray
     description: If enabled, clicking the close button will not quit the app. It will be hidden and being send to Tray instead of closing and quitting the app.
 
+  - icon: ellipse
+    heading: Progress on Tray
+    description: The app will show progress animation on tray. This feature can be activate if Minimize to Tray of Close to Tray is enabled. Useful when the timer is being hidden.
+
   - icon: keypad
     heading: Keyboard Shortcuts
     description: Provide some useful keyboard shortcuts allowing the user to use the app conveniently.

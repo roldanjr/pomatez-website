@@ -42,12 +42,7 @@ const Download: React.FC = () => {
 
   return (
     <StyledDownload id="download-now">
-      <LazyLoad
-        once={true}
-        offset={80}
-        height="800px"
-        placeholder={<Preloader />}
-      >
+      <LazyLoad once={true} offset={80} height="47.7rem">
         <StyledDownloadContent>
           <Header frontMatter={frontmatter} />
 

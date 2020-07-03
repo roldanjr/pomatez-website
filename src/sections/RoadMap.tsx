@@ -72,12 +72,7 @@ const RoadMap: React.FC = () => {
 
   return (
     <StyledRoadMap id="road-map">
-      <LazyLoad
-        once={true}
-        offset={80}
-        height="800px"
-        placeholder={<Preloader />}
-      >
+      <LazyLoad once={true} offset={80} height="58.3rem">
         <StyledRoadMapContent>
           <Header frontMatter={frontmatter} />
 

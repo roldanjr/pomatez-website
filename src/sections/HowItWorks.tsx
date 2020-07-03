@@ -36,12 +36,7 @@ const HowItWorks: React.FC = () => {
 
   return (
     <StyledHowItWorks id="how-it-works">
-      <LazyLoad
-        once={true}
-        offset={80}
-        height="800px"
-        placeholder={<Preloader />}
-      >
+      <LazyLoad once={true} offset={80} height="44.6rem">
         <StyledFeatureContent>
           <Header frontMatter={frontmatter} />
 

@@ -7,7 +7,7 @@
 <h1 align="center">PRODUCTIVITY TIMER</h1>
 
 <p align="center">
-  Simple download page for this multi-platform time management app <br> based on Pomodoro Technique.
+  Responsive download page for this multi-platform time management app <br> based on Pomodoro Technique.
   <br>
   <br>
   <a href="https://roldanjrcodearts9711.github.io/productivity-timer/">Official Website Link</a>

@@ -72,12 +72,7 @@ const Features: React.FC = () => {
 
   return (
     <StyledFeatures id="app-features">
-      <LazyLoad
-        once={true}
-        offset={80}
-        height="800px"
-        placeholder={<Preloader />}
-      >
+      <LazyLoad once={true} offset={80} height="72.7rem">
         <StyledFeatureContent>
           <Header frontMatter={frontmatter} />
 
