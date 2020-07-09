@@ -79,11 +79,9 @@ const Navigation: React.FC = () => {
               onClick={hideSidebarAction}
               href="/"
               to={nav.link}
-              activeClass="active"
               offset={nav.offset}
               duration={420}
               smooth
-              spy
             >
               {nav.label}
             </StyledNavLinkAnchor>

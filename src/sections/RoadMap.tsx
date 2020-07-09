@@ -41,7 +41,7 @@ const RoadMap: React.FC = () => {
       return (
         <StyledRoadMapItem
           onClick={() => {
-            setLimit(prevLimit => prevLimit + 5);
+            setLimit(prevLimit => prevLimit + 6);
           }}
         >
           <h3>
@@ -52,21 +52,12 @@ const RoadMap: React.FC = () => {
       );
     }
     return (
-      <li>
-        <StyledShowMore
-          href="/"
-          to="road-map"
-          offset={-24}
-          duration={420}
-          smooth
-          spy
-        >
-          <h3>
-            <SVG name="more" />
-            More of it soon...
-          </h3>
-        </StyledShowMore>
-      </li>
+      <StyledRoadMapItem>
+        <h3>
+          <SVG name="more" />
+          More of it soon...
+        </h3>
+      </StyledRoadMapItem>
     );
   };
 

@@ -23,8 +23,6 @@
 
 ![Preview Light](src/assets/images/preview-light.png)
 
-![Preview Dark](src/assets/images/preview-dark.png)
-
 ## 🛠 Installation & Set Up
 
 1. Install the Gatsby CLI

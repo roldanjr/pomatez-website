@@ -22,9 +22,9 @@ type Image = {
 export type Frontmatter = {
   title: string;
   subTitle?: string;
-  featuredImage: Image;
   featureList?: FeatureList[];
   stepList?: StepList[];
+  screenShot: Image;
 };
 
 type Edges = {

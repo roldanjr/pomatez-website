@@ -1,10 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
-import { SiteMetaProps, AllImageSharpProps } from "types";
+import { SiteMetaProps, MarkDownProps } from "types";
 import { APP_VERSION } from "configurations";
 
-type QueryProps = SiteMetaProps & AllImageSharpProps;
+type QueryProps = SiteMetaProps & MarkDownProps;
 
 type MetaProps =
   | React.DetailedHTMLProps<
@@ -31,10 +31,9 @@ const SEO: React.FC<Props> = ({
   description,
   lang,
   meta,
-  metaImage,
   includeSchema,
 }) => {
-  const { site, allImageSharp } = useStaticQuery<QueryProps>(
+  const { site, allMarkdownRemark } = useStaticQuery<QueryProps>(
     graphql`
       query {
         site {
@@ -48,11 +47,19 @@ const SEO: React.FC<Props> = ({
             googleVerification
           }
         }
-        allImageSharp(filter: { sizes: { presentationWidth: { eq: 340 } } }) {
+        allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/hero/" } }) {
           edges {
             node {
-              resize(width: 340) {
-                src
+              frontmatter {
+                screenShot {
+                  childImageSharp {
+                    resize(width: 1600) {
+                      src
+                      width
+                      height
+                    }
+                  }
+                }
               }
             }
           }
@@ -61,12 +68,16 @@ const SEO: React.FC<Props> = ({
     `
   );
 
+  const {
+    frontmatter: { screenShot },
+  } = allMarkdownRemark.edges[0].node;
+
+  const socialPreviewLight = screenShot.childImageSharp.resize;
+
   const metaTitle =
     title || `${site.siteMetadata.title} - Be Productive and Effective`;
 
   const metaDescription = description || site.siteMetadata.description;
-
-  const socialPreviewImage = `${site.siteMetadata.siteUrl}${metaImage?.src}`;
 
   const getMeta = () => {
     const defaultMeta: MetaProps = [
@@ -111,19 +122,19 @@ const SEO: React.FC<Props> = ({
         content: metaDescription,
       },
     ].concat(
-      metaImage
+      socialPreviewLight
         ? [
             {
               property: "og:image",
-              content: socialPreviewImage,
+              content: site.siteMetadata.siteUrl + socialPreviewLight.src,
             },
             {
               property: "og:image:width",
-              content: `${metaImage.width}`,
+              content: `${socialPreviewLight.width}`,
             },
             {
               property: "og:image:height",
-              content: `${metaImage.height}`,
+              content: `${socialPreviewLight.height}`,
             },
             {
               name: "twitter:card",
@@ -145,15 +156,11 @@ const SEO: React.FC<Props> = ({
     return defaultMeta;
   };
 
-  const appImages = allImageSharp.edges.map(
-    v => `${site.siteMetadata.siteUrl}${v.node.resize.src}`
-  );
-
   const schemaMarkup = {
     "@context": "http://schema.org",
     "@type": "SoftwareApplication",
     name: site.siteMetadata.title,
-    image: socialPreviewImage,
+    image: site.siteMetadata.siteUrl + socialPreviewLight.src,
     url: site.siteMetadata.siteUrl,
     author: {
       "@type": "Person",
@@ -163,7 +170,7 @@ const SEO: React.FC<Props> = ({
     downloadUrl:
       "https://github.com/roldanjrCodeArts9711/productivity-timer/releases",
     operatingSystem: "Windows, Linux, macOS",
-    screenshot: appImages,
+    screenshot: site.siteMetadata.siteUrl + socialPreviewLight.src,
     softwareVersion: APP_VERSION,
   };
 

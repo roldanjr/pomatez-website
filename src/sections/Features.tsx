@@ -52,21 +52,12 @@ const Features: React.FC = () => {
       );
     }
     return (
-      <li>
-        <StyledShowMore
-          href="/"
-          to="road-map"
-          offset={-24}
-          duration={420}
-          smooth
-          spy
-        >
-          <h3>
-            <SVG name="more" />
-            More of it soon...
-          </h3>
-        </StyledShowMore>
-      </li>
+      <StyledFeatureItem>
+        <h3>
+          <SVG name="more" />
+          More of it soon...
+        </h3>
+      </StyledFeatureItem>
     );
   };
 
