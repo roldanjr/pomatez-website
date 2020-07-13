@@ -90,7 +90,9 @@ const Navigation: React.FC = () => {
       }
       return (
         <li key={index}>
-          <a href={nav.link}>{nav.label}</a>
+          <a href={nav.link} target="_blank" rel="noopener noreferrer">
+            {nav.label}
+          </a>
         </li>
       );
     });

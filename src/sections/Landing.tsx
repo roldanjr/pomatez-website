@@ -244,6 +244,8 @@ const Landing: React.FC = () => {
             <StyledLandingCtaGithubLink
               as={"a"}
               href="https://github.com/roldanjrCodeArts9711/productivity-timer"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <SVG name="github" />
               View on Github

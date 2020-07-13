@@ -83,6 +83,8 @@ const Download: React.FC = () => {
                   id="snap-store-btn"
                   as={"a"}
                   href="https://snapcraft.io/productivity-timer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span>Get it from Snap Store</span>
                   <SVG name="snap-store" />

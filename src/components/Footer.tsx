@@ -14,7 +14,11 @@ const Footer: React.FC<Props> = () => {
   return (
     <StyledFooter>
       <StyledFooterContent>
-        <StyledGithubLink href="https://github.com/roldanjrCodeArts9711/productivity-timer">
+        <StyledGithubLink
+          href="https://github.com/roldanjrCodeArts9711/productivity-timer"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <SVG name="github" />
         </StyledGithubLink>
         <StyledCopyrightText>
@@ -22,7 +26,11 @@ const Footer: React.FC<Props> = () => {
         </StyledCopyrightText>
         <StyledFooterNote>
           Developed and Maintained by&nbsp;
-          <a href="https://github.com/roldanjrCodeArts9711">
+          <a
+            href="https://github.com/roldanjrCodeArts9711"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Roldan Montilla Jr
           </a>
         </StyledFooterNote>

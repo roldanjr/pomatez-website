@@ -8,7 +8,7 @@ featureList:
     description: If enabled, the app will always on top of other apps running on user's Operating System.
 
   - icon: laptop
-    heading: Full Screen Breaks
+    heading: Full-screen Breaks
     description: If enabled, the app will interrupt the user by occupying the whole screen so that the user will be force to take a break.
 
   - icon: alert
@@ -24,7 +24,7 @@ featureList:
     description: Allowing the user to switch between default custom titlebar to a native one and vice versa. This feature is useful for some users especially to those who don't like the default custom titlebar.
 
   - icon: timer
-    heading: Timer Animation
+    heading: Progress Animation
     description: Allowing the user to disable timer progress animation to reduce the CPU usage to the app least required. It is really useful for some people.
 
   - icon: notification
