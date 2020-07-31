@@ -20,7 +20,7 @@
     "test": "echo \"Skipping Test as of Now\"",
     "cp:sitemap": "cp sitemap.xml public",
     "predeploy": "yarn clean && yarn build --prefix-paths && yarn cp:sitemap",
-    "deploy": "gh-pages -d public -r https://$GH_TOKEN@github.com/roldanjrCodeArts9711/productivity-timer.git"
+    "deploy": "gh-pages -d public -r https://$GH_TOKEN@github.com/roldanjr/productivity-timer.git"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",

@@ -33,7 +33,7 @@ module.exports = {
       "pomodoro principle timer",
     ],
     author: `Roldan Montilla Jr`,
-    siteUrl: `https://roldanjrcodearts9711.github.io/productivity-timer`,
+    siteUrl: `https://roldanjr.github.io/productivity-timer`,
     twitterUsername: `@roldan_montilla`,
     googleVerification: `${process.env.GOOGLE_VERIFICATION}`,
   },
