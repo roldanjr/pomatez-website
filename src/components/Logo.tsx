@@ -7,7 +7,7 @@ type Props = {
   src: FluidObject | FluidObject[] | undefined;
 };
 
-const Logo: React.FC<Props> = ({ name, src }) => {
+export const Logo: React.FC<Props> = ({ name, src }) => {
   return (
     <StyledNavLogo href="/" to="landing" offset={-56} duration={420} smooth>
       <Image fluid={src} alt="Productivity Timer Logo" />

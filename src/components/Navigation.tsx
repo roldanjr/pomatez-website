@@ -31,7 +31,7 @@ type QueryProps = {
   siteLogoDark: FluidImageProps;
 };
 
-const Navigation: React.FC = () => {
+export const Navigation: React.FC = () => {
   const { siteName, siteLogoLight, siteLogoDark } = useStaticQuery<
     QueryProps
   >(graphql`

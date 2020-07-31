@@ -33,7 +33,7 @@ type Props = {
   name?: string;
 };
 
-const SVG: React.FC<Props> = ({ name }) => {
+export const SVG: React.FC<Props> = ({ name }) => {
   switch (name) {
     case "download":
       return <DownloadSVG />;

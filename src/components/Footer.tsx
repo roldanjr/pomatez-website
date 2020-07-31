@@ -10,7 +10,7 @@ import { SVG } from "../components";
 
 type Props = {};
 
-const Footer: React.FC<Props> = () => {
+export const Footer: React.FC<Props> = () => {
   return (
     <StyledFooter>
       <StyledFooterContent>

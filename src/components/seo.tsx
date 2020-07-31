@@ -26,7 +26,7 @@ type Props = {
   includeSchema?: boolean;
 };
 
-const SEO: React.FC<Props> = ({
+export const SEO: React.FC<Props> = ({
   title,
   description,
   lang,

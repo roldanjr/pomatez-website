@@ -6,7 +6,7 @@ type Props = {
   frontMatter: Frontmatter;
 };
 
-const Header: React.FC<Props> = ({ frontMatter }) => {
+export const Header: React.FC<Props> = ({ frontMatter }) => {
   const { title, subTitle } = frontMatter;
 
   return (
