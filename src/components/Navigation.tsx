@@ -16,7 +16,7 @@ import {
 import { ThemeContext } from "../contexts";
 import { navLinks } from "../configurations";
 import { FluidImageProps } from "../types";
-import { SVG } from "../components";
+import SVG from "./SVG";
 
 import Logo from "./Logo";
 import { useTargetOutside } from "../hooks";

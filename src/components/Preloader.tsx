@@ -18,3 +18,5 @@ export const Preloader = () => (
     <StyledLoaderLabel>Loading</StyledLoaderLabel>
   </StyledLoaderContainer>
 );
+
+export default Preloader;
