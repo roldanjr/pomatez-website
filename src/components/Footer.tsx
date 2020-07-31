@@ -5,8 +5,8 @@ import {
   StyledGithubLink,
   StyledFooterNote,
   StyledCopyrightText,
-} from "styles";
-import { SVG } from "components";
+} from "../styles";
+import { SVG } from "../components";
 
 type Props = {};
 

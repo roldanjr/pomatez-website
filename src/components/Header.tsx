@@ -1,6 +1,6 @@
 import React from "react";
-import { StyledHeader } from "styles";
-import { Frontmatter } from "types";
+import { StyledHeader } from "../styles";
+import { Frontmatter } from "../types";
 
 type Props = {
   frontMatter: Frontmatter;

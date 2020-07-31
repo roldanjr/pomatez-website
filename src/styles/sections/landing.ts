@@ -3,13 +3,13 @@ import Image from "gatsby-image";
 
 import { Link } from "react-scroll";
 
-import { SectionStyle, SectionContentStyle } from "styles/mixins";
-import { ButtonStyles, StyledButtonNormal } from "styles";
+import { SectionStyle, SectionContentStyle } from "../mixins";
+import { ButtonStyles, StyledButtonNormal } from "..";
 
-import WaterMarkLeft from "assets/images/watermark-left.svg";
-import WaterMarkRight from "assets/images/watermark-right.svg";
+import WaterMarkLeft from "../../assets/images/watermark-left.svg";
+import WaterMarkRight from "../../assets/images/watermark-right.svg";
 
-import media from "styles/media";
+import media from "../media";
 
 export const StyledLanding = styled.section`
   ${SectionStyle};

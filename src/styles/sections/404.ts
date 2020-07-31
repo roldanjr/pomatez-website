@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
 
-import { SectionStyle, SectionContentStyle } from "styles/mixins";
+import { SectionStyle, SectionContentStyle } from "../mixins";
+import { ButtonStyles } from "../components";
+
 import { StyledLandingHeader } from "./landing";
-import { ButtonStyles } from "styles/components";
 
 export const StyledPageNotFound = styled.section`
   ${SectionStyle};

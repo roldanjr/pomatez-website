@@ -1,8 +1,8 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
-import { SiteMetaProps, MarkDownProps } from "types";
-import { APP_VERSION } from "configurations";
+import { SiteMetaProps, MarkDownProps } from "../types";
+import { APP_VERSION } from "../configurations";
 
 type QueryProps = SiteMetaProps & MarkDownProps;
 

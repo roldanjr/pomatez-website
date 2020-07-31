@@ -1,6 +1,6 @@
 import React from "react";
 import Image, { FluidObject } from "gatsby-image";
-import { StyledNavLogo } from "styles";
+import { StyledNavLogo } from "../styles";
 
 type Props = {
   name: string;

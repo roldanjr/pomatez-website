@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { SectionStyle, SectionContentStyle } from "styles/mixins";
-import { StyledButtonPrimary } from "styles/components";
-import media from "styles/media";
+import { SectionStyle, SectionContentStyle } from "../mixins";
+import { StyledButtonPrimary } from "../components";
+import media from "../media";
 
 export const StyledDownload = styled.section`
   ${SectionStyle};

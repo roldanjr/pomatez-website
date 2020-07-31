@@ -7,9 +7,9 @@ import {
   StyledRoadMapItem,
   StyledShowMore,
   StyledRoadMapContent,
-} from "styles";
-import { SVG, Header, Preloader } from "components";
-import { MarkDownProps } from "types";
+} from "../styles";
+import { SVG, Header } from "../components";
+import { MarkDownProps } from "../types";
 
 const RoadMap: React.FC = () => {
   const { allMarkdownRemark } = useStaticQuery<MarkDownProps>(graphql`

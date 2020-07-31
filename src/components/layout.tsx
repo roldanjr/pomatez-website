@@ -1,6 +1,6 @@
 import React from "react";
-import { StyledLayout } from "styles";
-import { ThemeProvider } from "contexts";
+import { StyledLayout } from "../styles";
+import { ThemeProvider } from "../contexts";
 
 import Navigation from "./Navigation";
 import Footer from "./Footer";

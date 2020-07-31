@@ -4,7 +4,7 @@ import {
   StyledLoaderWrapper,
   StyledLoaderBox,
   StyledLoaderLabel,
-} from "styles";
+} from "../styles";
 
 export const Preloader = () => (
   <StyledLoaderContainer>

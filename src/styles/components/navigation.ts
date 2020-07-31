@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-scroll";
 import { ButtonStyles } from "./button";
-import { SectionContentStyle } from "styles/mixins";
-import media from "styles/media";
+import { SectionContentStyle } from "../mixins";
+import media from "../media";
 
 export const StyledNav = styled.nav`
   width: 100%;

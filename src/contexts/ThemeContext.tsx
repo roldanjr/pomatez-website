@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { isPreferredDark, getFromStorage, saveToStorage, isSSR } from "utils";
-import { GlobalStyle } from "styles";
+import {
+  isPreferredDark,
+  getFromStorage,
+  saveToStorage,
+  isSSR,
+} from "../utils";
+import { GlobalStyle } from "../styles";
 
 type ThemeProps = {
   isDarkMode?: boolean;

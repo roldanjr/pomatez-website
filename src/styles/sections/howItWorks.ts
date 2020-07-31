@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { SectionStyle, SectionContentStyle } from "styles/mixins";
-import media from "styles/media";
+import { SectionStyle, SectionContentStyle } from "../mixins";
+import media from "../media";
 
 export const StyledHowItWorks = styled.section`
   ${SectionStyle}

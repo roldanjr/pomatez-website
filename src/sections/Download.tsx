@@ -11,16 +11,16 @@ import {
   StyledDownloadButton,
   StyledLinuxInstallerWrapper,
   StyledDownloadContent,
-} from "styles";
-import { MarkDownProps } from "types";
-import { Header, SVG, Preloader } from "components";
+} from "../styles";
+import { MarkDownProps } from "../types";
+import { Header, SVG } from "../components";
 import {
   WINDOWS_INSTALLER,
   DEB_INSTALLER,
   APP_IMAGE_INSTALLER,
   RPM_INSTALLER,
   MAC_INSTALLER,
-} from "configurations";
+} from "../configurations";
 
 const Download: React.FC = () => {
   const { allMarkdownRemark } = useStaticQuery<MarkDownProps>(graphql`

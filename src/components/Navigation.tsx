@@ -12,14 +12,14 @@ import {
   StyledNavAsideWrapper,
   StyledNavMenu,
   StyledSideNavDimmer,
-} from "styles";
-import { ThemeContext } from "contexts";
-import { navLinks } from "configurations";
-import { FluidImageProps } from "types";
-import { SVG } from "components";
+} from "../styles";
+import { ThemeContext } from "../contexts";
+import { navLinks } from "../configurations";
+import { FluidImageProps } from "../types";
+import { SVG } from "../components";
 
 import Logo from "./Logo";
-import { useTargetOutside } from "hooks";
+import { useTargetOutside } from "../hooks";
 
 type QueryProps = {
   siteName: {

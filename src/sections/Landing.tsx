@@ -12,12 +12,12 @@ import {
   StyledLandingCtaWrapper,
   StyledLandingCtaGithubLink,
   StyledAppPreviewImage,
-} from "styles";
-import { FluidImageProps, MarkDownProps } from "types";
-import { OSTypes, detectOS } from "utils";
-import { WINDOWS_INSTALLER, MAC_INSTALLER } from "configurations";
-import { ThemeContext } from "contexts";
-import { SVG } from "components";
+} from "../styles";
+import { FluidImageProps, MarkDownProps } from "../types";
+import { OSTypes, detectOS } from "../utils";
+import { WINDOWS_INSTALLER, MAC_INSTALLER } from "../configurations";
+import { ThemeContext } from "../contexts";
+import { SVG } from "../components";
 
 type QueryProps = {
   workTimePreviewLight: FluidImageProps;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, SEO, SVG } from "components";
+import { Layout, SEO, SVG } from "../components";
 import {
   StyledPageNotFound,
   Styled404Header,
@@ -8,7 +8,7 @@ import {
   Styled404ActionWrapper,
   Styled404HomeLink,
   Styled404Content,
-} from "styles";
+} from "../styles";
 
 const NotFoundPage = () => (
   <Layout>
