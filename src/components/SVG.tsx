@@ -28,6 +28,8 @@ import ExitSVG from "../assets/icons/exit.svg";
 import RepeatSVG from "../assets/icons/repeat.svg";
 import RemoveSVG from "../assets/icons/remove.svg";
 import EllipseSVG from "../assets/icons/ellipse.svg";
+import MicSVG from "../assets/icons/mic.svg";
+import TimeSVG from "../assets/icons/time.svg";
 
 type Props = {
   name?: string;
@@ -93,6 +95,10 @@ export const SVG: React.FC<Props> = ({ name }) => {
       return <RemoveSVG />;
     case "ellipse":
       return <EllipseSVG />;
+    case "mic":
+      return <MicSVG />;
+    case "time":
+      return <TimeSVG />;
     default:
       return <GithubSVG />;
   }

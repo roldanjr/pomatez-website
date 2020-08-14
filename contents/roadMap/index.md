@@ -14,4 +14,8 @@ featureList:
   - icon: bar-chart
     heading: Productivity Report
     description: Provide some useful summary about user's productivity to have some sense of accomplishments.
+
+  - icon: time
+    heading: Time Extender
+    description: Enable user to extend timer if needed.
 ---

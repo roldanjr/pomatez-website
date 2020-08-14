@@ -51,6 +51,10 @@ featureList:
     heading: Progress on Tray
     description: The app will show progress animation on tray. This feature can be activate if Minimize to Tray of Close to Tray is enabled. Useful when the timer is being hidden.
 
+  - icon: mic
+    heading: Voice Assistance
+    description: Notification text to speech feature that might help some users if enabled.
+
   - icon: keypad
     heading: Keyboard Shortcuts
     description: Provide some useful keyboard shortcuts allowing the user to use the app conveniently.

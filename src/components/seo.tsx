@@ -75,7 +75,7 @@ export const SEO: React.FC<Props> = ({
   const socialPreviewLight = screenShot.childImageSharp.resize;
 
   const metaTitle =
-    title || `${site.siteMetadata.title} - Be Productive and Effective`;
+    title || `${site.siteMetadata.title} - ${site.siteMetadata.description}`;
 
   const metaDescription = description || site.siteMetadata.description;
 
