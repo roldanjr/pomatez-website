@@ -1,6 +1,6 @@
-export const APP_VERSION = "v3.1.0";
+export const APP_VERSION = "v3.2.0";
 
-export const INSTALLER = `https://github.com/roldanjrCodeArts9711/productivity-timer/releases/download/${APP_VERSION}/PRODUCTIVITY-TIMER-${APP_VERSION}`;
+export const INSTALLER = `https://github.com/roldanjr/productivity-timer/releases/download/${APP_VERSION}/PRODUCTIVITY-TIMER-${APP_VERSION}`;
 
 export const WINDOWS_INSTALLER = `${INSTALLER}-setup.exe`;
 export const DEB_INSTALLER = `${INSTALLER}-linux.deb`;
