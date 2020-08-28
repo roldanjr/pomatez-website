@@ -6,17 +6,17 @@ import Navigation from "./Navigation";
 import Footer from "./Footer";
 
 export const Layout: React.FC = ({ children }) => {
-  return (
-    <ThemeProvider>
-      <StyledLayout>
-        <Navigation />
+	return (
+		<ThemeProvider>
+			<StyledLayout>
+				<Navigation />
 
-        <main>{children}</main>
+				<main>{children}</main>
 
-        <Footer />
-      </StyledLayout>
-    </ThemeProvider>
-  );
+				<Footer />
+			</StyledLayout>
+		</ThemeProvider>
+	);
 };
 
 export default Layout;

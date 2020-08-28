@@ -1,22 +1,22 @@
 import React from "react";
 import {
-  StyledLoaderContainer,
-  StyledLoaderWrapper,
-  StyledLoaderBox,
-  StyledLoaderLabel,
+	StyledLoaderContainer,
+	StyledLoaderWrapper,
+	StyledLoaderBox,
+	StyledLoaderLabel,
 } from "../styles";
 
 export const Preloader = () => (
-  <StyledLoaderContainer>
-    <StyledLoaderWrapper>
-      <StyledLoaderBox />
-      <StyledLoaderBox />
-      <StyledLoaderBox />
-      <StyledLoaderBox />
-      <StyledLoaderBox />
-    </StyledLoaderWrapper>
-    <StyledLoaderLabel>Loading</StyledLoaderLabel>
-  </StyledLoaderContainer>
+	<StyledLoaderContainer>
+		<StyledLoaderWrapper>
+			<StyledLoaderBox />
+			<StyledLoaderBox />
+			<StyledLoaderBox />
+			<StyledLoaderBox />
+			<StyledLoaderBox />
+		</StyledLoaderWrapper>
+		<StyledLoaderLabel>Loading</StyledLoaderLabel>
+	</StyledLoaderContainer>
 );
 
 export default Preloader;

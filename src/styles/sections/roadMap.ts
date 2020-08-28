@@ -3,24 +3,24 @@ import { SectionStyle, SectionContentStyle } from "../mixins";
 import { StyledFeatureList, StyledFeatureItem } from "./features";
 
 export const StyledRoadMap = styled.section`
-  ${SectionStyle}
+	${SectionStyle}
 `;
 
 export const StyledRoadMapContent = styled.div`
-  ${SectionContentStyle};
+	${SectionContentStyle};
 `;
 
 export const StyledRoadMapList = styled(StyledFeatureList)`
-  column-gap: 6rem;
-  row-gap: 6rem;
+	column-gap: 6rem;
+	row-gap: 6rem;
 `;
 
 export const StyledRoadMapItem = styled(StyledFeatureItem)`
-  border: 1px solid var(--color-border-secondary);
-  background: var(--color-bg-secondary);
+	border: 1px solid var(--border-secondary);
+	background: var(--bg-secondary);
 
-  &:hover {
-    border-color: var(--color-primary-variant);
-    box-shadow: 0 0 0 3px var(--color-primary-variant);
-  }
+	&:hover {
+		border-color: var(--cl-primary-variant);
+		box-shadow: 0 0 0 3px var(--cl-primary-variant);
+	}
 `;

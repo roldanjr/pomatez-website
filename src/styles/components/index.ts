@@ -1,5 +1,5 @@
 export * from "./layout";
-export * from "./navigation";
+export * from "./nav";
 
 export * from "./button";
 export * from "./header";

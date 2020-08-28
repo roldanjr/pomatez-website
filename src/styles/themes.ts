@@ -1,111 +1,101 @@
 import { css } from "styled-components";
 
 export const lightTheme = css`
-  --color-primary: #0098f7;
-  --color-primary-variant: #0078d6;
+	--cl-primary: #007bc7;
+	--cl-primary-variant: #035aa5;
 
-  --color-heading-text: #212121;
-  --color-body-text: #666666;
-  --color-disabled-text: #9e9e9e;
+	--cl-display-text: #111111;
+	--cl-heading-text: #212121;
+	--cl-body-text: #666666;
+	--cl-disabled-text: #999999;
 
-  --color-bg-primary: #fff;
-  --color-bg-secondary: #fafafa;
-  --color-bg-tertiary: #f2f2f2;
+	--bg-primary: #fff;
+	--bg-primary-rgb: 255, 255, 255;
 
-  --color-section-gradient-1: linear-gradient(
-    to bottom right,
-    var(--color-bg-secondary),
-    var(--color-bg-tertiary)
-  );
+	--bg-secondary: #fafafa;
+	--bg-tertiary: #f2f2f2;
 
-  --color-bg-button-normal: linear-gradient(
-    to bottom right,
-    var(--color-bg-secondary),
-    var(--color-bg-primary)
-  );
+	--bg-btn-primary: linear-gradient(
+		to bottom,
+		var(--cl-primary),
+		var(--cl-primary-variant)
+	);
 
-  --color-bg-button-normal-hover: linear-gradient(
-    to bottom right,
-    var(--color-bg-primary),
-    var(--color-bg-primary)
-  );
+	--bg-btn-primary-hover: linear-gradient(
+		to bottom,
+		var(--cl-primary),
+		var(--cl-primary)
+	);
 
-  --color-bg-button-primary: linear-gradient(
-    to bottom right,
-    var(--color-primary),
-    var(--color-primary-variant)
-  );
+	--cl-github-btn: rgba(255, 255, 255, 0.9);
+	--bg-github-btn: linear-gradient(
+		to bottom,
+		var(--cl-heading-text),
+		var(--cl-display-text)
+	);
+	--bg-github-btn-hover: linear-gradient(
+		to bottom,
+		var(--cl-heading-text),
+		var(--cl-heading-text)
+	);
 
-  --color-bg-button-primary-hover: linear-gradient(
-    to bottom right,
-    var(--color-primary),
-    var(--color-primary)
-  );
+	--bg-footer: linear-gradient(
+		to bottom,
+		var(--bg-secondary),
+		var(--bg-primary)
+	);
 
-  --color-bg-footer: linear-gradient(
-    to bottom,
-    var(--color-bg-secondary),
-    var(--color-bg-primary)
-  );
+	--border-primary: #e6e6e6;
+	--border-secondary: #f4f4f4;
 
-  --color-border-primary: #e6e6e6;
-  --color-border-secondary: #f4f4f4;
-
-  --color-shadow-primary: rgba(0, 0, 0, 0.16);
-  --color-shadow-secondary: rgba(0, 0, 0, 0.24);
+	--cl-shadow-primary: rgba(0, 0, 0, 0.16);
+	--cl-shadow-secondary: rgba(0, 0, 0, 0.24);
 `;
 
 export const darkTheme = css`
-  --color-primary: #0098f7;
-  --color-primary-variant: #2ca7f8;
+	--cl-primary: #007bc7;
+	--cl-primary-variant: #0098f7;
 
-  --color-heading-text: #e3e4e5;
-  --color-body-text: #a7abae;
-  --color-disabled-text: #6d7478;
+	--cl-display-text: rgba(255, 255, 255, 0.9);
+	--cl-heading-text: rgba(255, 255, 255, 0.8);
+	--cl-body-text: rgba(255, 255, 255, 0.6);
+	--cl-disabled-text: rgba(255, 255, 255, 0.4);
 
-  --color-bg-primary: #141e25;
-  --color-bg-secondary: #1f2930;
-  --color-bg-tertiary: #232d34;
+	--bg-primary: #111d25;
+	--bg-primary-rgb: 17, 29, 37;
 
-  --color-section-gradient-1: linear-gradient(
-    to bottom right,
-    #141c20,
-    #12181b
-  );
+	--bg-secondary: #1c2830;
+	--bg-tertiary: #202c34;
 
-  --color-bg-button-normal: linear-gradient(
-    to bottom right,
-    var(--color-bg-tertiary),
-    var(--color-bg-secondary)
-  );
+	--bg-btn-primary: linear-gradient(
+		to bottom,
+		var(--cl-primary-variant),
+		var(--cl-primary)
+	);
 
-  --color-bg-button-normal-hover: linear-gradient(
-    to bottom right,
-    var(--color-bg-tertiary),
-    var(--color-bg-tertiary)
-  );
+	--bg-btn-primary-hover: linear-gradient(
+		to bottom,
+		var(--cl-primary-variant),
+		var(--cl-primary-variant)
+	);
 
-  --color-bg-button-primary: linear-gradient(
-    to bottom right,
-    var(--color-primary-variant),
-    var(--color-primary)
-  );
+	--cl-github-btn: var(--cl-heading-text);
+	--bg-github-btn: linear-gradient(
+		to bottom,
+		var(--bg-tertiary),
+		var(--bg-secondary)
+	);
+	--bg-github-btn-hover: linear-gradient(
+		to bottom,
+		var(--bg-tertiary),
+		var(--bg-tertiary)
+	);
 
-  --color-bg-button-primary-hover: linear-gradient(
-    to bottom right,
-    var(--color-primary-variant),
-    var(--color-primary-variant)
-  );
+	--bg-footer: linear-gradient(to bottom, var(--bg-primary), #12181b);
 
-  --color-bg-footer: linear-gradient(
-    to bottom,
-    var(--color-bg-primary),
-    #12181b
-  );
+	--border-primary: rgba(255, 255, 255, 0.16);
+	--border-secondary: rgba(255, 255, 255, 0.1);
 
-  --color-border-primary: rgba(255, 255, 255, 0.16);
-  --color-border-secondary: rgba(255, 255, 255, 0.1);
-
-  --color-shadow-primary: rgba(0, 0, 0, 0.24);
-  --color-shadow-secondary: rgba(0, 0, 0, 0.4);
+	--cl-shadow-primary: rgba(0, 0, 0, 0.24);
+	--cl-shadow-secondary: rgba(0, 0, 0, 0.4);
 `;

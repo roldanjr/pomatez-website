@@ -3,18 +3,18 @@ import { darkTheme, lightTheme } from "./themes";
 import media from "./media";
 
 type GlobalProps = {
-  isDarkMode?: boolean;
+	isDarkMode?: boolean;
 };
 
 export const GlobalStyle = createGlobalStyle<GlobalProps>`
 
   :root {
-    ${p => {
-      if (p.isDarkMode) {
-        return darkTheme;
-      }
-      return lightTheme;
-    }}
+    ${(p) => {
+			if (p.isDarkMode) {
+				return darkTheme;
+			}
+			return lightTheme;
+		}}
   }
 
   *,
@@ -32,7 +32,7 @@ export const GlobalStyle = createGlobalStyle<GlobalProps>`
 
   html {
     font-size: 62.5%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: normal;
 
     ${media.laptopSm}{
@@ -43,7 +43,8 @@ export const GlobalStyle = createGlobalStyle<GlobalProps>`
   body {
     font-size: 1.6rem;
     font-weight: normal;
-    color: var(--color-body-text);
+    color: var(--cl-body-text);
+	  background: var(--bg-primary);
   }
 
   a {

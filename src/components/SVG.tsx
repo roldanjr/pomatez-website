@@ -32,76 +32,76 @@ import MicSVG from "../assets/icons/mic.svg";
 import TimeSVG from "../assets/icons/time.svg";
 
 type Props = {
-  name?: string;
+	name?: string;
 };
 
 export const SVG: React.FC<Props> = ({ name }) => {
-  switch (name) {
-    case "download":
-      return <DownloadSVG />;
-    case "sunny":
-      return <SunnySVG />;
-    case "moon":
-      return <MoonSVG />;
-    case "github":
-      return <GithubSVG />;
-    case "windows":
-      return <WindowSVG />;
-    case "copy":
-      return <CopySVG />;
-    case "food":
-      return <FoodSVG />;
-    case "laptop":
-      return <LaptopSVG />;
-    case "alert":
-      return <AlertSVG />;
-    case "moon-outline":
-      return <MoonOutlineSVG />;
-    case "timer":
-      return <TimerSVG />;
-    case "notification":
-      return <NotificationSVG />;
-    case "keypad":
-      return <KeypadSVG />;
-    case "cog":
-      return <CogSVG />;
-    case "create":
-      return <CreateSVG />;
-    case "more":
-      return <MoreSVG />;
-    case "browser":
-      return <BrowserSVG />;
-    case "cloud":
-      return <CloudSVG />;
-    case "bar-chart":
-      return <BarChartSVG />;
-    case "apple":
-      return <AppleSVG />;
-    case "linux":
-      return <LinuxSVG />;
-    case "snap-store":
-      return <SnapStoreSVG />;
-    case "tux":
-      return <TuxSVG />;
-    case "arrow-back":
-      return <ArrowBackSVG />;
-    case "auto-update":
-      return <AutoUpdateSVG />;
-    case "exit":
-      return <ExitSVG />;
-    case "repeat":
-      return <RepeatSVG />;
-    case "remove":
-      return <RemoveSVG />;
-    case "ellipse":
-      return <EllipseSVG />;
-    case "mic":
-      return <MicSVG />;
-    case "time":
-      return <TimeSVG />;
-    default:
-      return <GithubSVG />;
-  }
+	switch (name) {
+		case "download":
+			return <DownloadSVG />;
+		case "sunny":
+			return <SunnySVG />;
+		case "moon":
+			return <MoonSVG />;
+		case "github":
+			return <GithubSVG />;
+		case "windows":
+			return <WindowSVG />;
+		case "copy":
+			return <CopySVG />;
+		case "food":
+			return <FoodSVG />;
+		case "laptop":
+			return <LaptopSVG />;
+		case "alert":
+			return <AlertSVG />;
+		case "moon-outline":
+			return <MoonOutlineSVG />;
+		case "timer":
+			return <TimerSVG />;
+		case "notification":
+			return <NotificationSVG />;
+		case "keypad":
+			return <KeypadSVG />;
+		case "cog":
+			return <CogSVG />;
+		case "create":
+			return <CreateSVG />;
+		case "more":
+			return <MoreSVG />;
+		case "browser":
+			return <BrowserSVG />;
+		case "cloud":
+			return <CloudSVG />;
+		case "bar-chart":
+			return <BarChartSVG />;
+		case "apple":
+			return <AppleSVG />;
+		case "linux":
+			return <LinuxSVG />;
+		case "snap-store":
+			return <SnapStoreSVG />;
+		case "tux":
+			return <TuxSVG />;
+		case "arrow-back":
+			return <ArrowBackSVG />;
+		case "auto-update":
+			return <AutoUpdateSVG />;
+		case "exit":
+			return <ExitSVG />;
+		case "repeat":
+			return <RepeatSVG />;
+		case "remove":
+			return <RemoveSVG />;
+		case "ellipse":
+			return <EllipseSVG />;
+		case "mic":
+			return <MicSVG />;
+		case "time":
+			return <TimeSVG />;
+		default:
+			return <GithubSVG />;
+	}
 };
 
 export default React.memo(SVG);
