@@ -1,6 +1,4 @@
-import React, { useContext, useState, useRef } from "react";
-import { useStaticQuery, graphql } from "gatsby";
-
+import React, { useContext, useRef } from "react";
 import {
 	StyledNav,
 	StyledNavLinks,
@@ -14,52 +12,13 @@ import {
 	StyledSideNavDimmer,
 } from "../styles";
 import { ThemeContext } from "../contexts";
-import { navLinks } from "../config";
-import { FluidImageProps } from "../types";
-import SVG from "./SVG";
-
-import Logo from "./Logo";
+import { navLinks, APP_NAME } from "../config";
 import { useTargetOutside } from "../hooks";
 
-type QueryProps = {
-	siteName: {
-		siteMetadata: {
-			title: string;
-		};
-	};
-	siteLogoLight: FluidImageProps;
-	siteLogoDark: FluidImageProps;
-};
+import Logo from "./Logo";
+import SVG from "./SVG";
 
 export const Navigation: React.FC = () => {
-	const { siteName, siteLogoLight, siteLogoDark } = useStaticQuery<
-		QueryProps
-	>(graphql`
-		{
-			siteName: site {
-				siteMetadata {
-					title
-				}
-			}
-			siteLogoLight: file(relativePath: { eq: "logo-light.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 28, quality: 100) {
-						...GatsbyImageSharpFluid
-						...GatsbyImageSharpFluidLimitPresentationSize
-					}
-				}
-			}
-			siteLogoDark: file(relativePath: { eq: "logo-dark.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 28, quality: 100) {
-						...GatsbyImageSharpFluid
-						...GatsbyImageSharpFluidLimitPresentationSize
-					}
-				}
-			}
-		}
-	`);
-
 	const { isDarkMode, themeToggler } = useContext(ThemeContext);
 
 	const asideRef = useRef<HTMLDivElement>(null);
@@ -101,14 +60,7 @@ export const Navigation: React.FC = () => {
 	return (
 		<StyledNav>
 			<StyledNavContent>
-				<Logo
-					src={
-						isDarkMode
-							? siteLogoDark.childImageSharp.fluid
-							: siteLogoLight.childImageSharp.fluid
-					}
-					name={siteName.siteMetadata.title}
-				/>
+				<Logo name={APP_NAME} />
 
 				<StyledSideNavDimmer showSidebar={showSidebar} />
 

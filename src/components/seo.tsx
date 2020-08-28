@@ -72,10 +72,9 @@ export const SEO: React.FC<Props> = ({
 		frontmatter: { screenShot },
 	} = allMarkdownRemark.edges[0].node;
 
-	const socialPreviewLight = screenShot.childImageSharp.resize;
+	const metaTitle = title || site.siteMetadata.title;
 
-	const metaTitle =
-		title || `${site.siteMetadata.title} - ${site.siteMetadata.description}`;
+	const socialPreviewLight = screenShot.childImageSharp.resize;
 
 	const metaDescription = description || site.siteMetadata.description;
 

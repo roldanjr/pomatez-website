@@ -56,10 +56,12 @@ export const StyledNavLogo = styled(Link)`
 	text-transform: capitalize;
 	color: var(--cl-display-text);
 
-	& > div:first-child {
-		width: 1.8em;
-		height: 1.8em;
+	& > svg {
+		width: 1.5em;
+		height: 1.5em;
 		margin-right: 1rem;
+		color: var(--cl-primary);
+		background-color: var(--bg-primary);
 	}
 `;
 

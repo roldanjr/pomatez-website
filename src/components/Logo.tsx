@@ -1,16 +1,15 @@
 import React from "react";
-import Image, { FluidObject } from "gatsby-image";
 import { StyledNavLogo } from "../styles";
+import SVG from "./SVG";
 
 type Props = {
 	name: string;
-	src: FluidObject | FluidObject[] | undefined;
 };
 
-export const Logo: React.FC<Props> = ({ name, src }) => {
+export const Logo: React.FC<Props> = ({ name }) => {
 	return (
 		<StyledNavLogo href="/" to="landing" offset={-56} duration={420} smooth>
-			<Image fluid={src} alt="Productivity Timer Logo" />
+			<SVG name="pomatez" />
 			<label>{name}</label>
 		</StyledNavLogo>
 	);

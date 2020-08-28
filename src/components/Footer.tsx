@@ -2,11 +2,11 @@ import React from "react";
 import {
 	StyledFooter,
 	StyledFooterContent,
-	StyledGithubLink,
 	StyledFooterNote,
 	StyledCopyrightText,
 } from "../styles";
 import { SVG } from "../components";
+import { APP_NAME } from "../config";
 
 type Props = {};
 
@@ -21,7 +21,7 @@ export const Footer: React.FC<Props> = () => {
 				>
 					<SVG name="github" />
 					<StyledCopyrightText>
-						Pomatez © {new Date().getFullYear()}
+						{APP_NAME} © {new Date().getFullYear()}
 					</StyledCopyrightText>
 				</a>
 

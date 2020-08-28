@@ -8,8 +8,8 @@ require("dotenv").config({
 module.exports = {
 	pathPrefix: "/pomatez",
 	siteMetadata: {
-		title: `Pomatez`,
-		description: `Attractive pomodoro timer for Windows, Mac, and Linux.`,
+		title: `Pomatez | Stay Focused. Take a Break.`,
+		description: `Wonderful and helpful app to be more productive while staying healthy.`,
 		keywords: [
 			"pomatez",
 			"tomato app",

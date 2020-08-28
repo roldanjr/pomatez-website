@@ -1,4 +1,5 @@
 import React from "react";
+import PomatezSVG from "../assets/icons/pomatez.svg";
 import DownloadSVG from "../assets/icons/download.svg";
 import SunnySVG from "../assets/icons/sunny.svg";
 import MoonSVG from "../assets/icons/moon.svg";
@@ -37,6 +38,8 @@ type Props = {
 
 export const SVG: React.FC<Props> = ({ name }) => {
 	switch (name) {
+		case "pomatez":
+			return <PomatezSVG />;
 		case "download":
 			return <DownloadSVG />;
 		case "sunny":
@@ -100,7 +103,7 @@ export const SVG: React.FC<Props> = ({ name }) => {
 		case "time":
 			return <TimeSVG />;
 		default:
-			return <GithubSVG />;
+			return <PomatezSVG />;
 	}
 };
 
