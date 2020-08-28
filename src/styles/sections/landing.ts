@@ -13,8 +13,6 @@ export const StyledLanding = styled.section`
 	position: relative;
 	overflow: hidden;
 	padding-top: 8rem;
-	min-height: 100vh;
-	height: 100%;
 
 	${media.laptopSm} {
 		padding-top: 8rem;
