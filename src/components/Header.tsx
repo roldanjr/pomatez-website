@@ -11,7 +11,9 @@ export const Header: React.FC<Props> = ({ node }) => {
 
 	return (
 		<StyledHeader>
-			<h3 data-after={title}>{title}</h3>
+			<h3 data-after={title}>
+				<span>{title}</span>
+			</h3>
 			<h4>{subTitle}</h4>
 			<div
 				dangerouslySetInnerHTML={{

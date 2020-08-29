@@ -13,9 +13,28 @@ export const StyledHeader = styled.header`
 	& > h3 {
 		font-size: 3.2rem;
 		font-weight: 700;
-		color: var(--cl-primary);
 
 		position: relative;
+
+		& > span {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: -1;
+		}
+
+		&::before {
+			content: attr(data-after);
+			background: linear-gradient(
+				to bottom,
+				var(--cl-primary),
+				var(--cl-primary-variant)
+			);
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
 
 		&::after {
 			content: attr(data-after);
