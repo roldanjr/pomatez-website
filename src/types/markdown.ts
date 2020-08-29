@@ -1,5 +1,4 @@
 type FeatureList = {
-	icon: string;
 	heading: string;
 	description: string;
 };

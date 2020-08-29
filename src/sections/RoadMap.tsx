@@ -7,7 +7,7 @@ import {
 	StyledRoadMapItem,
 	StyledRoadMapContent,
 } from "../styles";
-import { SVG, Header } from "../components";
+import { Header } from "../components";
 import { MarkDownProps } from "../types";
 
 const RoadMap: React.FC = () => {
@@ -20,7 +20,6 @@ const RoadMap: React.FC = () => {
 							title
 							subTitle
 							featureList {
-								icon
 								heading
 								description
 							}
@@ -32,7 +31,7 @@ const RoadMap: React.FC = () => {
 		}
 	`);
 
-	const [limit, setLimit] = useState(5);
+	const [limit, setLimit] = useState(6);
 
 	const { node } = allMarkdownRemark.edges[0];
 
@@ -47,21 +46,10 @@ const RoadMap: React.FC = () => {
 						setLimit((prevLimit) => prevLimit + 6);
 					}}
 				>
-					<h3>
-						<SVG name="more" />
-						Show more...
-					</h3>
+					<h5>Show more...</h5>
 				</StyledRoadMapItem>
 			);
 		}
-		return (
-			<StyledRoadMapItem>
-				<h3>
-					<SVG name="more" />
-					More of it soon...
-				</h3>
-			</StyledRoadMapItem>
-		);
 	};
 
 	return (
@@ -70,20 +58,17 @@ const RoadMap: React.FC = () => {
 				<StyledRoadMapContent>
 					<Header node={node} />
 
-					{/* <StyledRoadMapList>
+					<StyledRoadMapList>
 						{node.frontmatter.featureList
 							?.map((feature, index) => (
 								<StyledRoadMapItem key={index}>
-									<h3>
-										<SVG name={feature.icon} />
-										{feature.heading}
-									</h3>
+									<h5>{feature.heading}</h5>
 									<p>{feature.description}</p>
 								</StyledRoadMapItem>
 							))
 							.splice(0, limit)}
 						{renderLastItem()}
-					</StyledRoadMapList> */}
+					</StyledRoadMapList>
 				</StyledRoadMapContent>
 			</LazyLoad>
 		</StyledRoadMap>

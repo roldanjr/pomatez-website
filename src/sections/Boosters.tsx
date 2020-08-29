@@ -18,7 +18,6 @@ const Boosters: React.FC<Props> = () => {
 							title
 							subTitle
 							featureList {
-								icon
 								heading
 								description
 							}

@@ -11,13 +11,19 @@ export const StyledRoadMapContent = styled.div`
 `;
 
 export const StyledRoadMapList = styled(StyledFeatureList)`
-	column-gap: 6rem;
-	row-gap: 6rem;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 4rem;
+	row-gap: 4rem;
+
+	max-width: max-content;
+	margin: auto;
 `;
 
 export const StyledRoadMapItem = styled(StyledFeatureItem)`
 	border: 1px solid var(--border-secondary);
-	background: var(--bg-secondary);
+	/* background: var(--bg-secondary); */
+	max-width: 40rem;
+	padding: 2rem 2.4rem;
 
 	&:hover {
 		border-color: var(--cl-primary-variant);

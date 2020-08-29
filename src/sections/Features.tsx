@@ -9,7 +9,7 @@ import {
 	StyledFeatureContainer,
 	StyledFeaturedImage,
 } from "../styles";
-import { SVG, Header } from "../components";
+import { Header } from "../components";
 import { MarkDownProps } from "../types";
 
 const Features: React.FC = () => {
@@ -22,7 +22,6 @@ const Features: React.FC = () => {
 							title
 							subTitle
 							featureList {
-								icon
 								heading
 								description
 							}
@@ -49,19 +48,13 @@ const Features: React.FC = () => {
 						setLimit((prevLimit) => prevLimit + 3);
 					}}
 				>
-					<h5>
-						{/* <SVG name="more" /> */}
-						Show more...
-					</h5>
+					<h5>Show more...</h5>
 				</StyledFeatureItem>
 			);
 		}
 		return (
 			<StyledFeatureItem>
-				<h5>
-					{/* <SVG name="more" /> */}
-					More features soon...
-				</h5>
+				<h5>More features soon...</h5>
 			</StyledFeatureItem>
 		);
 	};

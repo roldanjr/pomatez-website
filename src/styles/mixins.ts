@@ -18,15 +18,15 @@ export const SectionStyle = css`
 		background: var(--bg-primary);
 		/* box-shadow: 0 1px 4px -1px var(--cl-shadow-primary); */
 
-		padding-bottom: 14rem;
+		/* padding-bottom: 14rem; */
 		/* z-index: 20; */
 
 		${media.laptopSm} {
-			padding-bottom: 10rem;
+			/* padding-bottom: 10rem; */
 		}
 
 		${media.tabletSm} {
-			padding-bottom: 8rem;
+			/* padding-bottom: 8rem; */
 		}
 	}
 
