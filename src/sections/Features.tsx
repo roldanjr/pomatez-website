@@ -1,20 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import Image from "gatsby-image";
 import {
 	StyledFeatures,
 	StyledFeatureList,
 	StyledFeatureItem,
 	StyledFeatureContent,
 	StyledFeatureContainer,
+	StyledFeaturedImageWrapper,
 	StyledFeaturedImage,
 } from "../styles";
 import { Header } from "../components";
-import { MarkDownProps } from "../types";
+import { MarkDownProps, FluidImageProps } from "../types";
+import { ThemeContext } from "../contexts";
+
+type QueryProps = {
+	configPreviewLight: FluidImageProps;
+	configPreviewDark: FluidImageProps;
+	tasksPreviewLight: FluidImageProps;
+	tasksPreviewDark: FluidImageProps;
+} & MarkDownProps;
 
 const Features: React.FC = () => {
-	const { allMarkdownRemark } = useStaticQuery<MarkDownProps>(graphql`
+	const {
+		allMarkdownRemark,
+		tasksPreviewLight,
+		tasksPreviewDark,
+		configPreviewLight,
+		configPreviewDark,
+	} = useStaticQuery<QueryProps>(graphql`
 		{
-			allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/features/" } }) {
+			allMarkdownRemark: allMarkdownRemark(
+				filter: { fileAbsolutePath: { regex: "/features/" } }
+			) {
 				edges {
 					node {
 						frontmatter {
@@ -29,8 +47,42 @@ const Features: React.FC = () => {
 					}
 				}
 			}
+			tasksPreviewLight: file(relativePath: { eq: "tasks-light.PNG" }) {
+				childImageSharp {
+					fluid(maxWidth: 340, quality: 100) {
+						...GatsbyImageSharpFluid_withWebp
+						...GatsbyImageSharpFluidLimitPresentationSize
+					}
+				}
+			}
+			tasksPreviewDark: file(relativePath: { eq: "tasks-dark.PNG" }) {
+				childImageSharp {
+					fluid(maxWidth: 340, quality: 100) {
+						...GatsbyImageSharpFluid_withWebp
+						...GatsbyImageSharpFluidLimitPresentationSize
+					}
+				}
+			}
+			configPreviewLight: file(relativePath: { eq: "config-light.PNG" }) {
+				childImageSharp {
+					fluid(maxWidth: 340, quality: 100) {
+						...GatsbyImageSharpFluid_withWebp
+						...GatsbyImageSharpFluidLimitPresentationSize
+					}
+				}
+			}
+			configPreviewDark: file(relativePath: { eq: "config-dark.PNG" }) {
+				childImageSharp {
+					fluid(maxWidth: 340, quality: 100) {
+						...GatsbyImageSharpFluid_withWebp
+						...GatsbyImageSharpFluidLimitPresentationSize
+					}
+				}
+			}
 		}
 	`);
+
+	const { isDarkMode } = useContext(ThemeContext);
 
 	const [limit, setLimit] = useState(3);
 
@@ -64,7 +116,28 @@ const Features: React.FC = () => {
 				<Header node={node} />
 
 				<StyledFeatureContainer>
-					<StyledFeaturedImage></StyledFeaturedImage>
+					<StyledFeaturedImageWrapper>
+						<StyledFeaturedImage>
+							<Image
+								fluid={
+									isDarkMode
+										? tasksPreviewDark.childImageSharp.fluid
+										: tasksPreviewLight.childImageSharp.fluid
+								}
+								alt="tasks preview"
+							/>
+						</StyledFeaturedImage>
+						<StyledFeaturedImage>
+							<Image
+								fluid={
+									isDarkMode
+										? configPreviewDark.childImageSharp.fluid
+										: configPreviewLight.childImageSharp.fluid
+								}
+								alt="config preview"
+							/>
+						</StyledFeaturedImage>
+					</StyledFeaturedImageWrapper>
 
 					<StyledFeatureList>
 						{node.frontmatter.featureList

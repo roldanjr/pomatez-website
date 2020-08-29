@@ -45,8 +45,9 @@ export const lightTheme = css`
 	--border-primary: #e6e6e6;
 	--border-secondary: #f4f4f4;
 
-	--cl-shadow-primary: rgba(0, 0, 0, 0.16);
-	--cl-shadow-secondary: rgba(0, 0, 0, 0.24);
+	--cl-shadow-primary: rgba(0, 0, 0, 0.12);
+	--cl-shadow-secondary: rgba(0, 0, 0, 0.16);
+	--cl-shadow-tertiary: rgba(0, 0, 0, 0.24);
 `;
 
 export const darkTheme = css`
@@ -95,5 +96,6 @@ export const darkTheme = css`
 	--border-secondary: rgba(255, 255, 255, 0.1);
 
 	--cl-shadow-primary: rgba(0, 0, 0, 0.24);
-	--cl-shadow-secondary: rgba(0, 0, 0, 0.4);
+	--cl-shadow-secondary: rgba(0, 0, 0, 0.32);
+	--cl-shadow-tertiary: rgba(0, 0, 0, 0.4);
 `;

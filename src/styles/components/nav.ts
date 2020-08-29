@@ -97,7 +97,7 @@ export const StyledNavAsideWrapper = styled.div<MenuProps>`
 		padding: 8rem 3.2rem;
 
 		background: var(--bg-primary);
-		box-shadow: 0 3px 6px var(--cl-shadow-primary);
+		box-shadow: 0 3px 6px var(--cl-shadow-secondary);
 
 		${(p) =>
 			p.showSidebar
@@ -120,7 +120,7 @@ export const StyledSideNavDimmer = styled.div<MenuProps>`
 	height: 100vh;
 
 	backdrop-filter: blur(8px);
-	background-color: var(--cl-shadow-primary);
+	background-color: var(--cl-shadow-secondary);
 	transition: all 160ms ease;
 
 	${(p) =>
@@ -187,7 +187,7 @@ export const StyledNavDownloadButton = styled(Link)`
 
 	&:hover {
 		background: var(--bg-btn-primary-hover);
-		box-shadow: 0 4px 16px 0 var(--cl-shadow-primary);
+		box-shadow: 0 4px 16px 0 var(--cl-shadow-secondary);
 	}
 `;
 

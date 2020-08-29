@@ -148,7 +148,7 @@ export const StyledPreviewImage = styled.div`
 		width: 20rem;
 		height: max-content;
 		z-index: 2;
-		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+		box-shadow: 0 20px 40px var(--cl-shadow-primary);
 
 		${media.laptopSm} {
 			width: 18rem;
@@ -224,7 +224,7 @@ export const StyledPreviewImage = styled.div`
 		width: 22rem;
 		height: max-content;
 		z-index: 4;
-		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+		box-shadow: 0 20px 40px var(--cl-shadow-primary);
 
 		${media.laptopSm} {
 			width: 20rem;
@@ -302,7 +302,7 @@ export const StyledPreviewImage = styled.div`
 		width: 25rem;
 		height: max-content;
 		z-index: 8;
-		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+		box-shadow: 0 20px 40px var(--cl-shadow-primary);
 
 		${media.laptopSm} {
 			width: 24rem;

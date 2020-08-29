@@ -16,7 +16,7 @@ export const SectionStyle = css`
 	&:nth-child(even) {
 		/* position: relative; */
 		background: var(--bg-primary);
-		/* box-shadow: 0 1px 4px -1px var(--cl-shadow-primary); */
+		/* box-shadow: 0 1px 4px -1px var(--cl-shadow-secondary); */
 
 		/* padding-bottom: 14rem; */
 		/* z-index: 20; */

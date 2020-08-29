@@ -44,7 +44,7 @@ export const Styled404HomeLink = styled(Link)`
 	box-shadow: 0 2px 4px 0 var(--cl-shadow-secondary);
 
 	&:hover {
-		box-shadow: 0 3px 6px 0 var(--cl-shadow-primary);
+		box-shadow: 0 3px 6px 0 var(--cl-shadow-secondary);
 	}
 
 	& > svg {
