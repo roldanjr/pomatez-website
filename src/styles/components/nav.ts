@@ -171,7 +171,7 @@ export const StyledNavLinks = styled.ul`
 
 	& > li a:hover,
 	& > li a.active {
-		color: var(--cl-primary-variant);
+		color: var(--cl-link-hover);
 	}
 `;
 

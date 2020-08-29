@@ -13,11 +13,12 @@ export const StyledGithubLink = styled.a`
 	}
 `;
 
-export const StyledCopyrightText = styled.p`
+export const StyledCopyrightText = styled.span`
 	font-size: 1.4rem;
 	font-weight: 700;
 	text-transform: capitalize;
 	margin-bottom: 0.8rem;
+	display: block;
 `;
 
 export const StyledFooterNote = styled.p`
@@ -25,12 +26,12 @@ export const StyledFooterNote = styled.p`
 	row-gap: 0.8rem;
 
 	& > a {
-		color: var(--cl-primary-variant);
+		color: var(--cl-link);
 		font-size: 2rem;
 		font-weight: 700 !important;
 
 		&:hover {
-			color: var(--cl-primary);
+			color: var(--cl-link-hover);
 		}
 	}
 `;
@@ -39,10 +40,15 @@ export const StyledFooterContent = styled.div`
 	display: grid;
 	row-gap: 0.8rem;
 	height: max-content;
+	width: max-content;
 
 	margin: 0 auto;
 
 	& > a {
+		&:hover {
+			color: var(--cl-link-hover);
+		}
+
 		svg {
 			width: 2.2rem;
 			height: 2.2rem;

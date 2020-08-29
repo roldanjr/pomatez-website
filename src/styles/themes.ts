@@ -15,6 +15,9 @@ export const lightTheme = css`
 	--bg-secondary: #fafafa;
 	--bg-tertiary: #f2f2f2;
 
+	--cl-link: var(--cl-primary-variant);
+	--cl-link-hover: var(--cl-primary);
+
 	--bg-btn-primary: linear-gradient(
 		to bottom,
 		var(--cl-primary),
@@ -39,12 +42,6 @@ export const lightTheme = css`
 		var(--cl-heading-text)
 	);
 
-	--bg-footer: linear-gradient(
-		to bottom,
-		var(--bg-secondary),
-		var(--bg-primary)
-	);
-
 	--border-primary: #e6e6e6;
 	--border-secondary: #f4f4f4;
 
@@ -66,6 +63,9 @@ export const darkTheme = css`
 
 	--bg-secondary: #1c2830;
 	--bg-tertiary: #202c34;
+
+	--cl-link: var(--cl-primary);
+	--cl-link-hover: var(--cl-primary-variant);
 
 	--bg-btn-primary: linear-gradient(
 		to bottom,
@@ -90,8 +90,6 @@ export const darkTheme = css`
 		var(--bg-tertiary),
 		var(--bg-tertiary)
 	);
-
-	--bg-footer: linear-gradient(to bottom, var(--bg-primary), #12181b);
 
 	--border-primary: rgba(255, 255, 255, 0.16);
 	--border-secondary: rgba(255, 255, 255, 0.1);
