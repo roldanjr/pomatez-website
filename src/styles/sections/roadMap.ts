@@ -21,7 +21,6 @@ export const StyledRoadMapList = styled(StyledFeatureList)`
 
 export const StyledRoadMapItem = styled(StyledFeatureItem)`
 	border: 1px solid var(--border-secondary);
-	/* background: var(--bg-secondary); */
 	max-width: 40rem;
 	padding: 2rem 2.4rem;
 
