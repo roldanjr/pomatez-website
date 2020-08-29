@@ -54,7 +54,7 @@ export const GlobalStyle = createGlobalStyle<GlobalProps>`
   }
 
   p {
-    line-height: 1.4;
+    line-height: 1.6;
   }
 
 `;

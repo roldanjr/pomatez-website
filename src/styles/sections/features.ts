@@ -11,14 +11,23 @@ export const StyledFeatureContent = styled.div`
 	${SectionContentStyle};
 `;
 
+export const StyledFeatureContainer = styled.div`
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 2rem;
+`;
+
+export const StyledFeaturedImage = styled.div``;
+
 export const StyledFeatureList = styled.ul`
 	list-style: none;
+
+	max-width: 40rem;
 
 	display: grid;
 	align-content: start;
 	justify-content: center;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 6rem;
+	gap: 4rem;
 
 	${media.laptopMd} {
 		gap: 4rem;
@@ -38,20 +47,18 @@ export const StyledFeatureList = styled.ul`
 `;
 
 const FeatureItemStyle = css`
+	position: relative;
 	height: 100%;
-
-	text-align: center;
 
 	display: grid;
 	align-content: start;
 	row-gap: 1.2rem;
-	padding: 4rem;
+	/* padding: 4rem; */
 
 	color: var(--cl-display-text);
 
 	border-radius: 3px;
-	border: 1px solid var(--border-secondary);
-	background: var(--bg-secondary);
+	/* border: 1px solid var(--border-primary); */
 	box-shadow: 0 0 0 0 var(--cl-primary-variant);
 	transition: all 200ms ease;
 
@@ -63,9 +70,9 @@ const FeatureItemStyle = css`
 
 	&:hover {
 		color: var(--cl-primary-variant);
-		border-color: var(--cl-primary-variant);
+		/* border-color: var(--cl-primary-variant);
 		background-color: var(--bg-primary);
-		box-shadow: 0 0 0 3px var(--cl-primary-variant);
+		box-shadow: 0 0 0 3px var(--cl-primary-variant); */
 	}
 
 	&:last-of-type {
@@ -73,27 +80,31 @@ const FeatureItemStyle = css`
 		height: max-content;
 	}
 
-	& > h3 {
-		font-size: 2rem;
-		font-weight: 500;
+	& > svg {
+		width: 8rem;
+		height: 8rem;
+		color: var(--cl-disabled-text);
+		fill: currentColor;
+		opacity: 0.08;
+
+		position: absolute;
+	}
+
+	& > h5 {
+		font-size: 2.4rem;
+		font-weight: 700;
 
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		/* align-items: center; */
 
 		color: currentColor;
-
-		& > svg {
-			width: 1.75em;
-			height: 1.75em;
-			fill: currentColor;
-
-			margin-bottom: 0.8rem;
-		}
+		z-index: 1;
 	}
 
 	& > p {
 		color: var(--cl-body-text);
+		z-index: 1;
 	}
 `;
 

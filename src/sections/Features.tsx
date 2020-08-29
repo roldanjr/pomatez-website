@@ -6,6 +6,8 @@ import {
 	StyledFeatureList,
 	StyledFeatureItem,
 	StyledFeatureContent,
+	StyledFeatureContainer,
+	StyledFeaturedImage,
 } from "../styles";
 import { SVG, Header } from "../components";
 import { MarkDownProps } from "../types";
@@ -32,7 +34,7 @@ const Features: React.FC = () => {
 		}
 	`);
 
-	const [limit, setLimit] = useState(5);
+	const [limit, setLimit] = useState(3);
 
 	const { node } = allMarkdownRemark.edges[0];
 
@@ -44,22 +46,22 @@ const Features: React.FC = () => {
 			return (
 				<StyledFeatureItem
 					onClick={() => {
-						setLimit((prevLimit) => prevLimit + 6);
+						setLimit((prevLimit) => prevLimit + 3);
 					}}
 				>
-					<h3>
-						<SVG name="more" />
+					<h5>
+						{/* <SVG name="more" /> */}
 						Show more...
-					</h3>
+					</h5>
 				</StyledFeatureItem>
 			);
 		}
 		return (
 			<StyledFeatureItem>
-				<h3>
-					<SVG name="more" />
-					More of it soon...
-				</h3>
+				<h5>
+					{/* <SVG name="more" /> */}
+					More features soon...
+				</h5>
 			</StyledFeatureItem>
 		);
 	};
@@ -70,20 +72,21 @@ const Features: React.FC = () => {
 				<StyledFeatureContent>
 					<Header node={node} />
 
-					{/* <StyledFeatureList>
-						{node.frontmatter.featureList
-							?.map((feature, index) => (
-								<StyledFeatureItem key={index}>
-									<h3>
-										<SVG name={feature.icon} />
-										{feature.heading}
-									</h3>
-									<p>{feature.description}</p>
-								</StyledFeatureItem>
-							))
-							.slice(0, limit)}
-						{renderLastItem()}
-					</StyledFeatureList> */}
+					<StyledFeatureContainer>
+						<StyledFeaturedImage></StyledFeaturedImage>
+
+						<StyledFeatureList>
+							{node.frontmatter.featureList
+								?.map((feature, index) => (
+									<StyledFeatureItem key={index}>
+										<h5>{feature.heading}</h5>
+										<p>{feature.description}</p>
+									</StyledFeatureItem>
+								))
+								.slice(0, limit)}
+							{renderLastItem()}
+						</StyledFeatureList>
+					</StyledFeatureContainer>
 				</StyledFeatureContent>
 			</LazyLoad>
 		</StyledFeatures>

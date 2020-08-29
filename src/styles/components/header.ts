@@ -18,7 +18,7 @@ export const StyledHeader = styled.header`
 		color: var(--cl-disabled-text);
 		font-size: 3.2rem;
 		font-weight: 700;
-		opacity: 0.08;
+		opacity: 0.1;
 	}
 
 	& > h3 {
