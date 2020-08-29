@@ -1,6 +1,4 @@
 import styled, { css } from "styled-components";
-import Image from "gatsby-image";
-
 import { SectionStyle, SectionContentStyle } from "../mixins";
 
 import WaterMarkLeft from "../../assets/images/watermark-left.svg";
@@ -121,7 +119,7 @@ export const StyledLandingCtaWrapper = styled.div`
 	}
 `;
 
-export const StyledAppPreviewWrapper = styled.div`
+export const StyledPreviewWrapper = styled.div`
 	position: relative;
 	z-index: 10;
 
@@ -141,7 +139,7 @@ export const StyledAppPreviewWrapper = styled.div`
 	}
 `;
 
-export const StyledAppPreviewImage = styled(Image)`
+export const StyledPreviewImage = styled.div`
 	background-color: var(--bg-primary);
 	position: relative;
 

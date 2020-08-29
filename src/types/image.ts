@@ -2,13 +2,13 @@ import { FixedObject, FluidObject } from "gatsby-image";
 
 export type FixedImageProps = {
 	childImageSharp: {
-		fixed: FixedObject | FixedObject[] | undefined;
+		fixed: FixedObject | FixedObject[];
 	};
 };
 
 export type FluidImageProps = {
 	childImageSharp: {
-		fluid: FluidObject | FluidObject[] | undefined;
+		fluid: FluidObject | FluidObject[];
 	};
 };
 

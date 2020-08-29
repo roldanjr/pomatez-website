@@ -1,17 +1,18 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import Image from "gatsby-image";
 import {
 	StyledLanding,
 	StyledWaterMarkLeft,
 	StyledWaterMarkRight,
 	StyledLandingCTAWrapper,
-	StyledAppPreviewWrapper,
+	StyledPreviewWrapper,
 	StyledLandingContent,
 	StyledCTADownloader,
 	StyledLandingHeader,
 	StyledLandingCtaWrapper,
 	StyledGithubLink,
-	StyledAppPreviewImage,
+	StyledPreviewImage,
 } from "../styles";
 import { FluidImageProps, MarkDownProps } from "../types";
 import { WINDOWS_INSTALLER, MAC_INSTALLER } from "../config";
@@ -253,56 +254,73 @@ const Landing: React.FC = () => {
 					</StyledLandingCtaWrapper>
 				</StyledLandingCTAWrapper>
 
-				<StyledAppPreviewWrapper>
-					<StyledAppPreviewImage
-						fluid={
-							isDarkMode
-								? tasksPreviewDark.childImageSharp.fluid
-								: tasksPreviewLight.childImageSharp.fluid
-						}
-						alt="tasks preview"
-					/>
-					<StyledAppPreviewImage
-						fluid={
-							isDarkMode
-								? settingsPreviewDark.childImageSharp.fluid
-								: settingsPreviewLight.childImageSharp.fluid
-						}
-						alt="settings preview"
-					/>
-					<StyledAppPreviewImage
-						fluid={
-							isDarkMode
-								? configPreviewDark.childImageSharp.fluid
-								: configPreviewLight.childImageSharp.fluid
-						}
-						alt="config preview"
-					/>
-					<StyledAppPreviewImage
-						fluid={
-							isDarkMode
-								? workTimePreviewDark.childImageSharp.fluid
-								: workTimePreviewLight.childImageSharp.fluid
-						}
-						alt="work time preview"
-					/>
-					<StyledAppPreviewImage
-						fluid={
-							isDarkMode
-								? shortBreakPreviewDark.childImageSharp.fluid
-								: shortBreakPreviewLight.childImageSharp.fluid
-						}
-						alt="short break preview"
-					/>
-					<StyledAppPreviewImage
-						fluid={
-							isDarkMode
-								? longBreakPreviewDark.childImageSharp.fluid
-								: longBreakPreviewLight.childImageSharp.fluid
-						}
-						alt="long break preview"
-					/>
-				</StyledAppPreviewWrapper>
+				<StyledPreviewWrapper>
+					<StyledPreviewImage>
+						<Image
+							fluid={
+								isDarkMode
+									? tasksPreviewDark.childImageSharp.fluid
+									: tasksPreviewLight.childImageSharp.fluid
+							}
+							alt="tasks preview"
+						/>
+					</StyledPreviewImage>
+
+					<StyledPreviewImage>
+						<Image
+							fluid={
+								isDarkMode
+									? settingsPreviewDark.childImageSharp.fluid
+									: settingsPreviewLight.childImageSharp.fluid
+							}
+							alt="settings preview"
+						/>
+					</StyledPreviewImage>
+
+					<StyledPreviewImage>
+						<Image
+							fluid={
+								isDarkMode
+									? configPreviewDark.childImageSharp.fluid
+									: configPreviewLight.childImageSharp.fluid
+							}
+							alt="config preview"
+						/>
+					</StyledPreviewImage>
+
+					<StyledPreviewImage>
+						<Image
+							fluid={
+								isDarkMode
+									? workTimePreviewDark.childImageSharp.fluid
+									: workTimePreviewLight.childImageSharp.fluid
+							}
+							alt="work time preview"
+						/>
+					</StyledPreviewImage>
+
+					<StyledPreviewImage>
+						<Image
+							fluid={
+								isDarkMode
+									? shortBreakPreviewDark.childImageSharp.fluid
+									: shortBreakPreviewLight.childImageSharp.fluid
+							}
+							alt="short break preview"
+						/>
+					</StyledPreviewImage>
+
+					<StyledPreviewImage>
+						<Image
+							fluid={
+								isDarkMode
+									? longBreakPreviewDark.childImageSharp.fluid
+									: longBreakPreviewLight.childImageSharp.fluid
+							}
+							alt="long break preview"
+						/>
+					</StyledPreviewImage>
+				</StyledPreviewWrapper>
 			</StyledLandingContent>
 		</StyledLanding>
 	);
