@@ -1,7 +1,5 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import LazyLoad from "react-lazyload";
-
 import { StyledBoosters, StyledFeatureContent } from "../styles";
 import { MarkDownProps } from "../types";
 import { Header } from "../components";
@@ -33,11 +31,9 @@ const Boosters: React.FC<Props> = () => {
 
 	return (
 		<StyledBoosters id="boosters">
-			<LazyLoad once={true} offset={80} height="72.7rem">
-				<StyledFeatureContent>
-					<Header node={node} />
-				</StyledFeatureContent>
-			</LazyLoad>
+			<StyledFeatureContent>
+				<Header node={node} />
+			</StyledFeatureContent>
 		</StyledBoosters>
 	);
 };

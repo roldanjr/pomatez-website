@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import LazyLoad from "react-lazyload";
 import {
 	StyledRoadMap,
 	StyledRoadMapList,
@@ -54,23 +53,21 @@ const RoadMap: React.FC = () => {
 
 	return (
 		<StyledRoadMap id="roadmap">
-			<LazyLoad once={true} offset={80} height="58.3rem">
-				<StyledRoadMapContent>
-					<Header node={node} />
+			<StyledRoadMapContent>
+				<Header node={node} />
 
-					<StyledRoadMapList>
-						{node.frontmatter.featureList
-							?.map((feature, index) => (
-								<StyledRoadMapItem key={index}>
-									<h5>{feature.heading}</h5>
-									<p>{feature.description}</p>
-								</StyledRoadMapItem>
-							))
-							.splice(0, limit)}
-						{renderLastItem()}
-					</StyledRoadMapList>
-				</StyledRoadMapContent>
-			</LazyLoad>
+				<StyledRoadMapList>
+					{node.frontmatter.featureList
+						?.map((feature, index) => (
+							<StyledRoadMapItem key={index}>
+								<h5>{feature.heading}</h5>
+								<p>{feature.description}</p>
+							</StyledRoadMapItem>
+						))
+						.splice(0, limit)}
+					{renderLastItem()}
+				</StyledRoadMapList>
+			</StyledRoadMapContent>
 		</StyledRoadMap>
 	);
 };

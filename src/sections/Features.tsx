@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import LazyLoad from "react-lazyload";
 import {
 	StyledFeatures,
 	StyledFeatureList,
@@ -61,27 +60,25 @@ const Features: React.FC = () => {
 
 	return (
 		<StyledFeatures id="features">
-			<LazyLoad once={true} offset={80} height="72.7rem">
-				<StyledFeatureContent>
-					<Header node={node} />
+			<StyledFeatureContent>
+				<Header node={node} />
 
-					<StyledFeatureContainer>
-						<StyledFeaturedImage></StyledFeaturedImage>
+				<StyledFeatureContainer>
+					<StyledFeaturedImage></StyledFeaturedImage>
 
-						<StyledFeatureList>
-							{node.frontmatter.featureList
-								?.map((feature, index) => (
-									<StyledFeatureItem key={index}>
-										<h5>{feature.heading}</h5>
-										<p>{feature.description}</p>
-									</StyledFeatureItem>
-								))
-								.slice(0, limit)}
-							{renderLastItem()}
-						</StyledFeatureList>
-					</StyledFeatureContainer>
-				</StyledFeatureContent>
-			</LazyLoad>
+					<StyledFeatureList>
+						{node.frontmatter.featureList
+							?.map((feature, index) => (
+								<StyledFeatureItem key={index}>
+									<h5>{feature.heading}</h5>
+									<p>{feature.description}</p>
+								</StyledFeatureItem>
+							))
+							.slice(0, limit)}
+						{renderLastItem()}
+					</StyledFeatureList>
+				</StyledFeatureContainer>
+			</StyledFeatureContent>
 		</StyledFeatures>
 	);
 };
