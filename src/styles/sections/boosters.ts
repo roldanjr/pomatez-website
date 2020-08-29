@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { Link } from "react-scroll";
 import { SectionStyle, SectionContentStyle } from "../mixins";
 import media from "../media";
 

@@ -14,6 +14,7 @@
 		"dev": "gatsby develop",
 		"build": "gatsby build",
 		"start": "npm run develop",
+		"lint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
 		"format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
 		"serve": "yarn clean && yarn build && gatsby serve",
 		"cp:sitemap": "cp sitemap.xml public",
