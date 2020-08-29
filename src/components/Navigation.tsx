@@ -75,7 +75,7 @@ export const Navigation: React.FC = () => {
 
 						<StyledNavDownloadButton
 							href="/"
-							to="download-now"
+							to="installers"
 							offset={-24}
 							duration={420}
 							smooth

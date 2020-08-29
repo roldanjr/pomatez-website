@@ -9,17 +9,17 @@ export const SectionStyle = css`
 
 	padding: 10rem 5.6rem;
 
-	&:nth-child(odd) {
+	/* &:nth-child(odd) {
 		background: var(--bg-primary);
-	}
+	} */
 
 	&:nth-child(even) {
-		position: relative;
+		/* position: relative; */
 		background: var(--bg-primary);
-		box-shadow: 0 1px 4px -1px var(--cl-shadow-primary);
+		/* box-shadow: 0 1px 4px -1px var(--cl-shadow-primary); */
 
 		padding-bottom: 14rem;
-		z-index: 20;
+		/* z-index: 20; */
 
 		${media.laptopSm} {
 			padding-bottom: 10rem;

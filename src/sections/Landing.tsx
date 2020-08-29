@@ -7,7 +7,7 @@ import {
 	StyledLandingCTAWrapper,
 	StyledAppPreviewWrapper,
 	StyledLandingContent,
-	StyledDownloadButton,
+	StyledCTADownloader,
 	StyledLandingHeader,
 	StyledLandingCtaWrapper,
 	StyledGithubLink,
@@ -186,21 +186,21 @@ const Landing: React.FC = () => {
 		switch (operatingSystem) {
 			case "Windows":
 				return (
-					<StyledDownloadButton as={"a"} href={WINDOWS_INSTALLER}>
+					<StyledCTADownloader as={"a"} href={WINDOWS_INSTALLER}>
 						<SVG name="windows" />
 						for Windows
-					</StyledDownloadButton>
+					</StyledCTADownloader>
 				);
 			case "MacOS":
 				return (
-					<StyledDownloadButton as={"a"} href={MAC_INSTALLER}>
+					<StyledCTADownloader as={"a"} href={MAC_INSTALLER}>
 						<SVG name="apple" />
 						for Mac OS
-					</StyledDownloadButton>
+					</StyledCTADownloader>
 				);
 			case "Linux":
 				return (
-					<StyledDownloadButton
+					<StyledCTADownloader
 						href="/"
 						to="download-now"
 						offset={-24}
@@ -209,11 +209,11 @@ const Landing: React.FC = () => {
 					>
 						<SVG name="tux" />
 						for Linux OS
-					</StyledDownloadButton>
+					</StyledCTADownloader>
 				);
 			default:
 				return (
-					<StyledDownloadButton
+					<StyledCTADownloader
 						href="/"
 						to="download-now"
 						offset={-24}
@@ -222,7 +222,7 @@ const Landing: React.FC = () => {
 					>
 						<SVG name="download" />
 						See Installers
-					</StyledDownloadButton>
+					</StyledCTADownloader>
 				);
 		}
 	};

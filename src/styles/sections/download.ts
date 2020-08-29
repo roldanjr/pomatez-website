@@ -26,6 +26,7 @@ export const StyledDownloadOSLogo = styled.div`
 export const StyledDownloadButtonWrapper = styled.div`
 	display: grid;
 	align-items: start;
+	column-gap: 2rem;
 	grid-template-columns: 1fr 2fr 1fr;
 
 	${media.laptopSm} {

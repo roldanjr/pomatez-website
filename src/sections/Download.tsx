@@ -32,19 +32,20 @@ const Download: React.FC = () => {
 							title
 							subTitle
 						}
+						html
 					}
 				}
 			}
 		}
 	`);
 
-	const { frontmatter } = allMarkdownRemark.edges[0].node;
+	const { node } = allMarkdownRemark.edges[0];
 
 	return (
-		<StyledDownload id="download-now">
+		<StyledDownload id="installers">
 			<LazyLoad once={true} offset={80} height="47.7rem">
 				<StyledDownloadContent>
-					<Header frontMatter={frontmatter} />
+					<Header node={node} />
 
 					<StyledDownloadButtonWrapper>
 						<StyledDownloadForWindows>

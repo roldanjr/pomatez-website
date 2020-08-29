@@ -7,21 +7,44 @@ export const StyledHeader = styled.header`
 	margin: 0 auto;
 
 	display: grid;
-	row-gap: 0.8rem;
+	row-gap: 2rem;
 	align-content: start;
 
-	& > h2 {
-		font-size: 3.6rem;
-		font-weight: 500;
-		color: var(--cl-display-text);
+	& > h3 {
+		font-size: 3.2rem;
+		font-weight: 700;
+		color: var(--cl-primary);
 
-		& > span {
-			color: var(--cl-primary-variant);
+		position: relative;
+
+		&::after {
+			content: attr(data-after);
+			position: absolute;
+			color: var(--cl-disabled-text);
+			opacity: 0.04;
+			font-size: 20rem;
+			top: -2rem;
+			left: 50%;
+			transform: translateX(-50%);
 		}
 	}
 
-	& > p {
-		font-size: 1.8rem;
-		color: var(--cl-body-text);
+	& > h4 {
+		font-size: 6.4rem;
+		font-weight: 700;
+		color: var(--cl-display-text);
+		z-index: 1;
+	}
+
+	& > div {
+		& > p {
+			font-size: 2rem;
+			color: var(--cl-body-text);
+			line-height: 1.7;
+
+			& > a:hover {
+				color: var(--cl-primary);
+			}
+		}
 	}
 `;

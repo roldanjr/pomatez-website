@@ -27,9 +27,10 @@ export type Frontmatter = {
 	screenShot: Image;
 };
 
-type Edges = {
+export type Edges = {
 	node: {
 		frontmatter: Frontmatter;
+		html: string;
 	};
 };
 
