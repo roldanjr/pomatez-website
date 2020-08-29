@@ -215,6 +215,10 @@ export const StyledNavThemeToggler = styled.button`
 		color: var(--cl-display-text);
 	}
 
+	&:hover > svg {
+		fill: var(--cl-heading-text);
+	}
+
 	& > svg {
 		width: 1.25em;
 		height: 1.25em;
