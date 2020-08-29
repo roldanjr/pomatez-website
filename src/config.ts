@@ -17,9 +17,9 @@ type LinkProps = {
 };
 
 export const navLinks: LinkProps[] = [
-	{ label: "Features", link: "app-features", offset: -24 },
-	{ label: "Boosters", link: "app-boosters", offset: -24 },
-	{ label: "Roadmap", link: "road-map", offset: -24 },
+	{ label: "Features", link: "features", offset: -24 },
+	{ label: "Boosters", link: "boosters", offset: -24 },
+	{ label: "Roadmap", link: "roadmap", offset: -24 },
 	{
 		label: "Released notes",
 		link: "https://github.com/roldanjr/pomatez/releases/latest",

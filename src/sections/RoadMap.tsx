@@ -5,7 +5,6 @@ import {
 	StyledRoadMap,
 	StyledRoadMapList,
 	StyledRoadMapItem,
-	StyledShowMore,
 	StyledRoadMapContent,
 } from "../styles";
 import { SVG, Header } from "../components";
@@ -14,7 +13,7 @@ import { MarkDownProps } from "../types";
 const RoadMap: React.FC = () => {
 	const { allMarkdownRemark } = useStaticQuery<MarkDownProps>(graphql`
 		{
-			allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/roadMap/" } }) {
+			allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/roadmap/" } }) {
 				edges {
 					node {
 						frontmatter {
@@ -26,6 +25,7 @@ const RoadMap: React.FC = () => {
 								description
 							}
 						}
+						html
 					}
 				}
 			}
@@ -34,10 +34,13 @@ const RoadMap: React.FC = () => {
 
 	const [limit, setLimit] = useState(5);
 
-	const { frontmatter } = allMarkdownRemark.edges[0].node;
+	const { node } = allMarkdownRemark.edges[0];
 
 	const renderLastItem = () => {
-		if (frontmatter.featureList && frontmatter.featureList.length > limit) {
+		if (
+			node.frontmatter.featureList &&
+			node.frontmatter.featureList.length > limit
+		) {
 			return (
 				<StyledRoadMapItem
 					onClick={() => {
@@ -62,13 +65,13 @@ const RoadMap: React.FC = () => {
 	};
 
 	return (
-		<StyledRoadMap id="road-map">
+		<StyledRoadMap id="roadmap">
 			<LazyLoad once={true} offset={80} height="58.3rem">
 				<StyledRoadMapContent>
-					<Header frontMatter={frontmatter} />
+					<Header node={node} />
 
-					<StyledRoadMapList>
-						{frontmatter.featureList
+					{/* <StyledRoadMapList>
+						{node.frontmatter.featureList
 							?.map((feature, index) => (
 								<StyledRoadMapItem key={index}>
 									<h3>
@@ -80,7 +83,7 @@ const RoadMap: React.FC = () => {
 							))
 							.splice(0, limit)}
 						{renderLastItem()}
-					</StyledRoadMapList>
+					</StyledRoadMapList> */}
 				</StyledRoadMapContent>
 			</LazyLoad>
 		</StyledRoadMap>

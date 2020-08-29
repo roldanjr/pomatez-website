@@ -44,7 +44,9 @@ export const GlobalStyle = createGlobalStyle<GlobalProps>`
     font-size: 1.6rem;
     font-weight: normal;
     color: var(--cl-body-text);
-	  background: var(--bg-primary);
+    background: var(--bg-primary);
+    
+    counter-reset: header;          
   }
 
   a {

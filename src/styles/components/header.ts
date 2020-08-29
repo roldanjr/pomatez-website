@@ -10,6 +10,17 @@ export const StyledHeader = styled.header`
 	row-gap: 2rem;
 	align-content: start;
 
+	position: relative;
+
+	&::before {
+		counter-increment: header;
+		content: "0" counter(header) ".";
+		color: var(--cl-disabled-text);
+		font-size: 3.2rem;
+		font-weight: 700;
+		opacity: 0.08;
+	}
+
 	& > h3 {
 		font-size: 3.2rem;
 		font-weight: 700;
@@ -22,6 +33,7 @@ export const StyledHeader = styled.header`
 			left: 50%;
 			transform: translateX(-50%);
 			z-index: -1;
+			opacity: 0;
 		}
 
 		&::before {

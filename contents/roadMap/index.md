@@ -1,6 +1,6 @@
 ---
-title: Road Map
-subTitle: These are some features that will be developing soon.
+title: Roadmap
+subTitle: Continue to develop features.
 
 featureList:
   - icon: keypad
@@ -19,3 +19,5 @@ featureList:
     heading: Time Extender
     description: Enable user to extend timer if needed.
 ---
+
+Here are some lists of features that might be developing soon.

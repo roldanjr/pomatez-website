@@ -47,7 +47,9 @@ export const SEO: React.FC<Props> = ({
 						googleVerification
 					}
 				}
-				allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/hero/" } }) {
+				allMarkdownRemark(
+					filter: { fileAbsolutePath: { regex: "/landing/" } }
+				) {
 					edges {
 						node {
 							frontmatter {

@@ -14,8 +14,8 @@ import {
 	StyledAppPreviewImage,
 } from "../styles";
 import { FluidImageProps, MarkDownProps } from "../types";
-import { OSTypes, detectOS } from "../utils";
 import { WINDOWS_INSTALLER, MAC_INSTALLER } from "../config";
+import { OSTypes, detectOS } from "../utils";
 import { ThemeContext } from "../contexts";
 import { SVG } from "../components";
 
@@ -52,7 +52,7 @@ const Landing: React.FC = () => {
 	} = useStaticQuery<QueryProps>(graphql`
 		{
 			allMarkdownRemark: allMarkdownRemark(
-				filter: { fileAbsolutePath: { regex: "/hero/" } }
+				filter: { fileAbsolutePath: { regex: "/landing/" } }
 			) {
 				edges {
 					node {

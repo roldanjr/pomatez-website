@@ -1,6 +1,6 @@
 ---
-title: App's Features
-subTitle: List of features that might help you be more productive and effective.
+title: Features
+subTitle: Work in a healthier way.
 
 featureList:
   - icon: copy
@@ -71,3 +71,5 @@ featureList:
     heading: Auto Updates
     description: With the Automatic Updates feature, it keep the app up to date with the latest updates and enhancements. User no longer have to search for critical updates; it delivers them directly to the computer.
 ---
+
+These are the lists of useful features that might absolutely help you with your daily task.

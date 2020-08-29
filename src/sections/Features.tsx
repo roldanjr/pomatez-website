@@ -5,7 +5,6 @@ import {
 	StyledFeatures,
 	StyledFeatureList,
 	StyledFeatureItem,
-	StyledShowMore,
 	StyledFeatureContent,
 } from "../styles";
 import { SVG, Header } from "../components";
@@ -26,6 +25,7 @@ const Features: React.FC = () => {
 								description
 							}
 						}
+						html
 					}
 				}
 			}
@@ -34,10 +34,13 @@ const Features: React.FC = () => {
 
 	const [limit, setLimit] = useState(5);
 
-	const { frontmatter } = allMarkdownRemark.edges[0].node;
+	const { node } = allMarkdownRemark.edges[0];
 
 	const renderLastItem = () => {
-		if (frontmatter.featureList && frontmatter.featureList.length > limit) {
+		if (
+			node.frontmatter.featureList &&
+			node.frontmatter.featureList.length > limit
+		) {
 			return (
 				<StyledFeatureItem
 					onClick={() => {
@@ -62,13 +65,13 @@ const Features: React.FC = () => {
 	};
 
 	return (
-		<StyledFeatures id="app-features">
+		<StyledFeatures id="features">
 			<LazyLoad once={true} offset={80} height="72.7rem">
 				<StyledFeatureContent>
-					<Header frontMatter={frontmatter} />
+					<Header node={node} />
 
-					<StyledFeatureList>
-						{frontmatter.featureList
+					{/* <StyledFeatureList>
+						{node.frontmatter.featureList
 							?.map((feature, index) => (
 								<StyledFeatureItem key={index}>
 									<h3>
@@ -80,7 +83,7 @@ const Features: React.FC = () => {
 							))
 							.slice(0, limit)}
 						{renderLastItem()}
-					</StyledFeatureList>
+					</StyledFeatureList> */}
 				</StyledFeatureContent>
 			</LazyLoad>
 		</StyledFeatures>
