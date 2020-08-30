@@ -6,17 +6,17 @@ featureList:
   - heading: Customizable rules
     description: You can easily modify the default rules of Pomodoro Principle to be fitted on your personal needs and likings.
 
-  - heading: Desktop notification
-    description: If enabled, you will be notified from time to time. Notification property are divided into 3 types; NONE, NORMAL and EXTRA.
+  - heading: Built-in task list
+    description: Allowing you to create task lists that you want to accomplish with drag and drop feature changing your task priorities. It also allow you to mark specific task item as finish or even undo and redu some accident actions.
 
   - heading: Full-screen breaks
     description: If enabled, the app will interrupt and force you to take a break by occupying the whole screen while preventing you from working.
 
+  - heading: Desktop notification
+    description: If enabled, you will be notified from time to time. Notification property are divided into 3 types; NONE, NORMAL and EXTRA.
+
   - heading: Special breaks
     description: You can set specific time wherein you really need to take a break like for example - lunch, snack, or even dinner time depending on you without having to change the rules that you have been set.
-
-  - heading: Built-in task list
-    description: Allowing you to create task lists that you want to accomplish with drag and drop feature changing your task priorities. It also allow you to mark specific task item as finish or even undo and redu some accident actions.
 
   - heading: Keyboard shortcuts
     description: Provide some useful keyboard shortcuts allowing you to use the app conveniently.
