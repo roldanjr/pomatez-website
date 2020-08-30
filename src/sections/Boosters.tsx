@@ -1,6 +1,14 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { StyledBoosters, StyledFeatureContent } from "../styles";
+import Image from "gatsby-image";
+import {
+	StyledBoosters,
+	StyledFeatureContent,
+	StyledBoosterList,
+	StyledBoosterItem,
+	StyledBoosterImage,
+	StyledBoosterDescription,
+} from "../styles";
 import { MarkDownProps } from "../types";
 import { Header } from "../components";
 
@@ -15,9 +23,17 @@ const Boosters: React.FC<Props> = () => {
 						frontmatter {
 							title
 							subTitle
-							featureList {
+							boosters {
 								heading
 								description
+								link
+								image {
+									childImageSharp {
+										fixed(width: 280, height: 280) {
+											...GatsbyImageSharpFixed_withWebp
+										}
+									}
+								}
 							}
 						}
 						html
@@ -33,6 +49,30 @@ const Boosters: React.FC<Props> = () => {
 		<StyledBoosters id="boosters">
 			<StyledFeatureContent>
 				<Header node={node} />
+
+				<StyledBoosterList>
+					{node.frontmatter.boosters?.map((booster, index) => (
+						<StyledBoosterItem key={index}>
+							<StyledBoosterImage>
+								<Image
+									fixed={booster.image.childImageSharp.fixed}
+									alt={booster.heading}
+								/>
+							</StyledBoosterImage>
+							<StyledBoosterDescription>
+								<h5>{booster.heading}</h5>
+								<p>{booster.description}</p>
+								<a
+									href={booster.link}
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+									See Details
+								</a>
+							</StyledBoosterDescription>
+						</StyledBoosterItem>
+					))}
+				</StyledBoosterList>
 			</StyledFeatureContent>
 		</StyledBoosters>
 	);

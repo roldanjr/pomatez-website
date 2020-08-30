@@ -18,7 +18,7 @@ const RoadMap: React.FC = () => {
 						frontmatter {
 							title
 							subTitle
-							featureList {
+							features {
 								heading
 								description
 							}
@@ -35,10 +35,7 @@ const RoadMap: React.FC = () => {
 	const { node } = allMarkdownRemark.edges[0];
 
 	const renderLastItem = () => {
-		if (
-			node.frontmatter.featureList &&
-			node.frontmatter.featureList.length > limit
-		) {
+		if (node.frontmatter.features && node.frontmatter.features.length > limit) {
 			return (
 				<StyledRoadMapItem
 					onClick={() => {
@@ -57,7 +54,7 @@ const RoadMap: React.FC = () => {
 				<Header node={node} />
 
 				<StyledRoadMapList>
-					{node.frontmatter.featureList
+					{node.frontmatter.features
 						?.map((feature, index) => (
 							<StyledRoadMapItem key={index}>
 								<h5>{feature.heading}</h5>

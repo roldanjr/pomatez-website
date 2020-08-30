@@ -38,7 +38,7 @@ const Features: React.FC = () => {
 						frontmatter {
 							title
 							subTitle
-							featureList {
+							features {
 								heading
 								description
 							}
@@ -89,10 +89,7 @@ const Features: React.FC = () => {
 	const { node } = allMarkdownRemark.edges[0];
 
 	const renderLastItem = () => {
-		if (
-			node.frontmatter.featureList &&
-			node.frontmatter.featureList.length > limit
-		) {
+		if (node.frontmatter.features && node.frontmatter.features.length > limit) {
 			return (
 				<StyledFeatureItem
 					onClick={() => {
@@ -140,7 +137,7 @@ const Features: React.FC = () => {
 					</StyledFeaturedImageWrapper>
 
 					<StyledFeatureList>
-						{node.frontmatter.featureList
+						{node.frontmatter.features
 							?.map((feature, index) => (
 								<StyledFeatureItem key={index}>
 									<h5>{feature.heading}</h5>

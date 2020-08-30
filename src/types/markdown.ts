@@ -1,6 +1,15 @@
+import { FixedImageProps } from "./image";
+
 type FeatureList = {
 	heading: string;
 	description: string;
+};
+
+type BoosterList = {
+	heading: string;
+	description: string;
+	link: string;
+	image: FixedImageProps;
 };
 
 type StepList = {
@@ -21,7 +30,8 @@ type Image = {
 export type Frontmatter = {
 	title: string;
 	subTitle?: string;
-	featureList?: FeatureList[];
+	features?: FeatureList[];
+	boosters?: BoosterList[];
 	stepList?: StepList[];
 	screenShot: Image;
 };

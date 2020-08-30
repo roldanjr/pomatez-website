@@ -2,7 +2,7 @@
 title: Roadmap
 subTitle: Continue to develop features.
 
-featureList:
+features:
   - heading: Customizable shortcuts
     description: Provide a way to make the default keyboard shortcuts customizable by the user.
 

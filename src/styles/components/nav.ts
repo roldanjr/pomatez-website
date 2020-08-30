@@ -61,7 +61,7 @@ export const StyledNavLogo = styled(Link)`
 		height: 1.5em;
 		margin-right: 1rem;
 		color: var(--cl-primary);
-		background-color: var(--bg-primary);
+		background-color: transparent;
 	}
 `;
 

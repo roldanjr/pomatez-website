@@ -2,7 +2,7 @@
 title: Features
 subTitle: Work in a healthier way.
 
-featureList:
+features:
   - heading: Customizable rules
     description: You can easily modify the default rules of Pomodoro Principle to be fitted on your personal needs and likings.
 
