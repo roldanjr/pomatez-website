@@ -8,6 +8,7 @@ import {
 	StyledBoosterItem,
 	StyledBoosterImage,
 	StyledBoosterDescription,
+	StyledCompanyWrapper,
 } from "../styles";
 import { MarkDownProps } from "../types";
 import { Header } from "../components";
@@ -31,6 +32,17 @@ const Boosters: React.FC<Props> = () => {
 									childImageSharp {
 										fixed(width: 280, height: 280) {
 											...GatsbyImageSharpFixed_withWebp
+										}
+									}
+								}
+							}
+							headline
+							companies {
+								name
+								logo {
+									childImageSharp {
+										original {
+											src
 										}
 									}
 								}
@@ -73,6 +85,20 @@ const Boosters: React.FC<Props> = () => {
 						</StyledBoosterItem>
 					))}
 				</StyledBoosterList>
+
+				<StyledCompanyWrapper>
+					<h6>{node.frontmatter.headline}</h6>
+
+					<div>
+						{node.frontmatter.companies?.map((company, index) => (
+							<img
+								key={index}
+								src={company.logo.childImageSharp.original.src}
+								alt={company.name}
+							/>
+						))}
+					</div>
+				</StyledCompanyWrapper>
 			</StyledFeatureContent>
 		</StyledBoosters>
 	);

@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { SectionStyle, SectionContentStyle } from "../mixins";
 import media from "../media";
 
@@ -105,5 +105,36 @@ export const StyledBoosterItem = styled.li`
 		row-gap: 0.8rem;
 		padding: 2.4rem;
 		padding-bottom: 3.2rem;
+	}
+`;
+
+export const StyledCompanyWrapper = styled.div`
+	display: grid;
+	justify-items: center;
+	row-gap: 2rem;
+	text-align: center;
+
+	margin-top: 8rem;
+
+	& > h6 {
+		font-size: 2.4rem;
+		font-weight: 400;
+
+		max-width: 70rem;
+	}
+
+	& > div {
+		max-width: 120rem;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		& > img {
+			margin-top: 2rem;
+		}
+
+		& > img:not(:last-of-type) {
+			margin-right: 4rem;
+		}
 	}
 `;

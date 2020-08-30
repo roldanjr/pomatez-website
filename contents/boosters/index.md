@@ -42,6 +42,31 @@ boosters:
     description: A 365-day calendar that keeps you motivated and focused on self-improvement.
     image: ../../src/assets/images/boosters/don't-break-the-chain.jpg
     link: https://luxafor.com/dont-break-the-chain-calendar-for-productivity-improvement-development/?hello=25
+
+headline: Luxafor products already used by 73,859 office workers in productive companies worldwide, such as;
+companies:
+  - name: Google
+    logo: ../../src/assets/images/companies/google.jpg
+  - name: YouTube
+    logo: ../../src/assets/images/companies/youtube.jpg
+  - name: Logitech
+    logo: ../../src/assets/images/companies/logitech.jpg
+  - name: Facebook
+    logo: ../../src/assets/images/companies/facebook.jpg
+  - name: Microsoft
+    logo: ../../src/assets/images/companies/microsoft.png
+  - name: Bank of America
+    logo: ../../src/assets/images/companies/bank-of-america.jpg
+  - name: Thales
+    logo: ../../src/assets/images/companies/thales.jpg
+  - name: Ingram
+    logo: ../../src/assets/images/companies/ingram.jpg
+  - name: Hulu
+    logo: ../../src/assets/images/companies/hulu.jpg
+  - name: Etsy
+    logo: ../../src/assets/images/companies/etsy.jpg
+  - name: Butterball
+    logo: ../../src/assets/images/companies/butterball.png
 ---
 
 Find exactly what you need to be more proficient on your workplace.

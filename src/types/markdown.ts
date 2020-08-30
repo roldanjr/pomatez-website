@@ -27,12 +27,25 @@ type Image = {
 	};
 };
 
+type CompanyList = {
+	name: string;
+	logo: {
+		childImageSharp: {
+			original: {
+				src: string;
+			};
+		};
+	};
+};
+
 export type Frontmatter = {
 	title: string;
 	subTitle?: string;
 	features?: FeatureList[];
 	boosters?: BoosterList[];
 	stepList?: StepList[];
+	headline?: string;
+	companies?: CompanyList[];
 	screenShot: Image;
 };
 
