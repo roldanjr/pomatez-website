@@ -1,4 +1,4 @@
-import { FixedImageProps } from "./image";
+import { FixedImageProps, FluidImageProps } from "./image";
 
 type FeatureList = {
 	heading: string;
@@ -29,13 +29,7 @@ type Image = {
 
 type CompanyList = {
 	name: string;
-	logo: {
-		childImageSharp: {
-			original: {
-				src: string;
-			};
-		};
-	};
+	logo: FluidImageProps;
 };
 
 export type Frontmatter = {

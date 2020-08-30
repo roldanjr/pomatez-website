@@ -108,6 +108,15 @@ export const StyledBoosterItem = styled.li`
 	}
 `;
 
+export const StyledCompanyImage = styled.div`
+	width: 22.5rem;
+	min-height: 7.1rem;
+	margin-top: 2rem;
+	overflow: hidden;
+	background-color: white;
+	opacity: var(--logo-opacity);
+`;
+
 export const StyledCompanyWrapper = styled.div`
 	display: grid;
 	justify-items: center;
@@ -120,7 +129,7 @@ export const StyledCompanyWrapper = styled.div`
 		font-size: 2.4rem;
 		font-weight: 400;
 
-		max-width: 70rem;
+		max-width: 72rem;
 	}
 
 	& > div {
@@ -128,13 +137,5 @@ export const StyledCompanyWrapper = styled.div`
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
-
-		& > img {
-			margin-top: 2rem;
-		}
-
-		& > img:not(:last-of-type) {
-			margin-right: 4rem;
-		}
 	}
 `;

@@ -65,8 +65,6 @@ companies:
     logo: ../../src/assets/images/companies/hulu.jpg
   - name: Etsy
     logo: ../../src/assets/images/companies/etsy.jpg
-  - name: Butterball
-    logo: ../../src/assets/images/companies/butterball.png
 ---
 
 Find exactly what you need to be more proficient on your workplace.

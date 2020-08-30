@@ -9,6 +9,7 @@ import {
 	StyledBoosterImage,
 	StyledBoosterDescription,
 	StyledCompanyWrapper,
+	StyledCompanyImage,
 } from "../styles";
 import { MarkDownProps } from "../types";
 import { Header } from "../components";
@@ -41,8 +42,9 @@ const Boosters: React.FC<Props> = () => {
 								name
 								logo {
 									childImageSharp {
-										original {
-											src
+										fluid(maxWidth: 225, quality: 100) {
+											...GatsbyImageSharpFluid_withWebp_tracedSVG
+											...GatsbyImageSharpFluidLimitPresentationSize
 										}
 									}
 								}
@@ -91,11 +93,12 @@ const Boosters: React.FC<Props> = () => {
 
 					<div>
 						{node.frontmatter.companies?.map((company, index) => (
-							<img
-								key={index}
-								src={company.logo.childImageSharp.original.src}
-								alt={company.name}
-							/>
+							<StyledCompanyImage key={index}>
+								<Image
+									fluid={company.logo.childImageSharp.fluid}
+									alt={company.name}
+								/>
+							</StyledCompanyImage>
 						))}
 					</div>
 				</StyledCompanyWrapper>

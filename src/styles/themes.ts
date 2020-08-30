@@ -48,6 +48,8 @@ export const lightTheme = css`
 	--cl-shadow-primary: rgba(0, 0, 0, 0.12);
 	--cl-shadow-secondary: rgba(0, 0, 0, 0.16);
 	--cl-shadow-tertiary: rgba(0, 0, 0, 0.24);
+
+	--logo-opacity: 1;
 `;
 
 export const darkTheme = css`
@@ -98,4 +100,6 @@ export const darkTheme = css`
 	--cl-shadow-primary: rgba(0, 0, 0, 0.24);
 	--cl-shadow-secondary: rgba(0, 0, 0, 0.32);
 	--cl-shadow-tertiary: rgba(0, 0, 0, 0.4);
+
+	--logo-opacity: 0.64;
 `;
