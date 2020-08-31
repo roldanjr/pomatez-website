@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext, useLayoutEffect } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Image from "gatsby-image";
 import {
@@ -175,12 +175,8 @@ const Landing: React.FC = () => {
 
 	const { isDarkMode } = useContext(ThemeContext);
 
-	useEffect(() => {
-		const timeout = setTimeout(() => {
-			setOperatingSystem(detectOS());
-		}, 1000);
-
-		return () => clearTimeout(timeout);
+	useLayoutEffect(() => {
+		setOperatingSystem(detectOS());
 	}, []);
 
 	const renderDownloadButton = () => {

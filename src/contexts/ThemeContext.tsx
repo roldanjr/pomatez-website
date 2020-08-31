@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import {
 	isPreferredDark,
 	getFromStorage,
@@ -17,9 +17,9 @@ const ThemeContext = React.createContext<ThemeProps>({});
 const ThemeProvider: React.FC = ({ children }) => {
 	const useDarkMode =
 		(!isSSR && getFromStorage("isDarkmode")) || (!isSSR && isPreferredDark());
-	const [isDarkMode, setDarkMode] = useState(useDarkMode || null);
+	const [isDarkMode, setDarkMode] = useState(useDarkMode);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (isDarkMode === null) {
 			setDarkMode(isPreferredDark());
 		}
