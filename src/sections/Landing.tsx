@@ -20,7 +20,7 @@ import { OSTypes, detectOS } from "../utils";
 import { ThemeContext } from "../contexts";
 import { SVG } from "../components";
 
-type QueryProps = {
+export type LandingQueryProps = {
 	workTimePreviewLight: FluidImageProps;
 	workTimePreviewDark: FluidImageProps;
 	shortBreakPreviewLight: FluidImageProps;
@@ -50,7 +50,7 @@ const Landing: React.FC = () => {
 		settingsPreviewDark,
 		tasksPreviewLight,
 		tasksPreviewDark,
-	} = useStaticQuery<QueryProps>(graphql`
+	} = useStaticQuery<LandingQueryProps>(graphql`
 		{
 			allMarkdownRemark: allMarkdownRemark(
 				filter: { fileAbsolutePath: { regex: "/landing/" } }

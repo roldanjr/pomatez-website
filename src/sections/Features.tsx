@@ -11,15 +11,8 @@ import {
 	StyledFeaturedImage,
 } from "../styles";
 import { Header } from "../components";
-import { MarkDownProps, FluidImageProps } from "../types";
 import { ThemeContext } from "../contexts";
-
-type QueryProps = {
-	configPreviewLight: FluidImageProps;
-	configPreviewDark: FluidImageProps;
-	tasksPreviewLight: FluidImageProps;
-	tasksPreviewDark: FluidImageProps;
-} & MarkDownProps;
+import { LandingQueryProps } from "./Landing";
 
 const Features: React.FC = () => {
 	const {
@@ -28,7 +21,7 @@ const Features: React.FC = () => {
 		tasksPreviewDark,
 		configPreviewLight,
 		configPreviewDark,
-	} = useStaticQuery<QueryProps>(graphql`
+	} = useStaticQuery<LandingQueryProps>(graphql`
 		{
 			allMarkdownRemark: allMarkdownRemark(
 				filter: { fileAbsolutePath: { regex: "/features/" } }

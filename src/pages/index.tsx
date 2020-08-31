@@ -1,6 +1,6 @@
 import React from "react";
 import { SEO, Layout } from "../components";
-import { Landing, Features, Boosters, RoadMap, Download } from "../sections";
+import { Landing, Features, Boosters, Roadmap, Download } from "../sections";
 
 export default () => {
 	return (
@@ -9,7 +9,7 @@ export default () => {
 			<Landing />
 			<Features />
 			<Boosters />
-			<RoadMap />
+			<Roadmap />
 			<Download />
 		</Layout>
 	);

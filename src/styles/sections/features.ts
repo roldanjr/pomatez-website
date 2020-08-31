@@ -26,19 +26,17 @@ export const StyledFeaturedImageWrapper = styled.div`
 `;
 
 export const StyledFeaturedImage = styled.div`
+	width: 34rem;
+	height: 48rem;
 	background-color: var(--bg-primary);
 	box-shadow: 0 20px 40px var(--cl-shadow-primary);
 
 	&:nth-child(1) {
-		width: 34rem;
-		height: 48rem;
 		margin-right: -16rem;
 		z-index: 10;
 	}
 
 	&:nth-child(2) {
-		width: 34rem;
-		height: 48rem;
 		margin-top: 16rem;
 		z-index: 20;
 	}
