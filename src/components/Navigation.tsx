@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useState, useLayoutEffect } from "react";
 import {
 	StyledNav,
 	StyledNavLinks,
@@ -10,6 +10,7 @@ import {
 	StyledNavAsideWrapper,
 	StyledNavMenu,
 	StyledSideNavDimmer,
+	StyledBackButton,
 } from "../styles";
 import { ThemeContext } from "../contexts";
 import { navLinks, APP_NAME } from "../config";
@@ -23,7 +24,15 @@ export const Navigation: React.FC = () => {
 
 	const asideRef = useRef<HTMLDivElement>(null);
 
-	const [showSidebar, setShowSidebar] = useTargetOutside({ ref: asideRef });
+	const [showSidebar, setShowSidebar] = useTargetOutside({
+		ref: asideRef,
+	});
+
+	const [isHome, setHome] = useState(false);
+
+	useLayoutEffect(() => {
+		setHome(window.location.pathname === "/");
+	}, []);
 
 	const hideSidebarAction = () => {
 		setShowSidebar(false);
@@ -60,12 +69,12 @@ export const Navigation: React.FC = () => {
 	return (
 		<StyledNav>
 			<StyledNavContent>
-				<Logo name={APP_NAME} />
+				<Logo name={APP_NAME} isHome={isHome} />
 
 				<StyledSideNavDimmer showSidebar={showSidebar} />
 
 				<StyledNavAsideWrapper showSidebar={showSidebar} ref={asideRef}>
-					<StyledNavLinks>{renderNavLinks()}</StyledNavLinks>
+					{isHome && <StyledNavLinks>{renderNavLinks()}</StyledNavLinks>}
 
 					<StyledNavButtonWrapper>
 						<StyledNavThemeToggler onClick={themeToggler}>
@@ -73,17 +82,28 @@ export const Navigation: React.FC = () => {
 							<SVG name={isDarkMode ? "moon" : "sunny"} />
 						</StyledNavThemeToggler>
 
-						<StyledNavDownloadButton
-							href="/"
-							to="installers"
-							offset={-24}
-							duration={420}
-							smooth
-							onClick={hideSidebarAction}
-						>
-							<SVG name="download" />
-							See Installers
-						</StyledNavDownloadButton>
+						{isHome ? (
+							<StyledNavDownloadButton
+								href="/"
+								to="installers"
+								offset={-24}
+								duration={420}
+								smooth
+								onClick={hideSidebarAction}
+							>
+								<SVG name="download" />
+								See Installers
+							</StyledNavDownloadButton>
+						) : (
+							<StyledBackButton
+								onClick={() => {
+									window.history.back();
+								}}
+							>
+								<SVG name="arrow-back" />
+								Back
+							</StyledBackButton>
+						)}
 					</StyledNavButtonWrapper>
 				</StyledNavAsideWrapper>
 

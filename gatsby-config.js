@@ -9,7 +9,7 @@ module.exports = {
 	pathPrefix: "/pomatez",
 	siteMetadata: {
 		title: `Pomatez | Stay Focused. Take a Break.`,
-		description: `Wonderful and helpful app to be more productive while staying healthy.`,
+		description: `Attractive and helpful app to be more productive while staying healthy.`,
 		keywords: [
 			"pomatez",
 			"tomato app",

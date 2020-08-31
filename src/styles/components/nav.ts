@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+
 import { ButtonStyles } from "./button";
 import { SectionContentStyle } from "../mixins";
 import media from "../media";
@@ -45,23 +46,28 @@ export const StyledNavContent = styled.div`
 	}
 `;
 
-export const StyledNavLogo = styled(Link)`
-	display: grid;
+export const StyledNavLogo = styled.div`
+	display: flex;
 	align-items: center;
-	grid-auto-flow: column;
 
-	font-size: 2rem;
-	font-weight: 700;
+	& > a {
+		display: grid;
+		align-items: center;
+		grid-auto-flow: column;
 
-	text-transform: capitalize;
-	color: var(--cl-display-text);
+		font-size: 2rem;
+		font-weight: 700;
 
-	& > svg {
-		width: 1.5em;
-		height: 1.5em;
-		margin-right: 1rem;
-		color: var(--cl-primary);
-		background-color: transparent;
+		text-transform: capitalize;
+		color: var(--cl-display-text);
+
+		& > svg {
+			width: 1.5em;
+			height: 1.5em;
+			margin-right: 1rem;
+			color: var(--cl-primary);
+			background-color: transparent;
+		}
 	}
 `;
 
@@ -72,7 +78,8 @@ type MenuProps = {
 export const StyledNavAsideWrapper = styled.div<MenuProps>`
 	display: grid;
 	align-content: center;
-	grid-template-columns: 1fr max-content;
+	justify-items: end;
+	grid-auto-flow: column;
 	column-gap: 4rem;
 
 	margin-bottom: -4px;
@@ -137,6 +144,7 @@ export const StyledSideNavDimmer = styled.div<MenuProps>`
 
 export const StyledNavLinks = styled.ul`
 	width: max-content;
+	justify-self: start;
 
 	list-style: none;
 	display: flex;
@@ -175,9 +183,23 @@ export const StyledNavLinks = styled.ul`
 	}
 `;
 
-export const StyledNavLinkAnchor = styled(Link)``;
+export const StyledNavLinkAnchor = styled(ScrollLink)``;
 
-export const StyledNavDownloadButton = styled(Link)`
+export const StyledNavDownloadButton = styled(ScrollLink)`
+	${ButtonStyles};
+	font-size: 1.4rem;
+	border-radius: 10rem;
+	color: #fff;
+	background: var(--bg-btn-primary);
+	box-shadow: 0 0 0 0 var(--cl-shadow-secondary);
+
+	&:hover {
+		background: var(--bg-btn-primary-hover);
+		box-shadow: 0 4px 16px 0 var(--cl-shadow-secondary);
+	}
+`;
+
+export const StyledBackButton = styled.button`
 	${ButtonStyles};
 	font-size: 1.4rem;
 	border-radius: 10rem;
