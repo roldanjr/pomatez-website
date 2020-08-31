@@ -13,7 +13,7 @@ export const Logo: React.FC<Props> = ({ name, isHome }) => {
 	return (
 		<StyledNavLogo>
 			{isHome ? (
-				<ScrollLink href="/" to="landing" offset={-56} duration={420} smooth>
+				<ScrollLink href="/" to="landing" offset={-64} duration={420} smooth>
 					<SVG name="pomatez" />
 					<label>{name}</label>
 				</ScrollLink>
