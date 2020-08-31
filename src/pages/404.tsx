@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, SEO, SVG } from "../components";
+import { Layout, PageHead, SVG } from "../components";
 import {
 	StyledPageNotFound,
 	Styled404Header,
@@ -12,7 +12,7 @@ import {
 
 const NotFoundPage = () => (
 	<Layout>
-		<SEO title="404: Page Not found" includeSchema={false} />
+		<PageHead title="404: Page Not found" />
 		<StyledPageNotFound>
 			<Styled404Content>
 				<StyledWaterMarkLeft />

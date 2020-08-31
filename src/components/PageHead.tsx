@@ -23,15 +23,15 @@ type Props = {
 		width: number;
 		height: number;
 	};
-	includeSchema?: boolean;
+	excludeSchema?: boolean;
 };
 
-export const SEO: React.FC<Props> = ({
+export const PageHead: React.FC<Props> = ({
 	title,
 	description,
 	lang,
 	meta,
-	includeSchema,
+	excludeSchema,
 }) => {
 	const { site, allMarkdownRemark } = useStaticQuery<QueryProps>(
 		graphql`
@@ -200,7 +200,7 @@ export const SEO: React.FC<Props> = ({
 			]}
 			defer={false}
 		>
-			{includeSchema && (
+			{!excludeSchema && (
 				<script type="application/ld+json">
 					{JSON.stringify(schemaMarkup)}
 				</script>
@@ -209,11 +209,11 @@ export const SEO: React.FC<Props> = ({
 	);
 };
 
-SEO.defaultProps = {
+PageHead.defaultProps = {
 	lang: `en`,
 	meta: [],
 	description: ``,
-	includeSchema: true,
+	excludeSchema: false,
 };
 
-export default SEO;
+export default PageHead;

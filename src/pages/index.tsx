@@ -1,11 +1,11 @@
 import React from "react";
-import { SEO, Layout } from "../components";
+import { PageHead, Layout } from "../components";
 import { Landing, Features, Boosters, Roadmap, Download } from "../sections";
 
 export default () => {
 	return (
 		<Layout>
-			<SEO includeSchema />
+			<PageHead />
 			<Landing />
 			<Features />
 			<Boosters />
