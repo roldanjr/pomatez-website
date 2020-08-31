@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const StyledHeader = styled.header`
 	text-align: center;
@@ -12,18 +12,14 @@ export const StyledHeader = styled.header`
 
 	position: relative;
 
-	${(p) =>
-		!p.isMain &&
-		css`
-			&::before {
-				counter-increment: header;
-				content: "0" counter(header) ".";
-				color: var(--cl-disabled-text);
-				font-size: 3.2rem;
-				font-weight: 700;
-				opacity: 0.1;
-			}
-		`}
+	&::before {
+		counter-increment: header;
+		content: "0" counter(header) ".";
+		color: var(--cl-disabled-text);
+		font-size: 3.2rem;
+		font-weight: 700;
+		opacity: 0.1;
+	}
 
 	& > h3,
 	& > h1 {

@@ -4,13 +4,6 @@ import media from "../media";
 
 export const StyledFeatures = styled.section`
 	${SectionStyle};
-
-	${(p) =>
-		p.isMain &&
-		css`
-			padding-top: 8rem;
-			padding-bottom: 12rem;
-		`}
 `;
 
 export const StyledFeatureContent = styled.div`

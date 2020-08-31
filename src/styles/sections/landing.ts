@@ -62,7 +62,6 @@ export const StyledWaterMarkLeft = styled(WaterMarkLeft)`
 	${WaterMarkStyle};
 	left: 0;
 	margin-left: -2.4rem;
-	/* margin-top: -2rem; */
 `;
 
 export const StyledWaterMarkRight = styled(WaterMarkRight)`
@@ -101,10 +100,6 @@ export const StyledLandingHeader = styled.header`
 		font-size: 2.2rem;
 		font-weight: 400;
 		line-height: 1.7;
-
-		${media.laptopSm} {
-			/* line-height: 1.4; */
-		}
 	}
 `;
 
