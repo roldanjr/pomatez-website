@@ -7,9 +7,9 @@ import {
 	StyledFeatureItem,
 	StyledFeatureContent,
 	StyledFeatureContainer,
+	StyledStickyContainer,
 	StyledFeaturedImageWrapper,
 	StyledFeaturedImage,
-	StyledSeeAll,
 } from "../styles";
 import { Header } from "../components";
 import { ThemeContext } from "../contexts";
@@ -86,43 +86,38 @@ const Features: React.FC = () => {
 				<Header node={node} />
 
 				<StyledFeatureContainer>
-					<StyledFeaturedImageWrapper>
-						<StyledFeaturedImage>
-							<Image
-								fluid={
-									isDarkMode
-										? tasksPreviewDark.childImageSharp.fluid
-										: tasksPreviewLight.childImageSharp.fluid
-								}
-								alt="tasks preview"
-							/>
-						</StyledFeaturedImage>
-						<StyledFeaturedImage>
-							<Image
-								fluid={
-									isDarkMode
-										? configPreviewDark.childImageSharp.fluid
-										: configPreviewLight.childImageSharp.fluid
-								}
-								alt="config preview"
-							/>
-						</StyledFeaturedImage>
-					</StyledFeaturedImageWrapper>
+					<StyledStickyContainer>
+						<StyledFeaturedImageWrapper>
+							<StyledFeaturedImage>
+								<Image
+									fluid={
+										isDarkMode
+											? tasksPreviewDark.childImageSharp.fluid
+											: tasksPreviewLight.childImageSharp.fluid
+									}
+									alt="tasks preview"
+								/>
+							</StyledFeaturedImage>
+							<StyledFeaturedImage>
+								<Image
+									fluid={
+										isDarkMode
+											? configPreviewDark.childImageSharp.fluid
+											: configPreviewLight.childImageSharp.fluid
+									}
+									alt="config preview"
+								/>
+							</StyledFeaturedImage>
+						</StyledFeaturedImageWrapper>
+					</StyledStickyContainer>
 
 					<StyledFeatureList>
-						{node.frontmatter.features
-							?.map((feature, index) => (
-								<StyledFeatureItem key={index}>
-									<h5>{feature.heading}</h5>
-									<p>{feature.description}</p>
-								</StyledFeatureItem>
-							))
-							.slice(0, 3)}
-						{node.frontmatter.features && node.frontmatter.features.length > 3 && (
-							<StyledFeatureItem>
-								<StyledSeeAll to="/features">See all</StyledSeeAll>
+						{node.frontmatter.features?.map((feature, index) => (
+							<StyledFeatureItem key={index}>
+								<h5>{feature.heading}</h5>
+								<p>{feature.description}</p>
 							</StyledFeatureItem>
-						)}
+						))}
 					</StyledFeatureList>
 				</StyledFeatureContainer>
 			</StyledFeatureContent>

@@ -1,11 +1,16 @@
 import styled, { css } from "styled-components";
-import { Link } from "gatsby";
-
 import { SectionStyle, SectionContentStyle } from "../mixins";
 import media from "../media";
 
 export const StyledFeatures = styled.section`
 	${SectionStyle};
+
+	${(p) =>
+		p.isMain &&
+		css`
+			padding-top: 8rem;
+			padding-bottom: 12rem;
+		`}
 `;
 
 export const StyledFeatureContent = styled.div`
@@ -18,12 +23,17 @@ export const StyledFeatureContainer = styled.div`
 	column-gap: 2rem;
 `;
 
+export const StyledStickyContainer = styled.div``;
+
 export const StyledFeaturedImageWrapper = styled.div`
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	justify-items: end;
 
 	margin-right: 4rem;
+
+	position: sticky;
+	top: 8.8rem;
 `;
 
 export const StyledFeaturedImage = styled.div`
@@ -52,6 +62,8 @@ export const StyledFeatureList = styled.ul`
 	align-content: start;
 	justify-content: center;
 	gap: 4rem;
+
+	margin-bottom: 8rem;
 
 	${media.laptopMd} {
 		gap: 4rem;
@@ -118,15 +130,15 @@ const FeatureItemStyle = css`
 
 export const StyledFeatureItem = styled.li`
 	${FeatureItemStyle};
-`;
 
-export const StyledSeeAll = styled(Link)`
-	font-size: 2rem;
-	font-weight: 700;
-	color: var(--cl-body-text);
+	& > a {
+		font-size: 2rem;
+		font-weight: 700;
+		color: var(--cl-body-text);
 
-	&:hover {
-		color: var(--cl-primary-variant);
-		text-decoration: underline;
+		&:hover {
+			color: var(--cl-primary-variant);
+			text-decoration: underline;
+		}
 	}
 `;

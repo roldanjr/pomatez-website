@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 import Image from "gatsby-image";
 import {
 	StyledRoadmap,
@@ -8,8 +8,8 @@ import {
 	StyledRoadmapContent,
 	StyledRoadmapContainer,
 	StyledRoadmapImageWrapper,
+	StyledStickyContainer,
 	StyledRoadmapImage,
-	StyledSeeAll,
 } from "../styles";
 import { Header } from "../components";
 import { LandingQueryProps } from "./Landing";
@@ -92,42 +92,38 @@ const Roadmap: React.FC = () => {
 				<Header node={node} />
 
 				<StyledRoadmapContainer>
-					<StyledRoadmapImageWrapper>
-						<StyledRoadmapImage>
-							<Image
-								fluid={
-									isDarkMode
-										? shortBreakPreviewDark.childImageSharp.fluid
-										: shortBreakPreviewLight.childImageSharp.fluid
-								}
-								alt="short break preview"
-							/>
-						</StyledRoadmapImage>
-						<StyledRoadmapImage>
-							<Image
-								fluid={
-									isDarkMode
-										? longBreakPreviewDark.childImageSharp.fluid
-										: longBreakPreviewLight.childImageSharp.fluid
-								}
-								alt="long break preview"
-							/>
-						</StyledRoadmapImage>
-					</StyledRoadmapImageWrapper>
+					<StyledStickyContainer>
+						<StyledRoadmapImageWrapper>
+							<StyledRoadmapImage>
+								<Image
+									fluid={
+										isDarkMode
+											? shortBreakPreviewDark.childImageSharp.fluid
+											: shortBreakPreviewLight.childImageSharp.fluid
+									}
+									alt="short break preview"
+								/>
+							</StyledRoadmapImage>
+							<StyledRoadmapImage>
+								<Image
+									fluid={
+										isDarkMode
+											? longBreakPreviewDark.childImageSharp.fluid
+											: longBreakPreviewLight.childImageSharp.fluid
+									}
+									alt="long break preview"
+								/>
+							</StyledRoadmapImage>
+						</StyledRoadmapImageWrapper>
+					</StyledStickyContainer>
+
 					<StyledRoadmapList>
-						{node.frontmatter.features
-							?.map((feature, index) => (
-								<StyledRoadmapItem key={index}>
-									<h5>{feature.heading}</h5>
-									<p>{feature.description}</p>
-								</StyledRoadmapItem>
-							))
-							.splice(0, 4)}
-						{node.frontmatter.features && node.frontmatter.features.length > 4 && (
-							<StyledRoadmapItem>
-								<StyledSeeAll to="/roadmap">See all</StyledSeeAll>
+						{node.frontmatter.features?.map((feature, index) => (
+							<StyledRoadmapItem key={index}>
+								<h5>{feature.heading}</h5>
+								<p>{feature.description}</p>
 							</StyledRoadmapItem>
-						)}
+						))}
 					</StyledRoadmapList>
 				</StyledRoadmapContainer>
 			</StyledRoadmapContent>

@@ -28,7 +28,7 @@ export const Navigation: React.FC = () => {
 		ref: asideRef,
 	});
 
-	const [isHome, setHome] = useState(false);
+	const [isHome, setHome] = useState(true);
 
 	useLayoutEffect(() => {
 		setHome(window.location.pathname === "/");
