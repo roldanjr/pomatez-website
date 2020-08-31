@@ -7,10 +7,10 @@ export default () => {
 		<Layout>
 			<PageHead />
 			<Landing />
-			<Features />
+			{/* <Features />
 			<Boosters />
 			<Roadmap />
-			<Download />
+			<Download /> */}
 		</Layout>
 	);
 };

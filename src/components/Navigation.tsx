@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState, useLayoutEffect } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import {
 	StyledNav,
 	StyledNavLinks,
@@ -6,46 +6,28 @@ import {
 	StyledNavButtonWrapper,
 	StyledNavLinkAnchor,
 	StyledNavDownloadButton,
+	StyledNavHeader,
 	StyledNavContent,
-	StyledNavAsideWrapper,
 	StyledNavMenu,
-	StyledSideNavDimmer,
 	StyledBackButton,
 } from "../styles";
-import { ThemeContext } from "../contexts";
 import { navLinks, APP_NAME } from "../config";
-import { useTargetOutside } from "../hooks";
+import { useContextProvider } from "../hooks";
 
 import Logo from "./Logo";
 import SVG from "./SVG";
 
-export const Navigation: React.FC = () => {
-	const { isDarkMode, themeToggler } = useContext(ThemeContext);
+export const NavLinks: React.FC = () => {
+	const { toggleMenu } = useContextProvider();
 
-	const asideRef = useRef<HTMLDivElement>(null);
-
-	const [showSidebar, setShowSidebar] = useTargetOutside({
-		ref: asideRef,
-	});
-
-	const [isHome, setHome] = useState(true);
-
-	useLayoutEffect(() => {
-		setHome(window.location.pathname === "/");
-	}, []);
-
-	const hideSidebarAction = () => {
-		setShowSidebar(false);
-	};
-
-	const renderNavLinks = () => {
-		return navLinks.map((nav, index) => {
-			if (nav.offset) {
-				return (
+	return (
+		<>
+			{navLinks.map((nav, index) =>
+				nav.offset ? (
 					<li key={index}>
 						<StyledNavLinkAnchor
-							onClick={hideSidebarAction}
 							href="/"
+							onClick={toggleMenu}
 							to={nav.link}
 							offset={nav.offset}
 							duration={420}
@@ -54,70 +36,85 @@ export const Navigation: React.FC = () => {
 							{nav.label}
 						</StyledNavLinkAnchor>
 					</li>
-				);
-			}
-			return (
-				<li key={index}>
-					<a href={nav.link} target="_blank" rel="noopener noreferrer">
-						{nav.label}
-					</a>
-				</li>
-			);
-		});
-	};
+				) : (
+					<li key={index}>
+						<a href={nav.link} target="_blank" rel="noopener noreferrer">
+							{nav.label}
+						</a>
+					</li>
+				)
+			)}
+		</>
+	);
+};
+
+export const Navigation: React.FC = () => {
+	const {
+		isOnDesktop,
+		isDarkMode,
+		themeToggler,
+		isMenuOpen,
+		toggleMenu,
+	} = useContextProvider();
+
+	const [isHome, setHome] = useState(true);
+
+	useLayoutEffect(() => {
+		setHome(window.location.pathname === "/");
+	}, []);
 
 	return (
-		<StyledNav>
-			<StyledNavContent>
+		<StyledNav isMenuOpen={isMenuOpen}>
+			<StyledNavHeader>
 				<Logo name={APP_NAME} isHome={isHome} />
 
-				<StyledSideNavDimmer showSidebar={showSidebar} />
-
-				<StyledNavAsideWrapper showSidebar={showSidebar} ref={asideRef}>
-					{isHome && <StyledNavLinks>{renderNavLinks()}</StyledNavLinks>}
-
-					<StyledNavButtonWrapper>
-						<StyledNavThemeToggler onClick={themeToggler}>
-							Mode
-							<SVG name={isDarkMode ? "moon" : "sunny"} />
-						</StyledNavThemeToggler>
-
-						{isHome ? (
-							<StyledNavDownloadButton
-								href="/"
-								to="installers"
-								offset={-24}
-								duration={420}
-								smooth
-								onClick={hideSidebarAction}
-							>
-								<SVG name="download" />
-								See Installers
-							</StyledNavDownloadButton>
-						) : (
-							<StyledBackButton
-								onClick={() => {
-									window.history.back();
-								}}
-							>
-								<SVG name="arrow-back" />
-								Back
-							</StyledBackButton>
+				{isOnDesktop && (
+					<StyledNavContent>
+						{isHome && (
+							<StyledNavLinks>
+								<NavLinks />
+							</StyledNavLinks>
 						)}
-					</StyledNavButtonWrapper>
-				</StyledNavAsideWrapper>
 
-				<StyledNavMenu
-					showSidebar={showSidebar}
-					onClick={() => {
-						setShowSidebar((prevState: boolean) => !prevState);
-					}}
-				>
-					<span>&nbsp;</span>
-					<span>&nbsp;</span>
-					<span>&nbsp;</span>
-				</StyledNavMenu>
-			</StyledNavContent>
+						<StyledNavButtonWrapper>
+							<StyledNavThemeToggler onClick={themeToggler}>
+								Mode
+								<SVG name={isDarkMode ? "moon" : "sunny"} />
+							</StyledNavThemeToggler>
+
+							{isHome ? (
+								<StyledNavDownloadButton
+									href="/"
+									to="installers"
+									offset={-24}
+									duration={420}
+									smooth
+								>
+									<SVG name="download" />
+									See Installers
+								</StyledNavDownloadButton>
+							) : (
+								<StyledBackButton
+									onClick={() => {
+										window.history.back();
+									}}
+								>
+									<SVG name="arrow-back" />
+									Back
+								</StyledBackButton>
+							)}
+						</StyledNavButtonWrapper>
+					</StyledNavContent>
+				)}
+
+				{!isOnDesktop && (
+					<StyledNavMenu isMenuOpen={isMenuOpen} onClick={toggleMenu}>
+						<span>&nbsp;</span>
+						<span>&nbsp;</span>
+						<span>&nbsp;</span>
+					</StyledNavMenu>
+				)}
+			</StyledNavHeader>
 		</StyledNav>
 	);
 };

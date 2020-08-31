@@ -1,17 +1,22 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Link as ScrollLink } from "react-scroll";
 
 import { ButtonStyles } from "./button";
 import { SectionContentStyle } from "../mixins";
 import media from "../media";
 
-export const StyledNav = styled.nav`
+type MenuProps = {
+	isMenuOpen?: boolean;
+};
+
+export const StyledNav = styled.nav<MenuProps>`
 	width: 100%;
 	height: 6.4rem;
 
 	padding: 0 5.6rem;
 
-	background-color: rgba(var(--bg-primary-rgb), 0.8);
+	background-color: ${(p) =>
+		p.isMenuOpen ? "var(--bg-primary)" : "rgba(var(--bg-primary-rgb), 0.8)"};
 	backdrop-filter: saturate(180%) blur(5px);
 
 	position: sticky;
@@ -23,6 +28,10 @@ export const StyledNav = styled.nav`
 		padding: 0 4rem;
 	}
 
+	${media.laptopXs} {
+		border-bottom: 1px solid var(--border-tertiary);
+	}
+
 	${media.tabletSm} {
 		padding: 0 2rem;
 	}
@@ -32,7 +41,7 @@ export const StyledNav = styled.nav`
 	}
 `;
 
-export const StyledNavContent = styled.div`
+export const StyledNavHeader = styled.header`
 	${SectionContentStyle};
 
 	max-width: 100rem;
@@ -71,13 +80,9 @@ export const StyledNavLogo = styled.div`
 	}
 `;
 
-type MenuProps = {
-	showSidebar?: boolean;
-};
-
-export const StyledNavAsideWrapper = styled.div<MenuProps>`
+export const StyledNavContent = styled.div`
 	display: grid;
-	align-content: center;
+	align-content: start;
 	justify-items: end;
 	grid-auto-flow: column;
 	column-gap: 4rem;
@@ -87,59 +92,6 @@ export const StyledNavAsideWrapper = styled.div<MenuProps>`
 	${media.laptopSm} {
 		column-gap: 2.8rem;
 	}
-
-	${media.laptopXs} {
-		grid-template-columns: 1fr;
-		align-content: start;
-		row-gap: 4rem;
-
-		position: fixed;
-		top: 0;
-		right: 0;
-
-		width: 32rem;
-		height: 100%;
-		overflow-y: auto;
-
-		padding: 8rem 3.2rem;
-
-		background: var(--bg-primary);
-		box-shadow: 0 3px 6px var(--cl-shadow-secondary);
-
-		${(p) =>
-			p.showSidebar
-				? css`
-						transition: transform 160ms ease;
-						transform: translateX(0);
-				  `
-				: css`
-						transition: transform 160ms ease-out;
-						transform: translateX(100%);
-				  `}
-	}
-`;
-
-export const StyledSideNavDimmer = styled.div<MenuProps>`
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100vh;
-
-	backdrop-filter: blur(8px);
-	background-color: var(--cl-shadow-secondary);
-	transition: all 160ms ease;
-
-	${(p) =>
-		p.showSidebar
-			? css`
-					opacity: 1;
-					visibility: visible;
-			  `
-			: css`
-					opacity: 0;
-					visibility: hidden;
-			  `}
 `;
 
 export const StyledNavLinks = styled.ul`
@@ -197,6 +149,18 @@ export const StyledNavDownloadButton = styled(ScrollLink)`
 		background: var(--bg-btn-primary-hover);
 		box-shadow: 0 4px 16px 0 var(--cl-shadow-secondary);
 	}
+
+	${media.laptopXs} {
+		margin-top: 4rem;
+		padding: 1.2rem;
+		max-width: 92rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	${media.tabletXl} {
+		max-width: 77.6rem;
+	}
 `;
 
 export const StyledBackButton = styled.button`
@@ -217,7 +181,7 @@ export const StyledNavThemeToggler = styled.button`
 	padding: 0.8rem 1.2rem;
 
 	border: none;
-	border-radius: 3px;
+	border-radius: 10rem;
 
 	display: flex;
 	align-items: center;
@@ -228,9 +192,8 @@ export const StyledNavThemeToggler = styled.button`
 	background-color: transparent;
 
 	${media.laptopXs} {
-		font-weight: 500;
-		border: 1px solid var(--cl-border-secondary);
-		background: var(--bg-btn-normal);
+		border: 1px solid var(--border-secondary);
+		padding: 1rem;
 	}
 
 	&:hover {
@@ -260,7 +223,15 @@ export const StyledNavButtonWrapper = styled.div`
 	${media.laptopXs} {
 		grid-template-columns: 1fr;
 		row-gap: 2rem;
-		margin-bottom: 3.2rem;
+		max-width: 92rem;
+		margin-top: 4rem;
+		margin-bottom: 0.8rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	${media.tabletXl} {
+		max-width: 77.6rem;
 	}
 `;
 
@@ -284,25 +255,25 @@ export const StyledNavMenu = styled.div<MenuProps>`
 
 		border-radius: 3px;
 		background-color: ${(p) =>
-			p.showSidebar ? "var(--cl-primary)" : "var(--cl-body-text)"};
+			p.isMenuOpen ? "var(--cl-primary)" : "var(--cl-body-text)"};
 		transition: all 160ms ease;
 
 		&:nth-of-type(1) {
 			transform-origin: left;
-			transform: ${(p) => (p.showSidebar ? "rotate(45deg)" : "rotate(0deg)")};
-			margin-bottom: ${(p) => (p.showSidebar ? "1.5px" : "0")};
+			transform: ${(p) => (p.isMenuOpen ? "rotate(45deg)" : "rotate(0deg)")};
+			margin-bottom: ${(p) => (p.isMenuOpen ? "1.5px" : "0")};
 		}
 
 		&:nth-of-type(2) {
-			opacity: ${(p) => (p.showSidebar ? "0" : "1")};
+			opacity: ${(p) => (p.isMenuOpen ? "0" : "1")};
 			transform: ${(p) =>
-				p.showSidebar ? "translateX(12px)" : "translateX(0)"};
+				p.isMenuOpen ? "translateX(12px)" : "translateX(0)"};
 		}
 
 		&:nth-of-type(3) {
 			transform-origin: left;
-			transform: ${(p) => (p.showSidebar ? "rotate(-45deg)" : "rotate(0deg)")};
-			margin-top: ${(p) => (p.showSidebar ? "1.5px" : "0")};
+			transform: ${(p) => (p.isMenuOpen ? "rotate(-45deg)" : "rotate(0deg)")};
+			margin-top: ${(p) => (p.isMenuOpen ? "1.5px" : "0")};
 		}
 	}
 `;

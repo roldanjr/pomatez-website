@@ -44,6 +44,7 @@ export const lightTheme = css`
 
 	--border-primary: #e6e6e6;
 	--border-secondary: #f4f4f4;
+	--border-tertiary: #f2f2f2;
 
 	--cl-shadow-primary: rgba(0, 0, 0, 0.12);
 	--cl-shadow-secondary: rgba(0, 0, 0, 0.16);
@@ -96,6 +97,7 @@ export const darkTheme = css`
 
 	--border-primary: rgba(255, 255, 255, 0.16);
 	--border-secondary: rgba(255, 255, 255, 0.1);
+	--border-tertiary: rgba(255, 255, 255, 0.08);
 
 	--cl-shadow-primary: rgba(0, 0, 0, 0.24);
 	--cl-shadow-secondary: rgba(0, 0, 0, 0.32);
