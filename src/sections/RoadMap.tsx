@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Image from "gatsby-image";
 import {
@@ -9,6 +9,7 @@ import {
 	StyledRoadmapContainer,
 	StyledRoadmapImageWrapper,
 	StyledRoadmapImage,
+	StyledSeeAll,
 } from "../styles";
 import { Header } from "../components";
 import { LandingQueryProps } from "./Landing";
@@ -83,23 +84,7 @@ const Roadmap: React.FC = () => {
 
 	const { isDarkMode } = useContext(ThemeContext);
 
-	const [limit, setLimit] = useState(6);
-
 	const { node } = allMarkdownRemark.edges[0];
-
-	const renderLastItem = () => {
-		if (node.frontmatter.features && node.frontmatter.features.length > limit) {
-			return (
-				<StyledRoadmapItem
-					onClick={() => {
-						setLimit((prevLimit) => prevLimit + 6);
-					}}
-				>
-					<h5>Show more...</h5>
-				</StyledRoadmapItem>
-			);
-		}
-	};
 
 	return (
 		<StyledRoadmap id="roadmap">
@@ -129,7 +114,6 @@ const Roadmap: React.FC = () => {
 							/>
 						</StyledRoadmapImage>
 					</StyledRoadmapImageWrapper>
-
 					<StyledRoadmapList>
 						{node.frontmatter.features
 							?.map((feature, index) => (
@@ -138,8 +122,12 @@ const Roadmap: React.FC = () => {
 									<p>{feature.description}</p>
 								</StyledRoadmapItem>
 							))
-							.splice(0, limit)}
-						{renderLastItem()}
+							.splice(0, 4)}
+						{node.frontmatter.features && node.frontmatter.features.length > 4 && (
+							<StyledRoadmapItem>
+								<StyledSeeAll to="/roadmap">See all</StyledSeeAll>
+							</StyledRoadmapItem>
+						)}
 					</StyledRoadmapList>
 				</StyledRoadmapContainer>
 			</StyledRoadmapContent>

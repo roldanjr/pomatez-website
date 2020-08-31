@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Image from "gatsby-image";
 import {
@@ -9,6 +9,7 @@ import {
 	StyledFeatureContainer,
 	StyledFeaturedImageWrapper,
 	StyledFeaturedImage,
+	StyledSeeAll,
 } from "../styles";
 import { Header } from "../components";
 import { ThemeContext } from "../contexts";
@@ -77,28 +78,7 @@ const Features: React.FC = () => {
 
 	const { isDarkMode } = useContext(ThemeContext);
 
-	const [limit, setLimit] = useState(3);
-
 	const { node } = allMarkdownRemark.edges[0];
-
-	const renderLastItem = () => {
-		if (node.frontmatter.features && node.frontmatter.features.length > limit) {
-			return (
-				<StyledFeatureItem
-					onClick={() => {
-						setLimit((prevLimit) => prevLimit + 3);
-					}}
-				>
-					<h5>Show more...</h5>
-				</StyledFeatureItem>
-			);
-		}
-		return (
-			<StyledFeatureItem>
-				<h5>More features soon...</h5>
-			</StyledFeatureItem>
-		);
-	};
 
 	return (
 		<StyledFeatures id="features">
@@ -137,8 +117,12 @@ const Features: React.FC = () => {
 									<p>{feature.description}</p>
 								</StyledFeatureItem>
 							))
-							.slice(0, limit)}
-						{renderLastItem()}
+							.slice(0, 3)}
+						{node.frontmatter.features && node.frontmatter.features.length > 3 && (
+							<StyledFeatureItem>
+								<StyledSeeAll to="/features">See all</StyledSeeAll>
+							</StyledFeatureItem>
+						)}
 					</StyledFeatureList>
 				</StyledFeatureContainer>
 			</StyledFeatureContent>

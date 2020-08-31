@@ -70,6 +70,7 @@ export const StyledBoosterDescription = styled.div`
 
 		&:hover {
 			color: var(--cl-primary-variant);
+			text-decoration: underline;
 		}
 	}
 `;

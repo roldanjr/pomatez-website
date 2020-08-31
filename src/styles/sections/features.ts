@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
-import { Link } from "react-scroll";
+import { Link } from "gatsby";
+
 import { SectionStyle, SectionContentStyle } from "../mixins";
 import media from "../media";
 
@@ -76,12 +77,10 @@ const FeatureItemStyle = css`
 	display: grid;
 	align-content: start;
 	row-gap: 1.2rem;
-	/* padding: 4rem; */
 
 	color: var(--cl-display-text);
 
 	border-radius: 3px;
-	/* border: 1px solid var(--border-primary); */
 	box-shadow: 0 0 0 0 var(--cl-primary-variant);
 	transition: all 200ms ease;
 
@@ -93,24 +92,11 @@ const FeatureItemStyle = css`
 
 	&:hover {
 		color: var(--cl-primary-variant);
-		/* border-color: var(--cl-primary-variant);
-		background-color: var(--bg-primary);
-		box-shadow: 0 0 0 3px var(--cl-primary-variant); */
 	}
 
 	&:last-of-type {
 		cursor: pointer;
 		height: max-content;
-	}
-
-	& > svg {
-		width: 8rem;
-		height: 8rem;
-		color: var(--cl-disabled-text);
-		fill: currentColor;
-		opacity: 0.08;
-
-		position: absolute;
 	}
 
 	& > h5 {
@@ -119,7 +105,6 @@ const FeatureItemStyle = css`
 
 		display: flex;
 		flex-direction: column;
-		/* align-items: center; */
 
 		color: currentColor;
 		z-index: 1;
@@ -135,6 +120,13 @@ export const StyledFeatureItem = styled.li`
 	${FeatureItemStyle};
 `;
 
-export const StyledShowMore = styled(Link)`
-	${FeatureItemStyle};
+export const StyledSeeAll = styled(Link)`
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--cl-body-text);
+
+	&:hover {
+		color: var(--cl-primary-variant);
+		text-decoration: underline;
+	}
 `;

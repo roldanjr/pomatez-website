@@ -13,7 +13,7 @@ features:
     description: Provide some useful summary about user's productivity to have some sense of accomplishments.
 
   - heading: Time extender
-    description: Enable user to extend timer if needed. Useful when the user wants to finish the task first before taking break.
+    description: Enable user to extend timer if needed. Useful when the user wants to finish the task first before taking up a break.
 
   - heading: Homebrew installer
     description: Making the app installable via homebrew (cask) makes it easier for some Mac users to install the app on their machine.

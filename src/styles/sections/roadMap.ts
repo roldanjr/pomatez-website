@@ -16,27 +16,9 @@ export const StyledRoadmapContent = styled.div`
 	${SectionContentStyle};
 `;
 
-export const StyledRoadmapImageWrapper = styled(StyledFeaturedImageWrapper)`
-	/* display: flex;
-	flex-direction: column;
-	justify-self: end; */
-`;
+export const StyledRoadmapImageWrapper = styled(StyledFeaturedImageWrapper)``;
 
-export const StyledRoadmapImage = styled(StyledFeaturedImage)`
-	/* &:nth-child(1) {
-		margin-left: -2rem;
-	}
-
-	&:nth-child(2) {
-		margin-left: -20rem;
-		margin-top: -20rem;
-	}
-
-	&:nth-child(3) {
-		margin-top: -20rem;
-		z-index: 30;
-	} */
-`;
+export const StyledRoadmapImage = styled(StyledFeaturedImage)``;
 
 export const StyledRoadmapContainer = styled(StyledFeatureContainer)``;
 
