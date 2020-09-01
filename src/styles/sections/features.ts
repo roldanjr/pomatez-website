@@ -90,6 +90,7 @@ export const StyledFeatureList = styled.ul`
 
 	${media.tabletMd} {
 		max-width: 100%;
+		margin-bottom: 0;
 		gap: 2.4rem;
 	}
 

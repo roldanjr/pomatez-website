@@ -1,6 +1,6 @@
 ---
 title: Roadmap
-subTitle: Continue to develop features.
+subTitle: Always developing new features.
 
 features:
   - heading: Customizable shortcuts

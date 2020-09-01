@@ -29,6 +29,10 @@ export const StyledHeader = styled.header`
 
 		position: relative;
 
+		${media.mobileMd} {
+			font-size: 2.8rem;
+		}
+
 		& > span {
 			position: absolute;
 			top: 0;

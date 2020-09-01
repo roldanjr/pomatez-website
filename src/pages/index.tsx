@@ -9,7 +9,7 @@ export default () => {
 			<Landing />
 			<Features />
 			{/* <Boosters /> */}
-			{/* <Roadmap /> */}
+			<Roadmap />
 			{/* <Download /> */}
 		</Layout>
 	);
