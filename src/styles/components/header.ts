@@ -104,6 +104,10 @@ export const StyledHeader = styled.header`
 			color: var(--cl-body-text);
 			line-height: 1.7;
 
+			${media.tabletSm} {
+				line-height: 1.5;
+			}
+
 			& > a:hover {
 				color: var(--cl-primary);
 			}

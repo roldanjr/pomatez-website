@@ -8,7 +8,7 @@ export default () => {
 			<PageHead />
 			<Landing />
 			<Features />
-			{/* <Boosters /> */}
+			<Boosters />
 			<Roadmap />
 			{/* <Download /> */}
 		</Layout>

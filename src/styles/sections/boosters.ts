@@ -20,19 +20,15 @@ export const StyledBoosterList = styled.ul`
 	column-gap: 2rem;
 	row-gap: 8rem;
 
-	${media.laptopMd} {
-		gap: 4rem;
-	}
-
 	${media.laptopSm} {
-		gap: 3.2rem;
+		column-gap: 4rem;
 	}
 
-	${media.tabletXl} {
-		grid-template-columns: repeat(2, 1fr);
+	${media.laptopXs} {
+		column-gap: 3.2rem;
 	}
 
-	${media.tabletMd} {
+	${media.tabletLg} {
 		grid-template-columns: 1fr;
 	}
 `;
@@ -44,9 +40,44 @@ export const StyledBoosterImage = styled.div`
 	overflow: hidden;
 	border-radius: 100rem;
 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
 	background-color: var(--bg-primary);
 	box-shadow: 0 20px 40px var(--cl-shadow-primary);
 	transition: all 320ms ease-out;
+
+	${media.laptopSm} {
+		width: 24rem;
+		height: 24rem;
+	}
+
+	${media.laptopXs} {
+		width: 20rem;
+		height: 20rem;
+	}
+
+	${media.tabletLg} {
+		width: 24rem;
+		height: 24rem;
+	}
+
+	${media.mobileXl} {
+		width: 20rem;
+		height: 20rem;
+		transform: scale(0.8);
+	}
+
+	${media.mobileMd} {
+		width: 18rem;
+		height: 18rem;
+	}
+
+	${media.mobileXs} {
+		width: 16rem;
+		height: 16rem;
+	}
 `;
 
 export const StyledBoosterDescription = styled.div`
@@ -90,6 +121,18 @@ export const StyledBoosterItem = styled.li`
 	border-radius: 3px;
 	transition: all 200ms ease;
 
+	${media.laptopSm} {
+		column-gap: 4rem;
+	}
+
+	${media.laptopXs} {
+		column-gap: 2.8rem;
+	}
+
+	${media.mobileXl} {
+		gap: 0;
+	}
+
 	&:nth-child(odd) {
 		${StyledBoosterImage} {
 			grid-row: 1 / 2;
@@ -101,12 +144,6 @@ export const StyledBoosterItem = styled.li`
 			text-align: end;
 		}
 	}
-
-	${media.laptopSm} {
-		row-gap: 0.8rem;
-		padding: 2.4rem;
-		padding-bottom: 3.2rem;
-	}
 `;
 
 export const StyledCompanyImage = styled.div`
@@ -116,6 +153,15 @@ export const StyledCompanyImage = styled.div`
 	overflow: hidden;
 	background-color: white;
 	opacity: var(--logo-opacity);
+
+	${media.mobileXl} {
+		width: 16rem;
+		min-height: max-content;
+
+		&:not(:last-of-type) {
+			margin-right: 2rem;
+		}
+	}
 `;
 
 export const StyledCompanyWrapper = styled.div`
@@ -131,6 +177,16 @@ export const StyledCompanyWrapper = styled.div`
 		font-weight: 400;
 
 		max-width: 72rem;
+
+		line-height: 1.7;
+
+		${media.tabletSm} {
+			line-height: 1.5;
+		}
+
+		${media.mobileMd} {
+			font-size: 2rem;
+		}
 	}
 
 	& > div {
