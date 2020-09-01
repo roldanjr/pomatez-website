@@ -27,16 +27,11 @@ export const StyledDownloadButtonWrapper = styled.div`
 	display: grid;
 	align-items: start;
 	column-gap: 2rem;
+	row-gap: 4rem;
 	grid-template-columns: 1fr 2fr 1fr;
-
-	${media.laptopSm} {
-		grid-template-columns: repeat(3, 1fr);
-		column-gap: 3.2rem;
-	}
 
 	${media.tabletMd} {
 		grid-template-columns: 1fr;
-		row-gap: 4.8rem;
 	}
 `;
 
@@ -78,7 +73,15 @@ export const StyledLinuxInstallerWrapper = styled.div`
 	grid-template-columns: repeat(3, 1fr);
 	gap: 2rem;
 
-	${media.tabletXl} {
+	& > a {
+		min-width: max-content;
+	}
+
+	& > a#snap-store-btn {
+		padding: 0 1.2rem;
+	}
+
+	${media.laptopXs} {
 		grid-template-columns: repeat(2, 1fr);
 
 		& > a:nth-last-of-type(2) {
@@ -89,11 +92,14 @@ export const StyledLinuxInstallerWrapper = styled.div`
 		& > a:nth-last-of-type(3) {
 			grid-column: 1 / -1;
 		}
+
+		& > span {
+			grid-column: 1 / -1 !important;
+		}
 	}
 
 	${media.tabletMd} {
 		width: 100%;
-		grid-template-columns: repeat(2, 1fr);
 	}
 
 	& > span {
