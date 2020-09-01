@@ -1,26 +1,27 @@
 import styled from "styled-components";
 import { SectionStyle, SectionContentStyle } from "../mixins";
-import { StyledFeatureList, StyledFeatureItem } from "./features";
+import {
+	StyledFeatureList,
+	StyledFeatureItem,
+	StyledFeatureContainer,
+	StyledFeaturedImageWrapper,
+	StyledFeaturedImage,
+} from "./features";
 
-export const StyledRoadMap = styled.section`
-  ${SectionStyle}
+export const StyledRoadmap = styled.section`
+	${SectionStyle}
 `;
 
-export const StyledRoadMapContent = styled.div`
-  ${SectionContentStyle};
+export const StyledRoadmapContent = styled.div`
+	${SectionContentStyle};
 `;
 
-export const StyledRoadMapList = styled(StyledFeatureList)`
-  column-gap: 6rem;
-  row-gap: 6rem;
-`;
+export const StyledRoadmapImageWrapper = styled(StyledFeaturedImageWrapper)``;
 
-export const StyledRoadMapItem = styled(StyledFeatureItem)`
-  border: 1px solid var(--color-border-secondary);
-  background: var(--color-bg-secondary);
+export const StyledRoadmapImage = styled(StyledFeaturedImage)``;
 
-  &:hover {
-    border-color: var(--color-primary-variant);
-    box-shadow: 0 0 0 3px var(--color-primary-variant);
-  }
-`;
+export const StyledRoadmapContainer = styled(StyledFeatureContainer)``;
+
+export const StyledRoadmapList = styled(StyledFeatureList)``;
+
+export const StyledRoadmapItem = styled(StyledFeatureItem)``;

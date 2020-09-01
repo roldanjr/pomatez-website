@@ -1,73 +1,58 @@
 ---
-title: App's Features
-subTitle: List of features that might help you be more productive and effective.
+title: Features
+subTitle: Work in a healthier way.
 
-featureList:
-  - icon: copy
-    heading: Always On Top
-    description: If enabled, the app will always on top of other apps running on user's Operating System.
+features:
+  - heading: Customizable rules
+    description: You can easily modify the default rules of Pomodoro Principle to be fitted on your personal needs and likings.
 
-  - icon: laptop
-    heading: Full-screen Breaks
-    description: If enabled, the app will interrupt the user by occupying the whole screen so that the user will be force to take a break.
+  - heading: Built-in task list
+    description: Allowing you to create task lists that you want to accomplish with drag and drop feature changing your task priorities. It also allow you to mark specific task item as finish or even undo and redu some accident actions.
 
-  - icon: alert
-    heading: Strict Mode
-    description: If enabled, the app will strictly follow user's configuration and prevent the user from resetting, pausing and skipping the timer when it has started.
+  - heading: Full-screen breaks
+    description: If enabled, the app will interrupt and force you to take a break by occupying the whole screen while preventing you from working.
 
-  - icon: moon-outline
-    heading: Dark Theme
-    description: Allowing the user to use Dark Mode to reduce eye strain and improves visibility for user with low vision and those who are sensitive to bright light.
+  - heading: Desktop notification
+    description: If enabled, you will be notified from time to time. Notification property are divided into 3 types; NONE, NORMAL and EXTRA.
 
-  - icon: browser
-    heading: Toggle Native Titlebar
-    description: Allowing the user to switch between default custom titlebar to a native one and vice versa. This feature is useful for some users especially to those who don't like the default custom titlebar.
+  - heading: Special breaks
+    description: You can set specific time wherein you really need to take a break like for example - lunch, snack, or even dinner time depending on you without having to change the rules that you have been set.
 
-  - icon: timer
-    heading: Progress Animation
-    description: Allowing the user to disable timer progress animation to reduce the CPU usage to the app least required. It is really useful for some people.
+  - heading: Keyboard shortcuts
+    description: Provide some useful keyboard shortcuts allowing you to use the app conveniently.
 
-  - icon: notification
-    heading: Desktop Notification
-    description: If enabled, the app will allow the user to be notified from time to time. Notification property is divided into 3 types NONE, NORMAL and EXTRA.
+  - heading: Auto updates
+    description: With this feature, it keeps the app up to date with the latest version. You don't need to download new updates; it delivers directly to your computer.
 
-  - icon: food
-    heading: Special Breaks
-    description: If enabled, the user will be allowed to set some special time when the user really need to take a break.
+  - heading: Always on top
+    description: If enabled, the app will always on top of other apps running on your Operating System.
 
-  - icon: repeat
-    heading: Auto-Start Work Time
-    description: If enabled, the app will automatically start after the timer ends. It is useful when the user did not want to always start the timer manually from time to time.
+  - heading: Minimize to tray
+    description: If enabled, minimize action will not minimized the app. Instead, it will be hidden and being send to tray. Useful when you want not to be distracted while using the alt-tab on your machine.
 
-  - icon: remove
-    heading: Minimize to Tray
-    description: If enabled, clicking the minimize button will not minimize the app. It will be hidden and being send to Tray instead of minimizing on the Taskbar.
+  - heading: Close to tray
+    description: If enabled, close action will not quit the app. Instead, it will be hidden and being send to tray. Useful if you don't want to accidentally quit the app.
 
-  - icon: exit
-    heading: Close to Tray
-    description: If enabled, clicking the close button will not quit the app. It will be hidden and being send to Tray instead of closing and quitting the app.
+  - heading: Progress on tray
+    description: It will show progress on your system tray. This feature can be activated if minimize to tray or close to tray feature is enabled.
 
-  - icon: ellipse
-    heading: Progress on Tray
-    description: The app will show progress animation on tray. This feature can be activate if Minimize to Tray of Close to Tray is enabled. Useful when the timer is being hidden.
+  - heading: Progress animation
+    description: Allowing you to disable timer progress animation to reduce CPU usage to the app least required.
 
-  - icon: mic
-    heading: Voice Assistance
-    description: Notification text to speech feature that might help some users if enabled.
+  - heading: Toggle native titlebar
+    description: Allowing you to switch between default custom titlebar to a native one and vice versa. This feature is useful especially if you don't like the default titlebar.
 
-  - icon: keypad
-    heading: Keyboard Shortcuts
-    description: Provide some useful keyboard shortcuts allowing the user to use the app conveniently.
+  - heading: Auto-start work time
+    description: If enabled, the app will automatically start after the timer ends. It is useful when you did not want to always start the timer manually everytime.
 
-  - icon: cog
-    heading: Customizable Rules
-    description: Allowing the user to modify the default rules of Pomodoro Principle to fit on their personal preference.
+  - heading: Voice assistance
+    description: If enabled, desktop notification will have male voice to inform you from time to time. Useful when you are away from your computer while taking some break.
 
-  - icon: create
-    heading: Built-in Task List
-    description: Allowing the user to create tasks they wanted to accomplish and enable them to mark a particular task as done showing some accomplishments.
+  - heading: Dark theme
+    description: Allowing you to use dark mode helps to reduce your eye strain and improves visibility if you are a type of person with low vision and sensitive to bright light.
 
-  - icon: auto-update
-    heading: Auto Updates
-    description: With the Automatic Updates feature, it keep the app up to date with the latest updates and enhancements. User no longer have to search for critical updates; it delivers them directly to the computer.
+  - heading: Strict mode
+    description: If enabled, the app will strictly follow the rules you have set and preventing you from pausing, skipping and resetting the timer when it started.
 ---
+
+These are the lists of useful features that might absolutely help you with your daily task.

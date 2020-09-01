@@ -1,16 +1,16 @@
 import React from "react";
-import { SEO, Layout } from "../components";
-import { Landing, Features, HowItWorks, RoadMap, Download } from "../sections";
+import { PageHead, Layout } from "../components";
+import { Landing, Features, Boosters, Roadmap, Download } from "../sections";
 
 export default () => {
-  return (
-    <Layout>
-      <SEO includeSchema />
-      <Landing />
-      <Features />
-      <HowItWorks />
-      <RoadMap />
-      <Download />
-    </Layout>
-  );
+	return (
+		<Layout>
+			<PageHead />
+			<Landing />
+			<Features />
+			<Boosters />
+			<Roadmap />
+			<Download />
+		</Layout>
+	);
 };

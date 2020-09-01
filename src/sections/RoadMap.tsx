@@ -1,90 +1,134 @@
-import React, { useState } from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import LazyLoad from "react-lazyload";
+import React, { useContext } from "react";
+import { useStaticQuery, graphql, Link } from "gatsby";
+import Image from "gatsby-image";
 import {
-  StyledRoadMap,
-  StyledRoadMapList,
-  StyledRoadMapItem,
-  StyledShowMore,
-  StyledRoadMapContent,
+	StyledRoadmap,
+	StyledRoadmapList,
+	StyledRoadmapItem,
+	StyledRoadmapContent,
+	StyledRoadmapContainer,
+	StyledRoadmapImageWrapper,
+	StyledStickyContainer,
+	StyledRoadmapImage,
 } from "../styles";
-import { SVG, Header } from "../components";
-import { MarkDownProps } from "../types";
+import { Header } from "../components";
+import { LandingQueryProps } from "./Landing";
+import { ThemeContext } from "../contexts";
 
-const RoadMap: React.FC = () => {
-  const { allMarkdownRemark } = useStaticQuery<MarkDownProps>(graphql`
-    {
-      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/roadMap/" } }) {
-        edges {
-          node {
-            frontmatter {
-              title
-              subTitle
-              featureList {
-                icon
-                heading
-                description
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+const Roadmap: React.FC = () => {
+	const {
+		allMarkdownRemark,
+		shortBreakPreviewLight,
+		shortBreakPreviewDark,
+		longBreakPreviewLight,
+		longBreakPreviewDark,
+	} = useStaticQuery<LandingQueryProps>(graphql`
+		{
+			allMarkdownRemark: allMarkdownRemark(
+				filter: { fileAbsolutePath: { regex: "/roadmap/" } }
+			) {
+				edges {
+					node {
+						frontmatter {
+							title
+							subTitle
+							features {
+								heading
+								description
+							}
+						}
+						html
+					}
+				}
+			}
+			shortBreakPreviewLight: file(
+				relativePath: { eq: "short-break-light.PNG" }
+			) {
+				childImageSharp {
+					fluid(maxWidth: 340, quality: 100) {
+						...GatsbyImageSharpFluid_withWebp
+						...GatsbyImageSharpFluidLimitPresentationSize
+					}
+				}
+			}
+			shortBreakPreviewDark: file(
+				relativePath: { eq: "short-break-dark.PNG" }
+			) {
+				childImageSharp {
+					fluid(maxWidth: 340, quality: 100) {
+						...GatsbyImageSharpFluid_withWebp
+						...GatsbyImageSharpFluidLimitPresentationSize
+					}
+				}
+			}
+			longBreakPreviewLight: file(
+				relativePath: { eq: "long-break-light.PNG" }
+			) {
+				childImageSharp {
+					fluid(maxWidth: 340, quality: 100) {
+						...GatsbyImageSharpFluid_withWebp
+						...GatsbyImageSharpFluidLimitPresentationSize
+					}
+				}
+			}
+			longBreakPreviewDark: file(relativePath: { eq: "long-break-dark.PNG" }) {
+				childImageSharp {
+					fluid(maxWidth: 340, quality: 100) {
+						...GatsbyImageSharpFluid_withWebp
+						...GatsbyImageSharpFluidLimitPresentationSize
+					}
+				}
+			}
+		}
+	`);
 
-  const [limit, setLimit] = useState(5);
+	const { isDarkMode } = useContext(ThemeContext);
 
-  const { frontmatter } = allMarkdownRemark.edges[0].node;
+	const { node } = allMarkdownRemark.edges[0];
 
-  const renderLastItem = () => {
-    if (frontmatter.featureList && frontmatter.featureList.length > limit) {
-      return (
-        <StyledRoadMapItem
-          onClick={() => {
-            setLimit(prevLimit => prevLimit + 6);
-          }}
-        >
-          <h3>
-            <SVG name="more" />
-            Show more...
-          </h3>
-        </StyledRoadMapItem>
-      );
-    }
-    return (
-      <StyledRoadMapItem>
-        <h3>
-          <SVG name="more" />
-          More of it soon...
-        </h3>
-      </StyledRoadMapItem>
-    );
-  };
+	return (
+		<StyledRoadmap id="roadmap">
+			<StyledRoadmapContent>
+				<Header node={node} />
 
-  return (
-    <StyledRoadMap id="road-map">
-      <LazyLoad once={true} offset={80} height="58.3rem">
-        <StyledRoadMapContent>
-          <Header frontMatter={frontmatter} />
+				<StyledRoadmapContainer>
+					<StyledStickyContainer>
+						<StyledRoadmapImageWrapper>
+							<StyledRoadmapImage>
+								<Image
+									fluid={
+										isDarkMode
+											? shortBreakPreviewDark.childImageSharp.fluid
+											: shortBreakPreviewLight.childImageSharp.fluid
+									}
+									alt="short break preview"
+								/>
+							</StyledRoadmapImage>
+							<StyledRoadmapImage>
+								<Image
+									fluid={
+										isDarkMode
+											? longBreakPreviewDark.childImageSharp.fluid
+											: longBreakPreviewLight.childImageSharp.fluid
+									}
+									alt="long break preview"
+								/>
+							</StyledRoadmapImage>
+						</StyledRoadmapImageWrapper>
+					</StyledStickyContainer>
 
-          <StyledRoadMapList>
-            {frontmatter.featureList
-              ?.map((feature, index) => (
-                <StyledRoadMapItem key={index}>
-                  <h3>
-                    <SVG name={feature.icon} />
-                    {feature.heading}
-                  </h3>
-                  <p>{feature.description}</p>
-                </StyledRoadMapItem>
-              ))
-              .splice(0, limit)}
-            {renderLastItem()}
-          </StyledRoadMapList>
-        </StyledRoadMapContent>
-      </LazyLoad>
-    </StyledRoadMap>
-  );
+					<StyledRoadmapList>
+						{node.frontmatter.features?.map((feature, index) => (
+							<StyledRoadmapItem key={index}>
+								<h5>{feature.heading}</h5>
+								<p>{feature.description}</p>
+							</StyledRoadmapItem>
+						))}
+					</StyledRoadmapList>
+				</StyledRoadmapContainer>
+			</StyledRoadmapContent>
+		</StyledRoadmap>
+	);
 };
 
-export default RoadMap;
+export default Roadmap;

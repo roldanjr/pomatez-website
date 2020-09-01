@@ -1,7 +1,7 @@
+import PageHead from "./PageHead";
 import Layout from "./Layout";
-import SEO from "./SEO";
 import SVG from "./SVG";
 import Header from "./Header";
-import Preloader from "./Preloader";
+import Sidebar from "./Sidebar";
 
-export { Layout, SEO, SVG, Header, Preloader };
+export { PageHead, Layout, SVG, Header, Sidebar };

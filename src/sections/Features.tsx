@@ -1,90 +1,128 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import LazyLoad from "react-lazyload";
+import Image from "gatsby-image";
 import {
-  StyledFeatures,
-  StyledFeatureList,
-  StyledFeatureItem,
-  StyledShowMore,
-  StyledFeatureContent,
+	StyledFeatures,
+	StyledFeatureList,
+	StyledFeatureItem,
+	StyledFeatureContent,
+	StyledFeatureContainer,
+	StyledStickyContainer,
+	StyledFeaturedImageWrapper,
+	StyledFeaturedImage,
 } from "../styles";
-import { SVG, Header } from "../components";
-import { MarkDownProps } from "../types";
+import { Header } from "../components";
+import { ThemeContext } from "../contexts";
+import { LandingQueryProps } from "./Landing";
 
 const Features: React.FC = () => {
-  const { allMarkdownRemark } = useStaticQuery<MarkDownProps>(graphql`
-    {
-      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/features/" } }) {
-        edges {
-          node {
-            frontmatter {
-              title
-              subTitle
-              featureList {
-                icon
-                heading
-                description
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+	const {
+		allMarkdownRemark,
+		tasksPreviewLight,
+		tasksPreviewDark,
+		configPreviewLight,
+		configPreviewDark,
+	} = useStaticQuery<LandingQueryProps>(graphql`
+		{
+			allMarkdownRemark: allMarkdownRemark(
+				filter: { fileAbsolutePath: { regex: "/features/" } }
+			) {
+				edges {
+					node {
+						frontmatter {
+							title
+							subTitle
+							features {
+								heading
+								description
+							}
+						}
+						html
+					}
+				}
+			}
+			tasksPreviewLight: file(relativePath: { eq: "tasks-light.PNG" }) {
+				childImageSharp {
+					fluid(maxWidth: 340, quality: 100) {
+						...GatsbyImageSharpFluid_withWebp
+						...GatsbyImageSharpFluidLimitPresentationSize
+					}
+				}
+			}
+			tasksPreviewDark: file(relativePath: { eq: "tasks-dark.PNG" }) {
+				childImageSharp {
+					fluid(maxWidth: 340, quality: 100) {
+						...GatsbyImageSharpFluid_withWebp
+						...GatsbyImageSharpFluidLimitPresentationSize
+					}
+				}
+			}
+			configPreviewLight: file(relativePath: { eq: "config-light.PNG" }) {
+				childImageSharp {
+					fluid(maxWidth: 340, quality: 100) {
+						...GatsbyImageSharpFluid_withWebp
+						...GatsbyImageSharpFluidLimitPresentationSize
+					}
+				}
+			}
+			configPreviewDark: file(relativePath: { eq: "config-dark.PNG" }) {
+				childImageSharp {
+					fluid(maxWidth: 340, quality: 100) {
+						...GatsbyImageSharpFluid_withWebp
+						...GatsbyImageSharpFluidLimitPresentationSize
+					}
+				}
+			}
+		}
+	`);
 
-  const [limit, setLimit] = useState(5);
+	const { isDarkMode } = useContext(ThemeContext);
 
-  const { frontmatter } = allMarkdownRemark.edges[0].node;
+	const { node } = allMarkdownRemark.edges[0];
 
-  const renderLastItem = () => {
-    if (frontmatter.featureList && frontmatter.featureList.length > limit) {
-      return (
-        <StyledFeatureItem
-          onClick={() => {
-            setLimit(prevLimit => prevLimit + 6);
-          }}
-        >
-          <h3>
-            <SVG name="more" />
-            Show more...
-          </h3>
-        </StyledFeatureItem>
-      );
-    }
-    return (
-      <StyledFeatureItem>
-        <h3>
-          <SVG name="more" />
-          More of it soon...
-        </h3>
-      </StyledFeatureItem>
-    );
-  };
+	return (
+		<StyledFeatures id="features">
+			<StyledFeatureContent>
+				<Header node={node} />
 
-  return (
-    <StyledFeatures id="app-features">
-      <LazyLoad once={true} offset={80} height="72.7rem">
-        <StyledFeatureContent>
-          <Header frontMatter={frontmatter} />
+				<StyledFeatureContainer>
+					<StyledStickyContainer>
+						<StyledFeaturedImageWrapper>
+							<StyledFeaturedImage>
+								<Image
+									fluid={
+										isDarkMode
+											? tasksPreviewDark.childImageSharp.fluid
+											: tasksPreviewLight.childImageSharp.fluid
+									}
+									alt="tasks preview"
+								/>
+							</StyledFeaturedImage>
+							<StyledFeaturedImage>
+								<Image
+									fluid={
+										isDarkMode
+											? configPreviewDark.childImageSharp.fluid
+											: configPreviewLight.childImageSharp.fluid
+									}
+									alt="config preview"
+								/>
+							</StyledFeaturedImage>
+						</StyledFeaturedImageWrapper>
+					</StyledStickyContainer>
 
-          <StyledFeatureList>
-            {frontmatter.featureList
-              ?.map((feature, index) => (
-                <StyledFeatureItem key={index}>
-                  <h3>
-                    <SVG name={feature.icon} />
-                    {feature.heading}
-                  </h3>
-                  <p>{feature.description}</p>
-                </StyledFeatureItem>
-              ))
-              .slice(0, limit)}
-            {renderLastItem()}
-          </StyledFeatureList>
-        </StyledFeatureContent>
-      </LazyLoad>
-    </StyledFeatures>
-  );
+					<StyledFeatureList>
+						{node.frontmatter.features?.map((feature, index) => (
+							<StyledFeatureItem key={index}>
+								<h5>{feature.heading}</h5>
+								<p>{feature.description}</p>
+							</StyledFeatureItem>
+						))}
+					</StyledFeatureList>
+				</StyledFeatureContainer>
+			</StyledFeatureContent>
+		</StyledFeatures>
+	);
 };
 
 export default Features;

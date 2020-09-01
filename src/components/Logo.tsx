@@ -1,19 +1,22 @@
 import React from "react";
-import Image, { FluidObject } from "gatsby-image";
+import { Link as ScrollLink } from "react-scroll";
 import { StyledNavLogo } from "../styles";
+import SVG from "./SVG";
 
 type Props = {
-  name: string;
-  src: FluidObject | FluidObject[] | undefined;
+	name: string;
+	isHome?: boolean;
 };
 
-export const Logo: React.FC<Props> = ({ name, src }) => {
-  return (
-    <StyledNavLogo href="/" to="landing" offset={-56} duration={420} smooth>
-      <Image fluid={src} alt="Productivity Timer Logo" />
-      <label>{name}</label>
-    </StyledNavLogo>
-  );
+export const Logo: React.FC<Props> = ({ name, isHome }) => {
+	return (
+		<StyledNavLogo>
+			<ScrollLink href="/" to="landing" offset={-64} duration={420} smooth>
+				<SVG name="pomatez" />
+				<label>{name}</label>
+			</ScrollLink>
+		</StyledNavLogo>
+	);
 };
 
 export default Logo;
