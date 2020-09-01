@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from "react";
+import React from "react";
 import {
 	StyledNav,
 	StyledNavLinks,
@@ -57,52 +57,32 @@ export const Navigation: React.FC = () => {
 		toggleMenu,
 	} = useContextProvider();
 
-	const [isHome, setHome] = useState(true);
-
-	useLayoutEffect(() => {
-		setHome(window.location.pathname === "/");
-	}, []);
-
 	return (
 		<StyledNav isMenuOpen={isMenuOpen}>
 			<StyledNavHeader>
-				<Logo name={APP_NAME} isHome={isHome} />
+				<Logo name={APP_NAME} />
 
 				{isOnDesktop && (
 					<StyledNavContent>
-						{isHome && (
-							<StyledNavLinks>
-								<NavLinks />
-							</StyledNavLinks>
-						)}
+						<StyledNavLinks>
+							<NavLinks />
+						</StyledNavLinks>
 
 						<StyledNavButtonWrapper>
 							<StyledNavThemeToggler onClick={themeToggler}>
 								Mode
 								<SVG name={isDarkMode ? "moon" : "sunny"} />
 							</StyledNavThemeToggler>
-
-							{isHome ? (
-								<StyledNavDownloadButton
-									href="/"
-									to="installers"
-									offset={-24}
-									duration={420}
-									smooth
-								>
-									<SVG name="download" />
-									See Installers
-								</StyledNavDownloadButton>
-							) : (
-								<StyledBackButton
-									onClick={() => {
-										window.history.back();
-									}}
-								>
-									<SVG name="arrow-back" />
-									Back
-								</StyledBackButton>
-							)}
+							<StyledNavDownloadButton
+								href="/"
+								to="installers"
+								offset={-24}
+								duration={420}
+								smooth
+							>
+								<SVG name="download" />
+								See Installers
+							</StyledNavDownloadButton>
 						</StyledNavButtonWrapper>
 					</StyledNavContent>
 				)}
