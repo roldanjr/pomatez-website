@@ -68,7 +68,6 @@ export const StyledWaterMarkRight = styled(WaterMarkRight)`
 	${WaterMarkStyle};
 	right: 0;
 	margin-right: -2.4rem;
-	/* margin-top: -2rem; */
 `;
 
 export const StyledLandingCTAWrapper = styled.div`
@@ -94,12 +93,40 @@ export const StyledLandingHeader = styled.header`
 		font-size: 7.2rem;
 		font-weight: 700;
 		color: var(--cl-display-text);
+
+		${media.tabletSm} {
+			line-height: normal;
+		}
+
+		${media.mobileXl} {
+			font-size: 6.4rem;
+		}
+
+		${media.mobileLg} {
+			font-size: 5.6rem;
+		}
+
+		${media.mobileSm} {
+			font-size: 4.8rem;
+		}
+
+		${media.mobileXs} {
+			font-size: 4.2rem;
+		}
 	}
 
 	& > h2 {
 		font-size: 2.2rem;
 		font-weight: 400;
 		line-height: 1.7;
+
+		${media.tabletSm} {
+			line-height: 1.5;
+		}
+
+		${media.mobileXl} {
+			font-size: 2rem;
+		}
 	}
 `;
 
@@ -128,10 +155,6 @@ export const StyledPreviewWrapper = styled.div`
 		row-gap: 3.2rem;
 		column-gap: -2rem;
 	}
-
-	@media screen and (max-width: 424px) {
-		display: none;
-	}
 `;
 
 export const StyledPreviewImage = styled.div`
@@ -147,6 +170,10 @@ export const StyledPreviewImage = styled.div`
 
 		${media.laptopSm} {
 			width: 18rem;
+		}
+
+		@media screen and (max-width: 420px) {
+			width: 16rem !important;
 		}
 	}
 
@@ -178,6 +205,15 @@ export const StyledPreviewImage = styled.div`
 
 			width: 20rem;
 			margin-right: -10.4rem;
+			transform: skewX(8deg) skewY(-8deg);
+		}
+
+		@media screen and (max-width: 420px) {
+			margin-right: -7.2rem;
+		}
+
+		${media.mobileMd} {
+			margin-right: -10rem;
 		}
 	}
 
@@ -211,6 +247,15 @@ export const StyledPreviewImage = styled.div`
 
 			width: 20rem;
 			margin-left: -10.4rem;
+			transform: skewX(-8deg) skewY(8deg);
+		}
+
+		@media screen and (max-width: 420px) {
+			margin-left: -7.2rem;
+		}
+
+		${media.mobileMd} {
+			margin-left: -10rem;
 		}
 	}
 
@@ -223,6 +268,10 @@ export const StyledPreviewImage = styled.div`
 
 		${media.laptopSm} {
 			width: 20rem;
+		}
+
+		@media screen and (max-width: 420px) {
+			width: 16rem !important;
 		}
 	}
 
@@ -256,6 +305,15 @@ export const StyledPreviewImage = styled.div`
 
 			margin: 0;
 			margin-left: -10.4rem;
+			transform: skewX(-8deg) skewY(8deg);
+		}
+
+		@media screen and (max-width: 420px) {
+			margin-left: -7.2rem;
+		}
+
+		${media.mobileMd} {
+			margin-left: -10rem;
 		}
 	}
 
@@ -289,6 +347,15 @@ export const StyledPreviewImage = styled.div`
 
 			margin: 0;
 			margin-right: -10.4rem;
+			transform: skewX(8deg) skewY(-8deg);
+		}
+
+		@media screen and (max-width: 420px) {
+			margin-right: -7.2rem;
+		}
+
+		${media.mobileMd} {
+			margin-right: -10rem;
 		}
 	}
 
@@ -301,6 +368,10 @@ export const StyledPreviewImage = styled.div`
 
 		${media.laptopSm} {
 			width: 24rem;
+		}
+
+		@media screen and (max-width: 420px) {
+			width: 20rem !important;
 		}
 	}
 
