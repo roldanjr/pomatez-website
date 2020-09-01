@@ -50,7 +50,6 @@ export const NavLinks: React.FC = () => {
 
 export const Navigation: React.FC = () => {
 	const {
-		isOnDesktop,
 		isDarkMode,
 		themeToggler,
 		isMenuOpen,
@@ -62,38 +61,34 @@ export const Navigation: React.FC = () => {
 			<StyledNavHeader>
 				<Logo name={APP_NAME} />
 
-				{isOnDesktop && (
-					<StyledNavContent>
-						<StyledNavLinks>
-							<NavLinks />
-						</StyledNavLinks>
+				<StyledNavContent>
+					<StyledNavLinks>
+						<NavLinks />
+					</StyledNavLinks>
 
-						<StyledNavButtonWrapper>
-							<StyledNavThemeToggler onClick={themeToggler}>
-								Mode
-								<SVG name={isDarkMode ? "moon" : "sunny"} />
-							</StyledNavThemeToggler>
-							<StyledNavDownloadButton
-								href="/"
-								to="installers"
-								offset={-24}
-								duration={420}
-								smooth
-							>
-								<SVG name="download" />
-								See Installers
-							</StyledNavDownloadButton>
-						</StyledNavButtonWrapper>
-					</StyledNavContent>
-				)}
+					<StyledNavButtonWrapper>
+						<StyledNavThemeToggler onClick={themeToggler}>
+							Mode
+							<SVG name={isDarkMode ? "moon" : "sunny"} />
+						</StyledNavThemeToggler>
+						<StyledNavDownloadButton
+							href="/"
+							to="installers"
+							offset={-24}
+							duration={420}
+							smooth
+						>
+							<SVG name="download" />
+							See Installers
+						</StyledNavDownloadButton>
+					</StyledNavButtonWrapper>
+				</StyledNavContent>
 
-				{!isOnDesktop && (
-					<StyledNavMenu isMenuOpen={isMenuOpen} onClick={toggleMenu}>
-						<span>&nbsp;</span>
-						<span>&nbsp;</span>
-						<span>&nbsp;</span>
-					</StyledNavMenu>
-				)}
+				<StyledNavMenu isMenuOpen={isMenuOpen} onClick={toggleMenu}>
+					<span>&nbsp;</span>
+					<span>&nbsp;</span>
+					<span>&nbsp;</span>
+				</StyledNavMenu>
 			</StyledNavHeader>
 		</StyledNav>
 	);
