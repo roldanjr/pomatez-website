@@ -95,7 +95,7 @@ export const darkTheme = css`
 		var(--bg-tertiary)
 	);
 
-	--border-primary: rgba(255, 255, 255, 0.16);
+	--border-primary: rgba(255, 255, 255, 0.12);
 	--border-secondary: rgba(255, 255, 255, 0.1);
 	--border-tertiary: rgba(255, 255, 255, 0.04);
 
