@@ -29,7 +29,7 @@ export const StyledNav = styled.nav<MenuProps>`
 	}
 
 	${media.laptopXs} {
-		border-bottom: 1px solid var(--border-tertiary);
+		/* border-bottom: 1px solid var(--border-tertiary); */
 	}
 
 	${media.tabletSm} {
@@ -49,6 +49,10 @@ export const StyledNavHeader = styled.header`
 	align-content: center;
 	grid-template-columns: max-content 1fr;
 	column-gap: 4rem;
+
+	${media.laptopMd} {
+		max-width: 90rem;
+	}
 
 	${media.laptopSm} {
 		column-gap: 2.8rem;

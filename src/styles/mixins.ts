@@ -74,10 +74,10 @@ export const SectionContentStyle = css`
 	}
 
 	${media.laptopXs} {
-		max-width: 92rem;
+		max-width: 90rem;
 	}
 
-	${media.tabletXl} {
-		max-width: 77.6rem;
-	}
+	/* ${media.tabletXl} {
+		max-width: 90rem;
+	} */
 `;

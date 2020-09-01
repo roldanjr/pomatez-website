@@ -6,6 +6,7 @@ export const StyledSidebar = styled.aside`
 	padding: 0 5.6rem;
 
 	background-color: var(--bg-primary);
+	border-top: 1px solid var(--border-tertiary);
 
 	position: fixed;
 	top: 6.4rem;

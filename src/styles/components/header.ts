@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "../media";
 
 export const StyledHeader = styled.header`
 	text-align: center;
@@ -58,6 +59,14 @@ export const StyledHeader = styled.header`
 			top: -2rem;
 			left: 50%;
 			transform: translateX(-50%);
+
+			${media.tabletLg} {
+				font-size: 16rem;
+			}
+
+			${media.tabletMd} {
+				display: none;
+			}
 		}
 	}
 
@@ -67,6 +76,22 @@ export const StyledHeader = styled.header`
 		font-weight: 700;
 		color: var(--cl-display-text);
 		z-index: 1;
+
+		${media.mobileXl} {
+			font-size: 5.6rem;
+		}
+
+		${media.mobileLg} {
+			font-size: 5.2rem;
+		}
+
+		${media.mobileSm} {
+			font-size: 4.8rem;
+		}
+
+		${media.mobileXs} {
+			font-size: 4rem;
+		}
 	}
 
 	& > div {

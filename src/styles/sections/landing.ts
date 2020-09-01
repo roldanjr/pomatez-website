@@ -62,12 +62,20 @@ export const StyledWaterMarkLeft = styled(WaterMarkLeft)`
 	${WaterMarkStyle};
 	left: 0;
 	margin-left: -2.4rem;
+
+	${media.laptopXs} {
+		display: none;
+	}
 `;
 
 export const StyledWaterMarkRight = styled(WaterMarkRight)`
 	${WaterMarkStyle};
 	right: 0;
 	margin-right: -2.4rem;
+
+	${media.laptopXs} {
+		display: none;
+	}
 `;
 
 export const StyledLandingCTAWrapper = styled.div`
@@ -186,7 +194,7 @@ export const StyledPreviewImage = styled.div`
 		}
 
 		${media.laptopXs} {
-			margin-right: -8.6rem;
+			margin-right: -9rem;
 		}
 
 		${media.tabletXl} {
@@ -226,7 +234,7 @@ export const StyledPreviewImage = styled.div`
 		}
 
 		${media.laptopXs} {
-			margin-left: -8.6rem;
+			margin-left: -9rem;
 		}
 
 		${media.tabletXl} {
@@ -284,7 +292,7 @@ export const StyledPreviewImage = styled.div`
 		}
 
 		${media.laptopXs} {
-			margin-right: -8.6rem;
+			margin-right: -9rem;
 		}
 
 		${media.tabletXl} {
@@ -326,7 +334,7 @@ export const StyledPreviewImage = styled.div`
 		}
 
 		${media.laptopXs} {
-			margin-left: -8.6rem;
+			margin-left: -9rem;
 		}
 
 		${media.tabletXl} {

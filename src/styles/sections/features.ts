@@ -14,9 +14,17 @@ export const StyledFeatureContainer = styled.div`
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	column-gap: 2rem;
+
+	${media.tabletMd} {
+		grid-template-columns: 1fr;
+	}
 `;
 
-export const StyledStickyContainer = styled.div``;
+export const StyledStickyContainer = styled.div`
+	${media.tabletMd} {
+		display: none;
+	}
+`;
 
 export const StyledFeaturedImageWrapper = styled.div`
 	display: grid;
@@ -27,6 +35,10 @@ export const StyledFeaturedImageWrapper = styled.div`
 
 	position: sticky;
 	top: 8.8rem;
+
+	${media.laptopSm} {
+		margin-right: 2rem;
+	}
 `;
 
 export const StyledFeaturedImage = styled.div`
@@ -34,6 +46,16 @@ export const StyledFeaturedImage = styled.div`
 	height: 48rem;
 	background-color: var(--bg-primary);
 	box-shadow: 0 20px 40px var(--cl-shadow-primary);
+
+	${media.laptopXs} {
+		width: 30rem;
+		height: max-content;
+	}
+
+	${media.tabletLg} {
+		width: 26.4rem;
+		height: max-content;
+	}
 
 	&:nth-child(1) {
 		margin-right: -16rem;
@@ -66,11 +88,12 @@ export const StyledFeatureList = styled.ul`
 		gap: 3.2rem;
 	}
 
-	${media.tabletXl} {
-		grid-template-columns: repeat(2, 1fr);
+	${media.tabletMd} {
+		max-width: 100%;
+		gap: 2.4rem;
 	}
 
-	${media.tabletMd} {
+	${media.tabletSm} {
 		grid-template-columns: 1fr;
 	}
 `;
@@ -88,12 +111,6 @@ const FeatureItemStyle = css`
 	border-radius: 3px;
 	box-shadow: 0 0 0 0 var(--cl-primary-variant);
 	transition: all 200ms ease;
-
-	${media.laptopSm} {
-		row-gap: 0.8rem;
-		padding: 2.4rem;
-		padding-bottom: 3.2rem;
-	}
 
 	&:hover {
 		color: var(--cl-primary-variant);
@@ -123,6 +140,18 @@ const FeatureItemStyle = css`
 
 export const StyledFeatureItem = styled.li`
 	${FeatureItemStyle};
+
+	${media.tabletMd} {
+		border-radius: 3px;
+		border: 1px solid var(--border-primary);
+		padding: 1.6rem 2.4rem;
+		padding-bottom: 2rem;
+		row-gap: 0.8rem;
+
+		&:hover {
+			box-shadow: 0 0 0 3px var(--cl-primary-variant);
+		}
+	}
 
 	& > a {
 		font-size: 2rem;
