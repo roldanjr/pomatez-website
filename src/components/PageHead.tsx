@@ -170,7 +170,6 @@ export const PageHead: React.FC<Props> = ({
 		applicationCategory: "LifestyleApplication",
 		downloadUrl: "https://github.com/roldanjr/pomatez/releases",
 		operatingSystem: "Windows, Linux, macOS",
-		screenshot: site.siteMetadata.siteUrl + socialPreviewLight.src,
 		softwareVersion: APP_VERSION,
 	};
 
