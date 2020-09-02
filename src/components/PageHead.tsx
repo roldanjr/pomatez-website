@@ -55,7 +55,7 @@ export const PageHead: React.FC<Props> = ({
 							frontmatter {
 								screenShot {
 									childImageSharp {
-										resize(width: 1600) {
+										original {
 											src
 											width
 											height
@@ -76,7 +76,7 @@ export const PageHead: React.FC<Props> = ({
 
 	const metaTitle = title || site.siteMetadata.title;
 
-	const socialPreviewLight = screenShot.childImageSharp.resize;
+	const socialPreviewLight = screenShot.childImageSharp.original;
 
 	const metaDescription = description || site.siteMetadata.description;
 
